@@ -1,0 +1,28 @@
+{
+  "name": "mirth-js",
+  "version": "1.0.0",
+  "description": "Mirh API for usage in javascript applications.",
+  "main": "./src/ConnectMirth.js",
+  "license": "(MIT OR GPL-3.0-or-later)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izorko33/mirth-js.git"
+  },
+  "keywords": [
+    "Mirth",
+    "javascript",
+    "node"
+  ],
+  "author": {
+    "name": "Igor Zorko",
+    "email": "igor.zorko1@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/izorko33/mirth-js/issues"
+  },
+  "homepage": "https://github.com/izorko33/mirth-js#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2"
+  }
+}
