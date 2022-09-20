@@ -11,7 +11,9 @@ class ConnectMirth {
     this._port = port;
     this._username = username;
     this._password = password;
+
     this.URL = `https://${host}:${port}/api`;
+
     this.instance = axios.create({
       baseURL: this.URL,
       withCredentials: true,
@@ -23,6 +25,7 @@ class ConnectMirth {
     if (disableTLSCheck) {
       process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
     }
+
     return this._init();
   }
 
