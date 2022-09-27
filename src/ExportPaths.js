@@ -24,7 +24,7 @@ async function ExportPaths(instance, url) {
 
   const data = await CreateJs();
 
-  await CreateMarkdown(paths, components.schemas);
+  // await CreateMarkdown(paths, components.schemas);
 
   try {
     if (!fs.existsSync(folderNameForFunctons)) {
@@ -38,7 +38,7 @@ async function ExportPaths(instance, url) {
 
   for (const path in paths) {
     if (paths.hasOwnProperty(path)) {
-      CreateFunction(path, paths[path], components.schemas);
+      CreateFunction(path, paths[path]);
     }
   }
 

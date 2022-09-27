@@ -12,7 +12,6 @@ async function CreateMarkdown(paths, schemas) {
   }
   let markdown = '';
   tags.forEach((tag, key) => {
-    // console.log(key);
     markdown += [`### ${key}\r\n\r\n`].join('\r\n');
     tag.forEach((item, key) => {
       let parametersWithoutDefaults = [];
@@ -73,7 +72,7 @@ async function CreateMarkdown(paths, schemas) {
           `| ------ | ------ | ------ | ------ |\r\n`,
         ].join('\r\n');
         item.parameters.forEach(function (params) {
-          markdown += `| ${params.name} | ${params.description} | ${params.required ? 'Yes' : 'No'} |\r\n`;
+          markdown += `| ${params.name} | ${params.description} | ${params.required ? 'Yes' : 'No'} |\r\n\r\n`;
         });
       }
 
@@ -82,13 +81,13 @@ async function CreateMarkdown(paths, schemas) {
       if (schemaParamsObject.length) {
         schemaParamsObject.forEach((param, index) => {
           markdown += [
-            `Parameters:\r\n`,
+            `Object Parameters:\r\n`,
             `| Name | Description | Required | Properties |`,
             `| ------ | ------ | ------ | ------ |\r\n`,
           ].join('\r\n');
           markdown += `| ${schemaParams[index]} | ${param.type} | Yes | ${
             param.properties !== undefined ? `{${Object.keys(param.properties)}}` : ''
-          } |\r\n`;
+          } |\r\n\r\n`;
         });
       }
 

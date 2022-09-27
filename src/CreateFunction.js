@@ -13,7 +13,7 @@ function createUrlString(url) {
   return newUrlFinal;
 }
 
-async function CreateFunction(url, func, schemas) {
+async function CreateFunction(url, func) {
   for (const f in func) {
     if (func.hasOwnProperty(f)) {
       let funcName = func[f].operationId;
@@ -22,7 +22,6 @@ async function CreateFunction(url, func, schemas) {
       let parametersWithoutDefaults = [];
       let missingParamsWithoutDefaults = [];
       let schemaParams = [];
-      let schemaParamsObject = [];
       let queryParams;
 
       const isLogin = url.includes('login');
@@ -98,8 +97,6 @@ async function CreateFunction(url, func, schemas) {
           if (headers.content['application/json']) {
             if (headers.content['application/json']['schema']['$ref']) {
               const text = headers.content['application/json']['schema']['$ref'].split('/').pop();
-              const keyPair = Object.keys(schemas).find(item => item === text);
-              schemaParamsObject.push(schemas[keyPair]);
               schemaParams.push(text[0].toLowerCase() + text.slice(1));
             }
             return {
@@ -118,7 +115,6 @@ async function CreateFunction(url, func, schemas) {
           } else if (headers.content['text/plain']) {
             if (headers.content['text/plain'].schema) {
               schemaParams.push('textData');
-              schemaParamsObject.push(headers.content['text/plain'].schema);
             }
             return {
               'Content-Type': 'text/plain',
@@ -263,48 +259,6 @@ async function CreateFunction(url, func, schemas) {
       }
 
       const allParams = [...new Set(parametersWithoutDefaults.concat(missingParamsWithoutDefaults, schemaParams))];
-
-      const prmsForMarkdown = `${
-        allParams.length !== 0 ? `${allParams.length <= 5 ? `${allParams.join(',')}` : ` {${allParams.join(',')}}`}` : ''
-      }`;
-
-      let markdown = [
-        `#### ${functionName}(${prmsForMarkdown})\r\n`,
-        `Summary: ${func[f].summary}\r\n`,
-        `Parameters:\r\n`,
-        `| Name | Description | Required | Properties |`,
-        `| ------ | ------ | ------ | ------ |\r\n`,
-      ].join('\r\n');
-
-      if (func[f].parameters) {
-        func[f].parameters.forEach(function (params) {
-          markdown += `| ${params.name} | ${params.description} | ${params.required ? 'Yes' : 'No'} |\r\n`;
-        });
-      }
-
-      if (schemaParamsObject.length) {
-        schemaParamsObject.forEach((item, index) => {
-          // console.log(Object.keys(item.properties));
-          markdown += `| ${schemaParams[index]} | ${item.type} | Yes | ${
-            item.properties !== undefined ? `{${Object.keys(item.properties)}}` : ''
-          } |\r\n`;
-        });
-      }
-
-      markdown += '---\r\n';
-
-      // try {
-      //   const data = fs.readFileSync('README.md').toString().split('\n');
-      //   if (data.length < 2000) {
-      //     data.push(markdown);
-      //     const text = data.join('\n');
-      //     fs.writeFileSync('README.md', text, function (err) {
-      //       if (err) return console.log(err);
-      //     });
-      //   }
-      // } catch (error) {
-      //   console.log(error);
-      // }
 
       // FOR NEWMIRTH CONNECT FUNCTIONS
       try {
