@@ -117,11 +117,6 @@ Parameters:
 
 Summary: Retrieves JMS connector settings templates.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### sendTestEmail(channelId,channelName,smtpDispatcherProperties)
@@ -155,11 +150,6 @@ Parameters:
 #### getDefinition(channelId,channelName,wsdlUrl)
 
 Summary: Retrieves the definition service map corresponding to the specified WSDL.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -195,32 +185,17 @@ Parameters:
 
 Summary: Returns true if the definition tree for the WSDL is cached by the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### generateEnvelope(channelId,channelName,wsdlUrl)
 
 Summary: Generate SOAP envelope for a given WSDL operation.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getSoapAction(channelId,channelName,wsdlUrl)
 
 Summary: Retrieves the default SOAP Action for a given WSDL operation.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -257,11 +232,6 @@ Parameters:
 
 Summary: Retrieves all dashboard channel states.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getChannelState(channelId)
@@ -294,32 +264,17 @@ Parameters:
 
 Summary: Starts the data pruner on-demand.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### stop()
 
 Summary: Stops the data pruner if currently running.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getStatusMap()
 
 Summary: Retrieves the current data pruner status.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -376,11 +331,6 @@ Parameters:
 
 Summary: Retrieves global map information.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getServerLogs(fetchSize,lastLogId)
@@ -414,22 +364,11 @@ Parameters:
 
 Summary: Creates a new alert.
 
-Parameters:
-
-| Name       | Description | Required | Properties                                                         |
-| ---------- | ----------- | -------- | ------------------------------------------------------------------ |
-| alertModel | object      | Yes      | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
-
----
+## | alertModel | object | Yes | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 
 #### getAlertsPost()
 
 Summary: Retrieves multiple alerts by ID, or all alerts if not specified. This is a POST request alternative to GET /alerts that may be used when there are too many alert IDs to include in the query parameters.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -449,32 +388,17 @@ Parameters:
 
 Summary: Returns an AlertInfo object containing alert protocol options and any updated channel summaries.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getAlertProtocolOptions()
 
 Summary: Returns all alert protocol options.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getAlertStatusList()
 
 Summary: Returns all alert dashboard statuses.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -544,11 +468,6 @@ Parameters:
 #### getChannelGroupsPost()
 
 Summary: Retrieve a list of all channel groups, or multiple channel groups by ID. This is a POST request alternative to GET /channelgroups that may be used when there are too many channel group IDs to include in the query parameters.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -621,11 +540,6 @@ Parameters:
 
 Summary: Removes the channels with the specified IDs. This is a POST request alternative to DELETE /channels that may be used when there are too many channel IDs to include in the query parameters.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getChannelsPost(pollingOnly,includeCodeTemplateLibraries)
@@ -644,11 +558,6 @@ Parameters:
 #### getChannelIdsAndNames()
 
 Summary: Returns a map of all channel IDs and names.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -670,13 +579,7 @@ Parameters:
 
 Summary: Creates a new channel.
 
-Parameters:
-
-| Name    | Description | Required | Properties                                                                                                                                                                                                                   |
-| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channel | object      | Yes      | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
-
----
+## | channel | object | Yes | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 
 #### removeChannels(channelId)
 
@@ -718,11 +621,6 @@ Parameters:
 
 Summary: Enables/disables the specified channels. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### setChannelEnabled_1(channelId,enabled)
@@ -741,11 +639,6 @@ Parameters:
 #### setChannelInitialState(initialState)
 
 Summary: Sets the initial state for the specified channels. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -780,21 +673,11 @@ Parameters:
 
 Summary: Clears all statistics (including lifetime) for all channels/connectors.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getStatisticsPost()
 
 Summary: Returns the Statistics for all channels. This is a POST request alternative to GET /statistics that may be used when there are too many channel IDs to include in the query parameters.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1128,11 +1011,6 @@ Parameters:
 
 Summary: Retrieves multiple code templates by ID, or all templates if not specified. This is a POST request alternative to GET /codeTemplates that may be used when there are too many code template IDs to include in the query parameters.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getCodeTemplate(codeTemplateId)
@@ -1189,11 +1067,6 @@ Parameters:
 
 Summary: Returns a list of code template summaries, indicating to a client which code templates have changed. If a code template was modified, the entire CodeTemplate object will be returned.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### updateLibrariesAndTemplates(override)
@@ -1214,21 +1087,11 @@ Parameters:
 
 Summary: Returns all resources for the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### setResources()
 
 Summary: Updates all resources for the server.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1236,21 +1099,11 @@ Parameters:
 
 Summary: Returns the version of the Mirth Connect server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getJVMName()
 
 Summary: Returns the name of the JVM running Mirth Connect.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1258,21 +1111,11 @@ Parameters:
 
 Summary: Returns a map of common information about the Mirth Connect server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getLicenseInfo()
 
 Summary: Returns a LicenseInfo object with the expiration date and other information.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1280,21 +1123,11 @@ Parameters:
 
 Summary: Returns a globally unique id.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getProtocolsAndCipherSuites()
 
 Summary: Returns a map containing all supported and enabled TLS protocols and cipher suites.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1302,21 +1135,11 @@ Parameters:
 
 Summary: Returns the status of the Mirth Connect server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getServerId()
 
 Summary: Returns the server id.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1324,33 +1147,17 @@ Parameters:
 
 Summary: Returns an UpdateSettings object with all update settings.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### setUpdateSettings(updateSettings)
 
 Summary: Updates the update settings.
 
-Parameters:
-
-| Name           | Description | Required | Properties                                               |
-| -------------- | ----------- | -------- | -------------------------------------------------------- |
-| updateSettings | object      | Yes      | {statsEnabled,lastStatsTime,properties,purgedProperties} |
-
----
+## | updateSettings | object | Yes | {statsEnabled,lastStatsTime,properties,purgedProperties} |
 
 #### getConfigurationMap()
 
 Summary: Returns all entries in the configuration map.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1358,21 +1165,11 @@ Parameters:
 
 Summary: Updates all entries in the configuration map.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getServerSettings()
 
 Summary: Returns a ServerSettings object with all server settings.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1380,22 +1177,11 @@ Parameters:
 
 Summary: Updates the server configuration settings.
 
-Parameters:
-
-| Name           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                            |
-| -------------- | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| serverSettings | object      | Yes      | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
-
----
+## | serverSettings | object | Yes | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
 
 #### getChannelMetadata()
 
 Summary: Returns all channel metadata for the server.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1403,21 +1189,11 @@ Parameters:
 
 Summary: Updates all channel metadata for the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getChannelTags()
 
 Summary: Returns a set containing all channel tags for the server.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1425,21 +1201,11 @@ Parameters:
 
 Summary: Updates all channel tags.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getGlobalScripts()
 
 Summary: Returns a map containing all of the global scripts.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1447,21 +1213,11 @@ Parameters:
 
 Summary: Updates all of the global scripts.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getChannelDependencies()
 
 Summary: Returns all channel dependencies for the server.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1469,21 +1225,11 @@ Parameters:
 
 Summary: Updates all channel dependencies for the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getRhinoLanguageVersion()
 
 Summary: Returns the language version that the Rhino engine should use.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1491,21 +1237,11 @@ Parameters:
 
 Summary: Returns the time zone of the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getServerTime()
 
 Summary: Returns the time of the server.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1513,21 +1249,11 @@ Parameters:
 
 Summary: Returns a List of all of the charset encodings supported by the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getPublicServerSettings()
 
 Summary: Returns a PublicServerSettings object containing server settings available to all users.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1535,21 +1261,11 @@ Parameters:
 
 Summary: Returns an EncryptionSettings object with all encryption settings.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getDatabaseDrivers()
 
 Summary: Returns the database driver list.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1557,21 +1273,11 @@ Parameters:
 
 Summary: Updates the list of database drivers.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getBuildDate()
 
 Summary: Returns the build date of the Mirth Connect server.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1607,21 +1313,11 @@ Parameters:
 
 Summary: Returns all password requirements for the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### sendTestEmail_1()
 
 Summary: Sends a test e-mail.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1642,11 +1338,6 @@ Parameters:
 #### getDatabaseTasks()
 
 Summary: Retrieves all current database tasks.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1769,11 +1460,6 @@ Parameters:
 
 Summary: Returns the maximum event ID currently in the database.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getEvents( {maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId,offset,limit})
@@ -1830,13 +1516,7 @@ Parameters:
 
 Summary: Count number for events by specific filter criteria.
 
-Parameters:
-
-| Name        | Description | Required | Properties                                                                                                 |
-| ----------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| eventFilter | object      | Yes      | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
-
----
+## | eventFilter | object | Yes | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 
 #### getEventCount_1( {maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId})
 
@@ -1864,11 +1544,6 @@ Parameters:
 
 Summary: Exports all events to the application data directory on the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 ### Extensions
@@ -1877,21 +1552,11 @@ Parameters:
 
 Summary: Installs an extension.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### uninstallExtension()
 
 Summary: Uninstalls an extension.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -1911,21 +1576,11 @@ Parameters:
 
 Summary: Returns all active plugin metadata.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getConnectorMetaData()
 
 Summary: Returns all active connector metadata.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -2462,21 +2117,11 @@ Parameters:
 
 Summary: Audit that the user has accessed a channel message that contains PHI.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### auditQueriedPHIMessage()
 
 Summary: Audit that the user has queried the channel messages panel that contains PHI.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -2553,21 +2198,11 @@ Parameters:
 
 Summary: Returns statistics for the underlying system.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getInfo()
 
 Summary: Returns information about the underlying system.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -2577,11 +2212,6 @@ Parameters:
 
 Summary: Generates usage document using data from both the client and server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 ### Users
@@ -2590,32 +2220,17 @@ Parameters:
 
 Summary: Logs in to the Mirth Connect server using the specified name and password.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### logout()
 
 Summary: Logs out of the server.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getCurrentUser()
 
 Summary: Returns the current logged in user.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -2635,13 +2250,7 @@ Parameters:
 
 Summary: Checks the password against the configured password policies.
 
-Parameters:
-
-| Name     | Description | Required | Properties |
-| -------- | ----------- | -------- | ---------- |
-| textData | string      | Yes      |            |
-
----
+## | textData | string | Yes | |
 
 #### updateUserPassword(userId,textData)
 
@@ -2660,21 +2269,11 @@ Parameters:
 
 Summary: User has been inactive and automatically logged out.
 
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
-
 ---
 
 #### getAllUsers()
 
 Summary: Returns a List of all users.
-
-Parameters:
-
-| Name | Description | Required | Properties |
-| ---- | ----------- | -------- | ---------- |
 
 ---
 
@@ -2682,13 +2281,7 @@ Parameters:
 
 Summary: Creates a new user.
 
-Parameters:
-
-| Name | Description | Required | Properties                                                                                                                                                                         |
-| ---- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| user | object      | Yes      | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
-
----
+## | user | object | Yes | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 
 #### getUser(userIdOrName)
 

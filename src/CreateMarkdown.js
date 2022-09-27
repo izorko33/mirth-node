@@ -13,7 +13,7 @@ async function CreateMarkdown(paths, schemas) {
   let markdown = '';
   tags.forEach((tag, key) => {
     // console.log(key);
-    markdown += [`### ${key}\r\n`].join('\r\n');
+    markdown += [`### ${key}\r\n\r\n`].join('\r\n');
     tag.forEach((item, key) => {
       let parametersWithoutDefaults = [];
       let missingParamsWithoutDefaults = [];
@@ -63,15 +63,15 @@ async function CreateMarkdown(paths, schemas) {
       const prmsForMarkdown = `${
         allParams.length !== 0 ? `${allParams.length <= 5 ? `${allParams.join(',')}` : ` {${allParams.join(',')}}`}` : ''
       }`;
-      markdown += [
-        `#### ${key}(${prmsForMarkdown})\r\n`,
-        `Summary: ${item.summary}\r\n`,
-        `Parameters:\r\n`,
-        `| Name | Description | Required | Properties |`,
-        `| ------ | ------ | ------ | ------ |\r\n`,
-      ].join('\r\n');
+      markdown += `#### ${key}(${prmsForMarkdown})\r\n\r\n`;
+      markdown += `Summary: ${item.summary}\r\n\r\n`;
 
       if (item.parameters) {
+        markdown += [
+          `Parameters:\r\n`,
+          `| Name | Description | Required | Properties |`,
+          `| ------ | ------ | ------ | ------ |\r\n`,
+        ].join('\r\n');
         item.parameters.forEach(function (params) {
           markdown += `| ${params.name} | ${params.description} | ${params.required ? 'Yes' : 'No'} |\r\n`;
         });
@@ -85,7 +85,7 @@ async function CreateMarkdown(paths, schemas) {
         });
       }
 
-      markdown += '---\r\n';
+      markdown += '---\r\n\r\n';
     });
   });
   try {
