@@ -31,6 +31,9 @@ class MirthClient {
     if (!fs.existsSync(folderNameForExports)) {
       fs.mkdirSync(folderNameForExports);
     }
+    if (!fs.existsSync('README.MD')) {
+      fs.writeFileSync('README.MD', '');
+    }
     if (!fs.existsSync(folderNameForFunctons)) {
       await ExportPaths(this.instance, this.URL);
     }

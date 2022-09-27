@@ -9,7 +9,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| textData | string | 'Yes' |  |
+| textData | string | Yes |  |
 ---
 
 #### TestWrite_1(channelId,channelName,fileDispatcherProperties)
@@ -22,7 +22,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| fileDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,scheme,schemeProperties,host,outputPattern,anonymous,username,password,timeout,keepConnectionOpen,maxIdleTime,secure,passive,validateConnection,outputAppend,errorOnExists,temporary,binary,charsetEncoding,template,name,protocol,purgedProperties} |
+| fileDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,scheme,schemeProperties,host,outputPattern,anonymous,username,password,timeout,keepConnectionOpen,maxIdleTime,secure,passive,validateConnection,outputAppend,errorOnExists,temporary,binary,charsetEncoding,template,name,protocol,purgedProperties} |
 ---
 
 #### TestRead(channelId,channelName,fileReceiverProperties)
@@ -35,7 +35,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| fileReceiverProperties | object | 'Yes' | {pluginProperties,pollConnectorProperties,sourceConnectorProperties,scheme,schemeProperties,host,fileFilter,regex,directoryRecursion,ignoreDot,anonymous,username,password,timeout,secure,passive,validateConnection,afterProcessingAction,moveToDirectory,moveToFileName,errorReadingAction,errorResponseAction,errorMoveToDirectory,errorMoveToFileName,checkFileAge,fileAge,fileSizeMinimum,fileSizeMaximum,ignoreFileSizeMaximum,sortBy,binary,charsetEncoding,name,protocol,purgedProperties} |
+| fileReceiverProperties | object | Yes | {pluginProperties,pollConnectorProperties,sourceConnectorProperties,scheme,schemeProperties,host,fileFilter,regex,directoryRecursion,ignoreDot,anonymous,username,password,timeout,secure,passive,validateConnection,afterProcessingAction,moveToDirectory,moveToFileName,errorReadingAction,errorResponseAction,errorMoveToDirectory,errorMoveToFileName,checkFileAge,fileAge,fileSizeMinimum,fileSizeMaximum,ignoreFileSizeMaximum,sortBy,binary,charsetEncoding,name,protocol,purgedProperties} |
 ---
 
 #### TestConnection(channelId,channelName,httpDispatcherProperties)
@@ -48,7 +48,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| httpDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,host,useProxyServer,proxyAddress,proxyPort,method,useHeadersVariable,headersVariable,useParametersVariable,parametersVariable,responseXmlBody,responseParseMultipart,responseIncludeMetadata,responseBinaryMimeTypes,responseBinaryMimeTypesRegex,multipart,useAuthentication,authenticationType,usePreemptiveAuthentication,username,password,content,contentType,dataTypeBinary,charset,socketTimeout,name,protocol,parametersMap,headersMap,purgedProperties} |
+| httpDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,host,useProxyServer,proxyAddress,proxyPort,method,useHeadersVariable,headersVariable,useParametersVariable,parametersVariable,responseXmlBody,responseParseMultipart,responseIncludeMetadata,responseBinaryMimeTypes,responseBinaryMimeTypesRegex,multipart,useAuthentication,authenticationType,usePreemptiveAuthentication,username,password,content,contentType,dataTypeBinary,charset,socketTimeout,name,protocol,parametersMap,headersMap,purgedProperties} |
 ---
 
 #### GetTables( {channelId,channelName,driver,username,password,tableNamePattern,selectLimit,resourceId})
@@ -90,7 +90,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | templateName | The name of the template. | Yes |
-| jmsConnectorProperties | object | 'Yes' | {pluginProperties,useJndi,jndiProviderUrl,jndiInitialContextFactory,jndiConnectionFactoryName,connectionFactoryClass,connectionProperties,username,password,destinationName,topic,clientId,name,protocol,purgedProperties} |
+| jmsConnectorProperties | object | Yes | {pluginProperties,useJndi,jndiProviderUrl,jndiInitialContextFactory,jndiConnectionFactoryName,connectionFactoryClass,connectionProperties,username,password,destinationName,topic,clientId,name,protocol,purgedProperties} |
 ---
 
 #### DeleteTemplate(templateName)
@@ -124,7 +124,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| smtpDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,smtpHost,smtpPort,overrideLocalBinding,localAddress,localPort,timeout,encryption,authentication,username,password,to,from,cc,bcc,replyTo,headersVariable,subject,charsetEncoding,html,body,attachmentsVariable,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,attachmentsList,purgedProperties} |
+| smtpDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,smtpHost,smtpPort,overrideLocalBinding,localAddress,localPort,timeout,encryption,authentication,username,password,to,from,cc,bcc,replyTo,headersVariable,subject,charsetEncoding,html,body,attachmentsVariable,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,attachmentsList,purgedProperties} |
 ---
 
 #### TestConnection_1(channelId,channelName,tcpDispatcherProperties)
@@ -137,7 +137,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| tcpDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,transmissionModeProperties,serverMode,remoteAddress,remotePort,overrideLocalBinding,localAddress,localPort,sendTimeout,bufferSize,maxConnections,keepConnectionOpen,checkRemoteHost,responseTimeout,ignoreResponse,queueOnResponseTimeout,dataTypeBinary,charsetEncoding,template,name,protocol,purgedProperties} |
+| tcpDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,transmissionModeProperties,serverMode,remoteAddress,remotePort,overrideLocalBinding,localAddress,localPort,sendTimeout,bufferSize,maxConnections,keepConnectionOpen,checkRemoteHost,responseTimeout,ignoreResponse,queueOnResponseTimeout,dataTypeBinary,charsetEncoding,template,name,protocol,purgedProperties} |
 ---
 
 #### GetDefinition(channelId,channelName,wsdlUrl)
@@ -160,7 +160,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| webServiceDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
+| webServiceDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 ---
 
 #### CacheWsdlFromUrl(channelId,channelName,webServiceDispatcherProperties)
@@ -173,7 +173,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| webServiceDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
+| webServiceDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 ---
 
 #### IsWsdlCached(channelId,channelName,wsdlUrl)
@@ -381,7 +381,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| alertModel | object | 'Yes' | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
+| alertModel | object | Yes | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 ---
 
 #### GetAlertsPost()
@@ -455,7 +455,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | alertId | The ID of the alert. | Yes |
-| alertModel | object | 'Yes' | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
+| alertModel | object | Yes | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 ---
 
 #### RemoveAlert(alertId)
@@ -545,7 +545,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel to update. | Yes |
 | override | If true, the channel will be updated even if a different revision exists on the server. | No |
-| channel | object | 'Yes' | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
+| channel | object | Yes | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 ---
 
 #### RemoveChannel(channelId)
@@ -612,7 +612,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| channel | object | 'Yes' | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
+| channel | object | Yes | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 ---
 
 #### RemoveChannels(channelId)
@@ -1051,7 +1051,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | codeTemplateId | The ID of the code template. | Yes |
 | override | If true, the code template will be updated even if a different revision exists on the server. | No |
-| codeTemplate | object | 'Yes' | {id,name,revision,lastModified,contextSet,properties,type,description,code,purgedProperties,addToScripts,functionDefinition} |
+| codeTemplate | object | Yes | {id,name,revision,lastModified,contextSet,properties,type,description,code,purgedProperties,addToScripts,functionDefinition} |
 ---
 
 #### RemoveCodeTemplate(codeTemplateId)
@@ -1215,7 +1215,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| updateSettings | object | 'Yes' | {statsEnabled,lastStatsTime,properties,purgedProperties} |
+| updateSettings | object | Yes | {statsEnabled,lastStatsTime,properties,purgedProperties} |
 ---
 
 #### GetConfigurationMap()
@@ -1256,7 +1256,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| serverSettings | object | 'Yes' | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
+| serverSettings | object | Yes | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
 ---
 
 #### GetChannelMetadata()
@@ -1452,7 +1452,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | deploy | If true, all enabled channels will be deployed after the configuration is restored. | No |
 | overwriteConfigMap | If true, overwrite the Configuration Map | No |
-| serverConfiguration | object | 'Yes' | {date,channelGroups,channels,channelTags,users,alerts,codeTemplateLibraries,serverSettings,updateSettings,globalScripts,pluginProperties,resourceProperties,channelDependencies,configurationMap} |
+| serverConfiguration | object | Yes | {date,channelGroups,channels,channelTags,users,alerts,codeTemplateLibraries,serverSettings,updateSettings,globalScripts,pluginProperties,resourceProperties,channelDependencies,configurationMap} |
 ---
 
 #### GetPasswordRequirements()
@@ -1652,7 +1652,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | offset | Used for pagination, determines where to start in the search results. | No |
 | limit | Used for pagination, determines the maximum number of results to return. | No |
-| eventFilter | object | 'Yes' | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
+| eventFilter | object | Yes | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 ---
 
 #### GetEventCount(eventFilter)
@@ -1663,7 +1663,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| eventFilter | object | 'Yes' | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
+| eventFilter | object | Yes | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 ---
 
 #### GetEventCount_1( {maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId})
@@ -1807,7 +1807,7 @@ Parameters:
 | includeContent | If true, message content will be returned with the results. | No |
 | offset | Used for pagination, determines where to start in the search results. | No |
 | limit | Used for pagination, determines the maximum number of results to return. | No |
-| messageFilter | object | 'Yes' | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| messageFilter | object | Yes | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 ---
 
 #### GetMessagesByChannelId( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,includeContent,offset,limit,channelId})
@@ -1874,7 +1874,7 @@ Parameters:
 | overwrite | If true and a valid original message ID is given, this message will overwrite the existing one. | No |
 | imported | If true, marks this message as being imported. If the message is overwriting an existing one, then statistics will not be decremented. | No |
 | originalMessageId | The original message ID this message is associated with. | No |
-| textData | string | 'Yes' |  |
+| textData | string | Yes |  |
 ---
 
 #### RemoveMessages( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
@@ -1933,7 +1933,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
-| rawMessage | object | 'Yes' | {overwrite,imported,originalMessageId,rawData,rawBytes,destinationMetaDataIds,sourceMap,binary,attachments} |
+| rawMessage | object | Yes | {overwrite,imported,originalMessageId,rawData,rawBytes,destinationMetaDataIds,sourceMap,binary,attachments} |
 ---
 
 #### GetAttachmentsByMessageId(includeContent,channelId,messageId)
@@ -1959,7 +1959,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | messageId | The ID of the message. | Yes |
-| connectorMessage | object | 'Yes' | {messageId,metaDataId,channelId,channelName,connectorName,serverId,receivedDate,status,raw,processedRaw,transformed,encoded,sent,response,responseTransformed,processedResponse,sourceMapContent,connectorMapContent,channelMapContent,responseMapContent,metaDataMap,processingErrorContent,postProcessorErrorContent,responseErrorContent,errorCode,sendAttempts,sendDate,responseDate,chainId,orderId,sentProperties,queueBucket,attemptedFirst,dispatcherId,responseMap,connectorMap,channelMap,responseError,processingError,sourceMap,messageContent,postProcessorError} |
+| connectorMessage | object | Yes | {messageId,metaDataId,channelId,channelName,connectorName,serverId,receivedDate,status,raw,processedRaw,transformed,encoded,sent,response,responseTransformed,processedResponse,sourceMapContent,connectorMapContent,channelMapContent,responseMapContent,metaDataMap,processingErrorContent,postProcessorErrorContent,responseErrorContent,errorCode,sendAttempts,sendDate,responseDate,chainId,orderId,sentProperties,queueBucket,attemptedFirst,dispatcherId,responseMap,connectorMap,channelMap,responseError,processingError,sourceMap,messageContent,postProcessorError} |
 ---
 
 #### GetMessageCount(channelId,messageFilter)
@@ -1971,7 +1971,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
-| messageFilter | object | 'Yes' | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| messageFilter | object | Yes | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 ---
 
 #### GetMessageCount_1( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
@@ -2033,7 +2033,7 @@ Parameters:
 | replace | If true, the message will overwrite the current one | No |
 | filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No |
 | metaDataId | Indicates which destinations to send the message to. | No |
-| messageFilter | object | 'Yes' | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| messageFilter | object | Yes | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 ---
 
 #### ReprocessMessages_1( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,replace,filterDestinations,metaDataId,channelId})
@@ -2149,7 +2149,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
-| message | object | 'Yes' | {messageId,serverId,channelId,receivedDate,processed,originalId,importId,importChannelId,attachments,connectorMessages,mergedConnectorMessage} |
+| message | object | Yes | {messageId,serverId,channelId,receivedDate,processed,originalId,importId,importChannelId,attachments,connectorMessages,mergedConnectorMessage} |
 ---
 
 #### ImportMessagesServer(includeSubfolders,channelId,textData)
@@ -2162,7 +2162,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | includeSubfolders | If true, sub-folders will also be scanned recursively for messages. | No |
-| textData | string | 'Yes' |  |
+| textData | string | Yes |  |
 ---
 
 #### ExportMessagesServer(pageSize,channelId)
@@ -2280,7 +2280,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
-| messageFilter | object | 'Yes' | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| messageFilter | object | Yes | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 ---
 
 #### RemoveAllMessages(restartRunningChannels,clearStatistics,channelId)
@@ -2412,7 +2412,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| textData | string | 'Yes' |  |
+| textData | string | Yes |  |
 ---
 
 #### UpdateUserPassword(userId,textData)
@@ -2424,7 +2424,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | userId | The unique ID of the user to update the password for. | Yes |
-| textData | string | 'Yes' |  |
+| textData | string | Yes |  |
 ---
 
 #### InactivityLogout()
@@ -2455,7 +2455,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| user | object | 'Yes' | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
+| user | object | Yes | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 ---
 
 #### GetUser(userIdOrName)
@@ -2478,7 +2478,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | userId | The unique ID of the user to update. | Yes |
-| user | object | 'Yes' | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
+| user | object | Yes | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 ---
 
 #### RemoveUser(userId)
@@ -2548,5 +2548,5 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | userId | The unique ID of the user. | Yes |
 | name | The name of the user property to update. | Yes |
-| textData | string | 'Yes' |  |
+| textData | string | Yes |  |
 ---
