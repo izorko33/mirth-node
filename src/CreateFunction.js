@@ -284,8 +284,9 @@ async function CreateFunction(url, func, schemas) {
 
       if (schemaParamsObject.length) {
         schemaParamsObject.forEach((item, index) => {
+          // console.log(Object.keys(item.properties));
           markdown += `| ${schemaParams[index]} | ${item.type} | 'Yes' | ${
-            item.properties !== undefined ? JSON.stringify(item.properties) : ''
+            item.properties !== undefined ? `{${Object.keys(item.properties)}}` : ''
           } |\r\n`;
         });
       }
@@ -293,13 +294,14 @@ async function CreateFunction(url, func, schemas) {
       markdown += '---\r\n';
 
       try {
-        // fs.writeFileSync('README.md', markdown);
-        const data = fs.readFileSync('README.md').toString().split('\n');
-        data.push(markdown);
-        const text = data.join('\n');
-        fs.writeFileSync('README.md', text, function (err) {
-          if (err) return console.log(err);
-        });
+        if (!fs.existsSync('README.md')) {
+          const data = fs.readFileSync('README.md').toString().split('\n');
+          data.push(markdown);
+          const text = data.join('\n');
+          fs.writeFileSync('README.md', text, function (err) {
+            if (err) return console.log(err);
+          });
+        }
       } catch (error) {
         console.log(error);
       }

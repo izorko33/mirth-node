@@ -22,7 +22,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| fileDispatcherProperties | object | 'Yes' | {"pluginProperties":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ConnectorPluginProperties"}},"destinationConnectorProperties":{"$ref":"#/components/schemas/DestinationConnectorProperties"},"scheme":{"type":"string","enum":["file","ftp","sftp","Amazon S3","smb","webdav"]},"schemeProperties":{"$ref":"#/components/schemas/SchemeProperties"},"host":{"type":"string"},"outputPattern":{"type":"string"},"anonymous":{"type":"boolean"},"username":{"type":"string"},"password":{"type":"string"},"timeout":{"type":"string"},"keepConnectionOpen":{"type":"boolean"},"maxIdleTime":{"type":"string"},"secure":{"type":"boolean"},"passive":{"type":"boolean"},"validateConnection":{"type":"boolean"},"outputAppend":{"type":"boolean"},"errorOnExists":{"type":"boolean"},"temporary":{"type":"boolean"},"binary":{"type":"boolean"},"charsetEncoding":{"type":"string"},"template":{"type":"string"},"name":{"type":"string"},"protocol":{"type":"string"},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| fileDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,scheme,schemeProperties,host,outputPattern,anonymous,username,password,timeout,keepConnectionOpen,maxIdleTime,secure,passive,validateConnection,outputAppend,errorOnExists,temporary,binary,charsetEncoding,template,name,protocol,purgedProperties} |
 ---
 
 #### TestRead(channelId,channelName,fileReceiverProperties)
@@ -35,7 +35,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| fileReceiverProperties | object | 'Yes' | {"pluginProperties":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ConnectorPluginProperties"}},"pollConnectorProperties":{"$ref":"#/components/schemas/PollConnectorProperties"},"sourceConnectorProperties":{"$ref":"#/components/schemas/SourceConnectorProperties"},"scheme":{"type":"string","enum":["file","ftp","sftp","Amazon S3","smb","webdav"]},"schemeProperties":{"$ref":"#/components/schemas/SchemeProperties"},"host":{"type":"string"},"fileFilter":{"type":"string"},"regex":{"type":"boolean"},"directoryRecursion":{"type":"boolean"},"ignoreDot":{"type":"boolean"},"anonymous":{"type":"boolean"},"username":{"type":"string"},"password":{"type":"string"},"timeout":{"type":"string"},"secure":{"type":"boolean"},"passive":{"type":"boolean"},"validateConnection":{"type":"boolean"},"afterProcessingAction":{"type":"string","enum":["None","Move","Delete","After Processing Action"]},"moveToDirectory":{"type":"string"},"moveToFileName":{"type":"string"},"errorReadingAction":{"type":"string","enum":["None","Move","Delete","After Processing Action"]},"errorResponseAction":{"type":"string","enum":["None","Move","Delete","After Processing Action"]},"errorMoveToDirectory":{"type":"string"},"errorMoveToFileName":{"type":"string"},"checkFileAge":{"type":"boolean"},"fileAge":{"type":"string"},"fileSizeMinimum":{"type":"string"},"fileSizeMaximum":{"type":"string"},"ignoreFileSizeMaximum":{"type":"boolean"},"sortBy":{"type":"string"},"binary":{"type":"boolean"},"charsetEncoding":{"type":"string"},"name":{"type":"string"},"protocol":{"type":"string"},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| fileReceiverProperties | object | 'Yes' | {pluginProperties,pollConnectorProperties,sourceConnectorProperties,scheme,schemeProperties,host,fileFilter,regex,directoryRecursion,ignoreDot,anonymous,username,password,timeout,secure,passive,validateConnection,afterProcessingAction,moveToDirectory,moveToFileName,errorReadingAction,errorResponseAction,errorMoveToDirectory,errorMoveToFileName,checkFileAge,fileAge,fileSizeMinimum,fileSizeMaximum,ignoreFileSizeMaximum,sortBy,binary,charsetEncoding,name,protocol,purgedProperties} |
 ---
 
 #### TestConnection(channelId,channelName,httpDispatcherProperties)
@@ -48,7 +48,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| httpDispatcherProperties | object | 'Yes' | {"pluginProperties":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ConnectorPluginProperties"}},"destinationConnectorProperties":{"$ref":"#/components/schemas/DestinationConnectorProperties"},"host":{"type":"string"},"useProxyServer":{"type":"boolean"},"proxyAddress":{"type":"string"},"proxyPort":{"type":"string"},"method":{"type":"string"},"useHeadersVariable":{"type":"boolean"},"headersVariable":{"type":"string"},"useParametersVariable":{"type":"boolean"},"parametersVariable":{"type":"string"},"responseXmlBody":{"type":"boolean"},"responseParseMultipart":{"type":"boolean"},"responseIncludeMetadata":{"type":"boolean"},"responseBinaryMimeTypes":{"type":"string"},"responseBinaryMimeTypesRegex":{"type":"boolean"},"multipart":{"type":"boolean"},"useAuthentication":{"type":"boolean"},"authenticationType":{"type":"string"},"usePreemptiveAuthentication":{"type":"boolean"},"username":{"type":"string"},"password":{"type":"string"},"content":{"type":"string"},"contentType":{"type":"string"},"dataTypeBinary":{"type":"boolean"},"charset":{"type":"string"},"socketTimeout":{"type":"string"},"name":{"type":"string"},"protocol":{"type":"string"},"parametersMap":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}}},"headersMap":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}}},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| httpDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,host,useProxyServer,proxyAddress,proxyPort,method,useHeadersVariable,headersVariable,useParametersVariable,parametersVariable,responseXmlBody,responseParseMultipart,responseIncludeMetadata,responseBinaryMimeTypes,responseBinaryMimeTypesRegex,multipart,useAuthentication,authenticationType,usePreemptiveAuthentication,username,password,content,contentType,dataTypeBinary,charset,socketTimeout,name,protocol,parametersMap,headersMap,purgedProperties} |
 ---
 
 #### GetTables( {channelId,channelName,driver,username,password,tableNamePattern,selectLimit,resourceId})
@@ -90,7 +90,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | templateName | The name of the template. | Yes |
-| jmsConnectorProperties | object | 'Yes' | {"pluginProperties":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ConnectorPluginProperties"}},"useJndi":{"type":"boolean"},"jndiProviderUrl":{"type":"string"},"jndiInitialContextFactory":{"type":"string"},"jndiConnectionFactoryName":{"type":"string"},"connectionFactoryClass":{"type":"string"},"connectionProperties":{"type":"object","additionalProperties":{"type":"string"}},"username":{"type":"string"},"password":{"type":"string"},"destinationName":{"type":"string"},"topic":{"type":"boolean"},"clientId":{"type":"string"},"name":{"type":"string"},"protocol":{"type":"string"},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| jmsConnectorProperties | object | 'Yes' | {pluginProperties,useJndi,jndiProviderUrl,jndiInitialContextFactory,jndiConnectionFactoryName,connectionFactoryClass,connectionProperties,username,password,destinationName,topic,clientId,name,protocol,purgedProperties} |
 ---
 
 #### DeleteTemplate(templateName)
@@ -124,7 +124,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| smtpDispatcherProperties | object | 'Yes' | {"pluginProperties":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ConnectorPluginProperties"}},"destinationConnectorProperties":{"$ref":"#/components/schemas/DestinationConnectorProperties"},"smtpHost":{"type":"string"},"smtpPort":{"type":"string"},"overrideLocalBinding":{"type":"boolean"},"localAddress":{"type":"string"},"localPort":{"type":"string"},"timeout":{"type":"string"},"encryption":{"type":"string"},"authentication":{"type":"boolean"},"username":{"type":"string"},"password":{"type":"string"},"to":{"type":"string"},"from":{"type":"string"},"cc":{"type":"string"},"bcc":{"type":"string"},"replyTo":{"type":"string"},"headersVariable":{"type":"string"},"subject":{"type":"string"},"charsetEncoding":{"type":"string"},"html":{"type":"boolean"},"body":{"type":"string"},"attachmentsVariable":{"type":"string"},"name":{"type":"string"},"protocol":{"type":"string"},"useAttachmentsVariable":{"type":"boolean"},"useHeadersVariable":{"type":"boolean"},"headersMap":{"type":"object","additionalProperties":{"type":"string"}},"attachmentsList":{"type":"array","items":{"$ref":"#/components/schemas/Attachment"}},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| smtpDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,smtpHost,smtpPort,overrideLocalBinding,localAddress,localPort,timeout,encryption,authentication,username,password,to,from,cc,bcc,replyTo,headersVariable,subject,charsetEncoding,html,body,attachmentsVariable,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,attachmentsList,purgedProperties} |
 ---
 
 #### TestConnection_1(channelId,channelName,tcpDispatcherProperties)
@@ -137,7 +137,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| tcpDispatcherProperties | object | 'Yes' | {"pluginProperties":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ConnectorPluginProperties"}},"destinationConnectorProperties":{"$ref":"#/components/schemas/DestinationConnectorProperties"},"transmissionModeProperties":{"$ref":"#/components/schemas/TransmissionModeProperties"},"serverMode":{"type":"boolean"},"remoteAddress":{"type":"string"},"remotePort":{"type":"string"},"overrideLocalBinding":{"type":"boolean"},"localAddress":{"type":"string"},"localPort":{"type":"string"},"sendTimeout":{"type":"string"},"bufferSize":{"type":"string"},"maxConnections":{"type":"string"},"keepConnectionOpen":{"type":"boolean"},"checkRemoteHost":{"type":"boolean"},"responseTimeout":{"type":"string"},"ignoreResponse":{"type":"boolean"},"queueOnResponseTimeout":{"type":"boolean"},"dataTypeBinary":{"type":"boolean"},"charsetEncoding":{"type":"string"},"template":{"type":"string"},"name":{"type":"string"},"protocol":{"type":"string"},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| tcpDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,transmissionModeProperties,serverMode,remoteAddress,remotePort,overrideLocalBinding,localAddress,localPort,sendTimeout,bufferSize,maxConnections,keepConnectionOpen,checkRemoteHost,responseTimeout,ignoreResponse,queueOnResponseTimeout,dataTypeBinary,charsetEncoding,template,name,protocol,purgedProperties} |
 ---
 
 #### GetDefinition(channelId,channelName,wsdlUrl)
@@ -160,7 +160,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| webServiceDispatcherProperties | object | 'Yes' | {"pluginProperties":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ConnectorPluginProperties"}},"destinationConnectorProperties":{"$ref":"#/components/schemas/DestinationConnectorProperties"},"wsdlUrl":{"type":"string"},"service":{"type":"string"},"port":{"type":"string"},"operation":{"type":"string"},"locationURI":{"type":"string"},"socketTimeout":{"type":"string"},"useAuthentication":{"type":"boolean"},"username":{"type":"string"},"password":{"type":"string"},"envelope":{"type":"string"},"oneWay":{"type":"boolean"},"headersVariable":{"type":"string"},"useMtom":{"type":"boolean"},"attachmentNames":{"type":"array","items":{"type":"string"}},"attachmentContents":{"type":"array","items":{"type":"string"}},"attachmentTypes":{"type":"array","items":{"type":"string"}},"attachmentsVariable":{"type":"string"},"soapAction":{"type":"string"},"wsdlDefinitionMap":{"$ref":"#/components/schemas/DefinitionServiceMap"},"name":{"type":"string"},"protocol":{"type":"string"},"useAttachmentsVariable":{"type":"boolean"},"useHeadersVariable":{"type":"boolean"},"headersMap":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}}},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| webServiceDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 ---
 
 #### CacheWsdlFromUrl(channelId,channelName,webServiceDispatcherProperties)
@@ -173,7 +173,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | channelName | The name of the channel. | Yes |
-| webServiceDispatcherProperties | object | 'Yes' | {"pluginProperties":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ConnectorPluginProperties"}},"destinationConnectorProperties":{"$ref":"#/components/schemas/DestinationConnectorProperties"},"wsdlUrl":{"type":"string"},"service":{"type":"string"},"port":{"type":"string"},"operation":{"type":"string"},"locationURI":{"type":"string"},"socketTimeout":{"type":"string"},"useAuthentication":{"type":"boolean"},"username":{"type":"string"},"password":{"type":"string"},"envelope":{"type":"string"},"oneWay":{"type":"boolean"},"headersVariable":{"type":"string"},"useMtom":{"type":"boolean"},"attachmentNames":{"type":"array","items":{"type":"string"}},"attachmentContents":{"type":"array","items":{"type":"string"}},"attachmentTypes":{"type":"array","items":{"type":"string"}},"attachmentsVariable":{"type":"string"},"soapAction":{"type":"string"},"wsdlDefinitionMap":{"$ref":"#/components/schemas/DefinitionServiceMap"},"name":{"type":"string"},"protocol":{"type":"string"},"useAttachmentsVariable":{"type":"boolean"},"useHeadersVariable":{"type":"boolean"},"headersMap":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}}},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| webServiceDispatcherProperties | object | 'Yes' | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 ---
 
 #### IsWsdlCached(channelId,channelName,wsdlUrl)
@@ -381,7 +381,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| alertModel | object | 'Yes' | {"id":{"type":"string"},"name":{"type":"string"},"enabled":{"type":"boolean"},"trigger":{"$ref":"#/components/schemas/AlertTrigger"},"actionGroups":{"type":"array","items":{"$ref":"#/components/schemas/AlertActionGroup"}},"properties":{"type":"object","additionalProperties":{"type":"object"}},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| alertModel | object | 'Yes' | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 ---
 
 #### GetAlertsPost()
@@ -455,7 +455,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | alertId | The ID of the alert. | Yes |
-| alertModel | object | 'Yes' | {"id":{"type":"string"},"name":{"type":"string"},"enabled":{"type":"boolean"},"trigger":{"$ref":"#/components/schemas/AlertTrigger"},"actionGroups":{"type":"array","items":{"$ref":"#/components/schemas/AlertActionGroup"}},"properties":{"type":"object","additionalProperties":{"type":"object"}},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| alertModel | object | 'Yes' | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 ---
 
 #### RemoveAlert(alertId)
@@ -545,7 +545,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel to update. | Yes |
 | override | If true, the channel will be updated even if a different revision exists on the server. | No |
-| channel | object | 'Yes' | {"id":{"type":"string"},"nextMetaDataId":{"type":"integer","format":"int32"},"name":{"type":"string"},"description":{"type":"string"},"revision":{"type":"integer","format":"int32"},"sourceConnector":{"$ref":"#/components/schemas/Connector"},"destinationConnectors":{"type":"array","items":{"$ref":"#/components/schemas/Connector"}},"preprocessingScript":{"type":"string"},"postprocessingScript":{"type":"string"},"deployScript":{"type":"string"},"undeployScript":{"type":"string"},"properties":{"$ref":"#/components/schemas/ChannelProperties"},"exportData":{"$ref":"#/components/schemas/ChannelExportData"},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}},"enabledDestinationConnectors":{"type":"array","items":{"$ref":"#/components/schemas/Connector"}}} |
+| channel | object | 'Yes' | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 ---
 
 #### RemoveChannel(channelId)
@@ -612,7 +612,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| channel | object | 'Yes' | {"id":{"type":"string"},"nextMetaDataId":{"type":"integer","format":"int32"},"name":{"type":"string"},"description":{"type":"string"},"revision":{"type":"integer","format":"int32"},"sourceConnector":{"$ref":"#/components/schemas/Connector"},"destinationConnectors":{"type":"array","items":{"$ref":"#/components/schemas/Connector"}},"preprocessingScript":{"type":"string"},"postprocessingScript":{"type":"string"},"deployScript":{"type":"string"},"undeployScript":{"type":"string"},"properties":{"$ref":"#/components/schemas/ChannelProperties"},"exportData":{"$ref":"#/components/schemas/ChannelExportData"},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}},"enabledDestinationConnectors":{"type":"array","items":{"$ref":"#/components/schemas/Connector"}}} |
+| channel | object | 'Yes' | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 ---
 
 #### RemoveChannels(channelId)
@@ -1051,7 +1051,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | codeTemplateId | The ID of the code template. | Yes |
 | override | If true, the code template will be updated even if a different revision exists on the server. | No |
-| codeTemplate | object | 'Yes' | {"id":{"type":"string"},"name":{"type":"string"},"revision":{"type":"integer","format":"int32"},"lastModified":{"type":"string","format":"date-time"},"contextSet":{"uniqueItems":true,"type":"array","properties":{"empty":{"type":"boolean"}},"items":{"type":"string","enum":["Global Deploy","Global Undeploy","Global Preprocessor","Global Postprocessor","Channel Deploy","Channel Undeploy","Channel Preprocessor","Channel Postprocessor","Channel Attachment","Channel Batch","Source Receiver","Source Filter Transformer","Destination Filter Transformer","Destination Dispatcher","Destination Response Transformer"]}},"properties":{"$ref":"#/components/schemas/CodeTemplateProperties"},"type":{"type":"string","enum":["Function","Drag-and-Drop Code Block","Compiled Code Block"]},"description":{"type":"string"},"code":{"type":"string"},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}},"addToScripts":{"type":"boolean"},"functionDefinition":{"$ref":"#/components/schemas/CodeTemplateFunctionDefinition"}} |
+| codeTemplate | object | 'Yes' | {id,name,revision,lastModified,contextSet,properties,type,description,code,purgedProperties,addToScripts,functionDefinition} |
 ---
 
 #### RemoveCodeTemplate(codeTemplateId)
@@ -1215,7 +1215,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| updateSettings | object | 'Yes' | {"statsEnabled":{"type":"boolean"},"lastStatsTime":{"type":"integer","format":"int64"},"properties":{"type":"object","additionalProperties":{"type":"string"}},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| updateSettings | object | 'Yes' | {statsEnabled,lastStatsTime,properties,purgedProperties} |
 ---
 
 #### GetConfigurationMap()
@@ -1256,7 +1256,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| serverSettings | object | 'Yes' | {"environmentName":{"type":"string"},"serverName":{"type":"string"},"clearGlobalMap":{"type":"boolean"},"queueBufferSize":{"type":"integer","format":"int32"},"defaultMetaDataColumns":{"type":"array","items":{"$ref":"#/components/schemas/MetaDataColumn"}},"defaultAdministratorBackgroundColor":{"type":"object","properties":{"red":{"type":"integer","format":"int32"},"green":{"type":"integer","format":"int32"},"blue":{"type":"integer","format":"int32"},"alpha":{"type":"integer","format":"int32"},"rgb":{"type":"integer","format":"int32"},"colorSpace":{"type":"object","properties":{"type":{"type":"integer","format":"int32"},"numComponents":{"type":"integer","format":"int32"},"cs_sRGB":{"type":"boolean"}}},"transparency":{"type":"integer","format":"int32"}}},"smtpHost":{"type":"string"},"smtpPort":{"type":"string"},"smtpTimeout":{"type":"string"},"smtpFrom":{"type":"string"},"smtpSecure":{"type":"string"},"smtpAuth":{"type":"boolean"},"smtpUsername":{"type":"string"},"smtpPassword":{"type":"string"},"loginNotificationEnabled":{"type":"boolean"},"loginNotificationMessage":{"type":"string"},"administratorAutoLogoutIntervalEnabled":{"type":"boolean"},"administratorAutoLogoutIntervalField":{"type":"integer","format":"int32"},"properties":{"type":"object","additionalProperties":{"type":"string"}},"purgedProperties":{"type":"object","additionalProperties":{"type":"object"}}} |
+| serverSettings | object | 'Yes' | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
 ---
 
 #### GetChannelMetadata()
@@ -1452,7 +1452,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | deploy | If true, all enabled channels will be deployed after the configuration is restored. | No |
 | overwriteConfigMap | If true, overwrite the Configuration Map | No |
-| serverConfiguration | object | 'Yes' | {"date":{"type":"string"},"channelGroups":{"type":"array","items":{"$ref":"#/components/schemas/ChannelGroup"}},"channels":{"type":"array","items":{"$ref":"#/components/schemas/Channel"}},"channelTags":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ChannelTag"}},"users":{"type":"array","items":{"$ref":"#/components/schemas/User"}},"alerts":{"type":"array","items":{"$ref":"#/components/schemas/AlertModel"}},"codeTemplateLibraries":{"type":"array","items":{"$ref":"#/components/schemas/CodeTemplateLibrary"}},"serverSettings":{"$ref":"#/components/schemas/ServerSettings"},"updateSettings":{"$ref":"#/components/schemas/UpdateSettings"},"globalScripts":{"type":"object","additionalProperties":{"type":"string"}},"pluginProperties":{"type":"object","additionalProperties":{"type":"object","additionalProperties":{"type":"string"}}},"resourceProperties":{"$ref":"#/components/schemas/ResourcePropertiesList"},"channelDependencies":{"uniqueItems":true,"type":"array","items":{"$ref":"#/components/schemas/ChannelDependency"}},"configurationMap":{"type":"object","additionalProperties":{"$ref":"#/components/schemas/ConfigurationProperty"}}} |
+| serverConfiguration | object | 'Yes' | {date,channelGroups,channels,channelTags,users,alerts,codeTemplateLibraries,serverSettings,updateSettings,globalScripts,pluginProperties,resourceProperties,channelDependencies,configurationMap} |
 ---
 
 #### GetPasswordRequirements()
@@ -1652,7 +1652,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | offset | Used for pagination, determines where to start in the search results. | No |
 | limit | Used for pagination, determines the maximum number of results to return. | No |
-| eventFilter | object | 'Yes' | {"maxEventId":{"type":"integer","format":"int32"},"minEventId":{"type":"integer","format":"int32"},"id":{"type":"integer","format":"int32"},"levels":{"uniqueItems":true,"type":"array","items":{"type":"string","enum":["INFORMATION","WARNING","ERROR"]}},"startDate":{"type":"string","format":"date-time"},"endDate":{"type":"string","format":"date-time"},"name":{"type":"string"},"outcome":{"type":"string","enum":["SUCCESS","FAILURE"]},"userId":{"type":"integer","format":"int32"},"attributeSearch":{"type":"string"},"ipAddress":{"type":"string"},"serverId":{"type":"string"}} |
+| eventFilter | object | 'Yes' | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 ---
 
 #### GetEventCount(eventFilter)
@@ -1663,7 +1663,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| eventFilter | object | 'Yes' | {"maxEventId":{"type":"integer","format":"int32"},"minEventId":{"type":"integer","format":"int32"},"id":{"type":"integer","format":"int32"},"levels":{"uniqueItems":true,"type":"array","items":{"type":"string","enum":["INFORMATION","WARNING","ERROR"]}},"startDate":{"type":"string","format":"date-time"},"endDate":{"type":"string","format":"date-time"},"name":{"type":"string"},"outcome":{"type":"string","enum":["SUCCESS","FAILURE"]},"userId":{"type":"integer","format":"int32"},"attributeSearch":{"type":"string"},"ipAddress":{"type":"string"},"serverId":{"type":"string"}} |
+| eventFilter | object | 'Yes' | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 ---
 
 #### GetEventCount_1( {maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId})
@@ -1807,7 +1807,7 @@ Parameters:
 | includeContent | If true, message content will be returned with the results. | No |
 | offset | Used for pagination, determines where to start in the search results. | No |
 | limit | Used for pagination, determines the maximum number of results to return. | No |
-| messageFilter | object | 'Yes' | {"maxMessageId":{"type":"integer","format":"int64"},"minMessageId":{"type":"integer","format":"int64"},"originalIdUpper":{"type":"integer","format":"int64"},"originalIdLower":{"type":"integer","format":"int64"},"importIdUpper":{"type":"integer","format":"int64"},"importIdLower":{"type":"integer","format":"int64"},"startDate":{"type":"string","format":"date-time"},"endDate":{"type":"string","format":"date-time"},"textSearch":{"type":"string"},"textSearchRegex":{"type":"boolean"},"statuses":{"uniqueItems":true,"type":"array","items":{"type":"string","enum":["RECEIVED","FILTERED","TRANSFORMED","SENT","QUEUED","ERROR","PENDING"]}},"includedMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"excludedMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"serverId":{"type":"string"},"contentSearch":{"type":"array","items":{"$ref":"#/components/schemas/ContentSearchElement"}},"metaDataSearch":{"type":"array","items":{"$ref":"#/components/schemas/MetaDataSearchElement"}},"textSearchMetaDataColumns":{"type":"array","items":{"type":"string"}},"sendAttemptsLower":{"type":"integer","format":"int32"},"sendAttemptsUpper":{"type":"integer","format":"int32"},"attachment":{"type":"boolean"},"error":{"type":"boolean"}} |
+| messageFilter | object | 'Yes' | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 ---
 
 #### GetMessagesByChannelId( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,includeContent,offset,limit,channelId})
@@ -1933,7 +1933,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
-| rawMessage | object | 'Yes' | {"overwrite":{"type":"boolean"},"imported":{"type":"boolean"},"originalMessageId":{"type":"integer","format":"int64"},"rawData":{"type":"string"},"rawBytes":{"type":"array","items":{"type":"string","format":"byte"}},"destinationMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"sourceMap":{"type":"object","additionalProperties":{"type":"object"}},"binary":{"type":"boolean"},"attachments":{"type":"array","items":{"$ref":"#/components/schemas/Attachment"}}} |
+| rawMessage | object | 'Yes' | {overwrite,imported,originalMessageId,rawData,rawBytes,destinationMetaDataIds,sourceMap,binary,attachments} |
 ---
 
 #### GetAttachmentsByMessageId(includeContent,channelId,messageId)
@@ -1959,7 +1959,7 @@ Parameters:
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
 | messageId | The ID of the message. | Yes |
-| connectorMessage | object | 'Yes' | {"messageId":{"type":"integer","format":"int64"},"metaDataId":{"type":"integer","format":"int32"},"channelId":{"type":"string"},"channelName":{"type":"string"},"connectorName":{"type":"string"},"serverId":{"type":"string"},"receivedDate":{"type":"string","format":"date-time"},"status":{"type":"string","enum":["RECEIVED","FILTERED","TRANSFORMED","SENT","QUEUED","ERROR","PENDING"]},"raw":{"$ref":"#/components/schemas/MessageContent"},"processedRaw":{"$ref":"#/components/schemas/MessageContent"},"transformed":{"$ref":"#/components/schemas/MessageContent"},"encoded":{"$ref":"#/components/schemas/MessageContent"},"sent":{"$ref":"#/components/schemas/MessageContent"},"response":{"$ref":"#/components/schemas/MessageContent"},"responseTransformed":{"$ref":"#/components/schemas/MessageContent"},"processedResponse":{"$ref":"#/components/schemas/MessageContent"},"sourceMapContent":{"$ref":"#/components/schemas/MapContent"},"connectorMapContent":{"$ref":"#/components/schemas/MapContent"},"channelMapContent":{"$ref":"#/components/schemas/MapContent"},"responseMapContent":{"$ref":"#/components/schemas/MapContent"},"metaDataMap":{"type":"object","additionalProperties":{"type":"object"}},"processingErrorContent":{"$ref":"#/components/schemas/ErrorContent"},"postProcessorErrorContent":{"$ref":"#/components/schemas/ErrorContent"},"responseErrorContent":{"$ref":"#/components/schemas/ErrorContent"},"errorCode":{"type":"integer","format":"int32"},"sendAttempts":{"type":"integer","format":"int32"},"sendDate":{"type":"string","format":"date-time"},"responseDate":{"type":"string","format":"date-time"},"chainId":{"type":"integer","format":"int32"},"orderId":{"type":"integer","format":"int32"},"sentProperties":{"$ref":"#/components/schemas/ConnectorProperties"},"queueBucket":{"type":"integer","format":"int32"},"attemptedFirst":{"type":"boolean"},"dispatcherId":{"type":"integer","format":"int64"},"responseMap":{"type":"object","additionalProperties":{"type":"object"}},"connectorMap":{"type":"object","additionalProperties":{"type":"object"}},"channelMap":{"type":"object","additionalProperties":{"type":"object"}},"responseError":{"type":"string"},"processingError":{"type":"string"},"sourceMap":{"type":"object","additionalProperties":{"type":"object"}},"messageContent":{"$ref":"#/components/schemas/MessageContent"},"postProcessorError":{"type":"string"}} |
+| connectorMessage | object | 'Yes' | {messageId,metaDataId,channelId,channelName,connectorName,serverId,receivedDate,status,raw,processedRaw,transformed,encoded,sent,response,responseTransformed,processedResponse,sourceMapContent,connectorMapContent,channelMapContent,responseMapContent,metaDataMap,processingErrorContent,postProcessorErrorContent,responseErrorContent,errorCode,sendAttempts,sendDate,responseDate,chainId,orderId,sentProperties,queueBucket,attemptedFirst,dispatcherId,responseMap,connectorMap,channelMap,responseError,processingError,sourceMap,messageContent,postProcessorError} |
 ---
 
 #### GetMessageCount(channelId,messageFilter)
@@ -1971,7 +1971,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
-| messageFilter | object | 'Yes' | {"maxMessageId":{"type":"integer","format":"int64"},"minMessageId":{"type":"integer","format":"int64"},"originalIdUpper":{"type":"integer","format":"int64"},"originalIdLower":{"type":"integer","format":"int64"},"importIdUpper":{"type":"integer","format":"int64"},"importIdLower":{"type":"integer","format":"int64"},"startDate":{"type":"string","format":"date-time"},"endDate":{"type":"string","format":"date-time"},"textSearch":{"type":"string"},"textSearchRegex":{"type":"boolean"},"statuses":{"uniqueItems":true,"type":"array","items":{"type":"string","enum":["RECEIVED","FILTERED","TRANSFORMED","SENT","QUEUED","ERROR","PENDING"]}},"includedMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"excludedMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"serverId":{"type":"string"},"contentSearch":{"type":"array","items":{"$ref":"#/components/schemas/ContentSearchElement"}},"metaDataSearch":{"type":"array","items":{"$ref":"#/components/schemas/MetaDataSearchElement"}},"textSearchMetaDataColumns":{"type":"array","items":{"type":"string"}},"sendAttemptsLower":{"type":"integer","format":"int32"},"sendAttemptsUpper":{"type":"integer","format":"int32"},"attachment":{"type":"boolean"},"error":{"type":"boolean"}} |
+| messageFilter | object | 'Yes' | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 ---
 
 #### GetMessageCount_1( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
@@ -2033,7 +2033,7 @@ Parameters:
 | replace | If true, the message will overwrite the current one | No |
 | filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No |
 | metaDataId | Indicates which destinations to send the message to. | No |
-| messageFilter | object | 'Yes' | {"maxMessageId":{"type":"integer","format":"int64"},"minMessageId":{"type":"integer","format":"int64"},"originalIdUpper":{"type":"integer","format":"int64"},"originalIdLower":{"type":"integer","format":"int64"},"importIdUpper":{"type":"integer","format":"int64"},"importIdLower":{"type":"integer","format":"int64"},"startDate":{"type":"string","format":"date-time"},"endDate":{"type":"string","format":"date-time"},"textSearch":{"type":"string"},"textSearchRegex":{"type":"boolean"},"statuses":{"uniqueItems":true,"type":"array","items":{"type":"string","enum":["RECEIVED","FILTERED","TRANSFORMED","SENT","QUEUED","ERROR","PENDING"]}},"includedMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"excludedMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"serverId":{"type":"string"},"contentSearch":{"type":"array","items":{"$ref":"#/components/schemas/ContentSearchElement"}},"metaDataSearch":{"type":"array","items":{"$ref":"#/components/schemas/MetaDataSearchElement"}},"textSearchMetaDataColumns":{"type":"array","items":{"type":"string"}},"sendAttemptsLower":{"type":"integer","format":"int32"},"sendAttemptsUpper":{"type":"integer","format":"int32"},"attachment":{"type":"boolean"},"error":{"type":"boolean"}} |
+| messageFilter | object | 'Yes' | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 ---
 
 #### ReprocessMessages_1( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,replace,filterDestinations,metaDataId,channelId})
@@ -2149,7 +2149,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
-| message | object | 'Yes' | {"messageId":{"type":"integer","format":"int64"},"serverId":{"type":"string"},"channelId":{"type":"string"},"receivedDate":{"type":"string","format":"date-time"},"processed":{"type":"boolean"},"originalId":{"type":"integer","format":"int64"},"importId":{"type":"integer","format":"int64"},"importChannelId":{"type":"string"},"attachments":{"type":"array","items":{"$ref":"#/components/schemas/Attachment"}},"connectorMessages":{"type":"object","additionalProperties":{"$ref":"#/components/schemas/ConnectorMessage"}},"mergedConnectorMessage":{"$ref":"#/components/schemas/ConnectorMessage"}} |
+| message | object | 'Yes' | {messageId,serverId,channelId,receivedDate,processed,originalId,importId,importChannelId,attachments,connectorMessages,mergedConnectorMessage} |
 ---
 
 #### ImportMessagesServer(includeSubfolders,channelId,textData)
@@ -2280,7 +2280,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | channelId | The ID of the channel. | Yes |
-| messageFilter | object | 'Yes' | {"maxMessageId":{"type":"integer","format":"int64"},"minMessageId":{"type":"integer","format":"int64"},"originalIdUpper":{"type":"integer","format":"int64"},"originalIdLower":{"type":"integer","format":"int64"},"importIdUpper":{"type":"integer","format":"int64"},"importIdLower":{"type":"integer","format":"int64"},"startDate":{"type":"string","format":"date-time"},"endDate":{"type":"string","format":"date-time"},"textSearch":{"type":"string"},"textSearchRegex":{"type":"boolean"},"statuses":{"uniqueItems":true,"type":"array","items":{"type":"string","enum":["RECEIVED","FILTERED","TRANSFORMED","SENT","QUEUED","ERROR","PENDING"]}},"includedMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"excludedMetaDataIds":{"type":"array","items":{"type":"integer","format":"int32"}},"serverId":{"type":"string"},"contentSearch":{"type":"array","items":{"$ref":"#/components/schemas/ContentSearchElement"}},"metaDataSearch":{"type":"array","items":{"$ref":"#/components/schemas/MetaDataSearchElement"}},"textSearchMetaDataColumns":{"type":"array","items":{"type":"string"}},"sendAttemptsLower":{"type":"integer","format":"int32"},"sendAttemptsUpper":{"type":"integer","format":"int32"},"attachment":{"type":"boolean"},"error":{"type":"boolean"}} |
+| messageFilter | object | 'Yes' | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 ---
 
 #### RemoveAllMessages(restartRunningChannels,clearStatistics,channelId)
@@ -2455,7 +2455,7 @@ Parameters:
 
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
-| user | object | 'Yes' | {"id":{"type":"integer","format":"int32"},"username":{"type":"string"},"email":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"organization":{"type":"string"},"description":{"type":"string"},"phoneNumber":{"type":"string"},"industry":{"type":"string"},"lastLogin":{"type":"string","format":"date-time"},"gracePeriodStart":{"type":"string","format":"date-time"},"strikeCount":{"type":"integer","format":"int32"},"lastStrikeTime":{"type":"string","format":"date-time"},"country":{"type":"string"},"stateTerritory":{"type":"string"},"role":{"type":"string"},"userConsent":{"type":"boolean"}} |
+| user | object | 'Yes' | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 ---
 
 #### GetUser(userIdOrName)
@@ -2478,7 +2478,7 @@ Parameters:
 | Name | Description | Required | Properties |
 | ------ | ------ | ------ | ------ |
 | userId | The unique ID of the user to update. | Yes |
-| user | object | 'Yes' | {"id":{"type":"integer","format":"int32"},"username":{"type":"string"},"email":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"organization":{"type":"string"},"description":{"type":"string"},"phoneNumber":{"type":"string"},"industry":{"type":"string"},"lastLogin":{"type":"string","format":"date-time"},"gracePeriodStart":{"type":"string","format":"date-time"},"strikeCount":{"type":"integer","format":"int32"},"lastStrikeTime":{"type":"string","format":"date-time"},"country":{"type":"string"},"stateTerritory":{"type":"string"},"role":{"type":"string"},"userConsent":{"type":"boolean"}} |
+| user | object | 'Yes' | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 ---
 
 #### RemoveUser(userId)
