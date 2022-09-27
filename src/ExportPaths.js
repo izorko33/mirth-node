@@ -1,6 +1,7 @@
 const { CreateFunction } = require('./CreateFunction');
 const fs = require('fs');
 const { CreateJs } = require('./CreateJs');
+const { CreateMarkdown } = require('./CreateMarkdown');
 
 async function ExportPaths(instance, url) {
   const headers = {
@@ -22,6 +23,8 @@ async function ExportPaths(instance, url) {
     });
 
   const data = await CreateJs();
+
+  await CreateMarkdown(paths, components.schemas);
 
   try {
     if (!fs.existsSync(folderNameForFunctons)) {

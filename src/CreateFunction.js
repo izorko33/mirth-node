@@ -293,18 +293,18 @@ async function CreateFunction(url, func, schemas) {
 
       markdown += '---\r\n';
 
-      try {
-        const data = fs.readFileSync('README.md').toString().split('\n');
-        if (data.length < 2000) {
-          data.push(markdown);
-          const text = data.join('\n');
-          fs.writeFileSync('README.md', text, function (err) {
-            if (err) return console.log(err);
-          });
-        }
-      } catch (error) {
-        console.log(error);
-      }
+      // try {
+      //   const data = fs.readFileSync('README.md').toString().split('\n');
+      //   if (data.length < 2000) {
+      //     data.push(markdown);
+      //     const text = data.join('\n');
+      //     fs.writeFileSync('README.md', text, function (err) {
+      //       if (err) return console.log(err);
+      //     });
+      //   }
+      // } catch (error) {
+      //   console.log(error);
+      // }
 
       // FOR NEWMIRTH CONNECT FUNCTIONS
       try {
