@@ -10,7 +10,12 @@ Parameters:
 | ----------- | ------------------------ | -------- | ---------- |
 | channelId   | The ID of the channel.   | Yes      |
 | channelName | The name of the channel. | Yes      |
-| textData    | string                   | Yes      |            |
+
+Parameters:
+
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
@@ -20,11 +25,16 @@ Summary: Tests whether a file can be written to the specified directory.
 
 Parameters:
 
-| Name                     | Description              | Required | Properties                                                                                                                                                                                                                                                                                            |
-| ------------------------ | ------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channelId                | The ID of the channel.   | Yes      |
-| channelName              | The name of the channel. | Yes      |
-| fileDispatcherProperties | object                   | Yes      | {pluginProperties,destinationConnectorProperties,scheme,schemeProperties,host,outputPattern,anonymous,username,password,timeout,keepConnectionOpen,maxIdleTime,secure,passive,validateConnection,outputAppend,errorOnExists,temporary,binary,charsetEncoding,template,name,protocol,purgedProperties} |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
+
+Parameters:
+
+| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                            |
+| ------------------------ | ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| fileDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,scheme,schemeProperties,host,outputPattern,anonymous,username,password,timeout,keepConnectionOpen,maxIdleTime,secure,passive,validateConnection,outputAppend,errorOnExists,temporary,binary,charsetEncoding,template,name,protocol,purgedProperties} |
 
 ---
 
@@ -34,11 +44,16 @@ Summary: Tests whether a file can be read from the specified directory.
 
 Parameters:
 
-| Name                   | Description              | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ---------------------- | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channelId              | The ID of the channel.   | Yes      |
-| channelName            | The name of the channel. | Yes      |
-| fileReceiverProperties | object                   | Yes      | {pluginProperties,pollConnectorProperties,sourceConnectorProperties,scheme,schemeProperties,host,fileFilter,regex,directoryRecursion,ignoreDot,anonymous,username,password,timeout,secure,passive,validateConnection,afterProcessingAction,moveToDirectory,moveToFileName,errorReadingAction,errorResponseAction,errorMoveToDirectory,errorMoveToFileName,checkFileAge,fileAge,fileSizeMinimum,fileSizeMaximum,ignoreFileSizeMaximum,sortBy,binary,charsetEncoding,name,protocol,purgedProperties} |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
+
+Parameters:
+
+| Name                   | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| fileReceiverProperties | object      | Yes      | {pluginProperties,pollConnectorProperties,sourceConnectorProperties,scheme,schemeProperties,host,fileFilter,regex,directoryRecursion,ignoreDot,anonymous,username,password,timeout,secure,passive,validateConnection,afterProcessingAction,moveToDirectory,moveToFileName,errorReadingAction,errorResponseAction,errorMoveToDirectory,errorMoveToFileName,checkFileAge,fileAge,fileSizeMinimum,fileSizeMaximum,ignoreFileSizeMaximum,sortBy,binary,charsetEncoding,name,protocol,purgedProperties} |
 
 ---
 
@@ -48,11 +63,16 @@ Summary: Tests whether a connection can be successfully established to the desti
 
 Parameters:
 
-| Name                     | Description              | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ------------------------ | ------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channelId                | The ID of the channel.   | Yes      |
-| channelName              | The name of the channel. | Yes      |
-| httpDispatcherProperties | object                   | Yes      | {pluginProperties,destinationConnectorProperties,host,useProxyServer,proxyAddress,proxyPort,method,useHeadersVariable,headersVariable,useParametersVariable,parametersVariable,responseXmlBody,responseParseMultipart,responseIncludeMetadata,responseBinaryMimeTypes,responseBinaryMimeTypesRegex,multipart,useAuthentication,authenticationType,usePreemptiveAuthentication,username,password,content,contentType,dataTypeBinary,charset,socketTimeout,name,protocol,parametersMap,headersMap,purgedProperties} |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
+
+Parameters:
+
+| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------ | ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| httpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,host,useProxyServer,proxyAddress,proxyPort,method,useHeadersVariable,headersVariable,useParametersVariable,parametersVariable,responseXmlBody,responseParseMultipart,responseIncludeMetadata,responseBinaryMimeTypes,responseBinaryMimeTypesRegex,multipart,useAuthentication,authenticationType,usePreemptiveAuthentication,username,password,content,contentType,dataTypeBinary,charset,socketTimeout,name,protocol,parametersMap,headersMap,purgedProperties} |
 
 ---
 
@@ -94,10 +114,15 @@ Summary: Creates or updates a JMS connector settings template.
 
 Parameters:
 
-| Name                   | Description               | Required | Properties                                                                                                                                                                                                                 |
-| ---------------------- | ------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| templateName           | The name of the template. | Yes      |
-| jmsConnectorProperties | object                    | Yes      | {pluginProperties,useJndi,jndiProviderUrl,jndiInitialContextFactory,jndiConnectionFactoryName,connectionFactoryClass,connectionProperties,username,password,destinationName,topic,clientId,name,protocol,purgedProperties} |
+| Name         | Description               | Required | Properties |
+| ------------ | ------------------------- | -------- | ---------- |
+| templateName | The name of the template. | Yes      |
+
+Parameters:
+
+| Name                   | Description | Required | Properties                                                                                                                                                                                                                 |
+| ---------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| jmsConnectorProperties | object      | Yes      | {pluginProperties,useJndi,jndiProviderUrl,jndiInitialContextFactory,jndiConnectionFactoryName,connectionFactoryClass,connectionProperties,username,password,destinationName,topic,clientId,name,protocol,purgedProperties} |
 
 ---
 
@@ -125,11 +150,16 @@ Summary: Sends a test e-mail, replacing any connector properties first.
 
 Parameters:
 
-| Name                     | Description              | Required | Properties                                                                                                                                                                                                                                                                                                                                                           |
-| ------------------------ | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channelId                | The ID of the channel.   | Yes      |
-| channelName              | The name of the channel. | Yes      |
-| smtpDispatcherProperties | object                   | Yes      | {pluginProperties,destinationConnectorProperties,smtpHost,smtpPort,overrideLocalBinding,localAddress,localPort,timeout,encryption,authentication,username,password,to,from,cc,bcc,replyTo,headersVariable,subject,charsetEncoding,html,body,attachmentsVariable,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,attachmentsList,purgedProperties} |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
+
+Parameters:
+
+| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------ | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| smtpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,smtpHost,smtpPort,overrideLocalBinding,localAddress,localPort,timeout,encryption,authentication,username,password,to,from,cc,bcc,replyTo,headersVariable,subject,charsetEncoding,html,body,attachmentsVariable,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,attachmentsList,purgedProperties} |
 
 ---
 
@@ -139,11 +169,16 @@ Summary: Tests whether a connection can be successfully established to the desti
 
 Parameters:
 
-| Name                    | Description              | Required | Properties                                                                                                                                                                                                                                                                                                                                                         |
-| ----------------------- | ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| channelId               | The ID of the channel.   | Yes      |
-| channelName             | The name of the channel. | Yes      |
-| tcpDispatcherProperties | object                   | Yes      | {pluginProperties,destinationConnectorProperties,transmissionModeProperties,serverMode,remoteAddress,remotePort,overrideLocalBinding,localAddress,localPort,sendTimeout,bufferSize,maxConnections,keepConnectionOpen,checkRemoteHost,responseTimeout,ignoreResponse,queueOnResponseTimeout,dataTypeBinary,charsetEncoding,template,name,protocol,purgedProperties} |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
+
+Parameters:
+
+| Name                    | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                         |
+| ----------------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| tcpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,transmissionModeProperties,serverMode,remoteAddress,remotePort,overrideLocalBinding,localAddress,localPort,sendTimeout,bufferSize,maxConnections,keepConnectionOpen,checkRemoteHost,responseTimeout,ignoreResponse,queueOnResponseTimeout,dataTypeBinary,charsetEncoding,template,name,protocol,purgedProperties} |
 
 ---
 
@@ -159,11 +194,16 @@ Summary: Tests whether a connection can be successfully established to the desti
 
 Parameters:
 
-| Name                           | Description              | Required | Properties                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------------------ | ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| channelId                      | The ID of the channel.   | Yes      |
-| channelName                    | The name of the channel. | Yes      |
-| webServiceDispatcherProperties | object                   | Yes      | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
+
+Parameters:
+
+| Name                           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------ | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| webServiceDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 
 ---
 
@@ -173,11 +213,16 @@ Summary: Downloads the WSDL at the specified URL and caches the web service defi
 
 Parameters:
 
-| Name                           | Description              | Required | Properties                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------------------ | ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| channelId                      | The ID of the channel.   | Yes      |
-| channelName                    | The name of the channel. | Yes      |
-| webServiceDispatcherProperties | object                   | Yes      | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
+
+Parameters:
+
+| Name                           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------ | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| webServiceDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 
 ---
 
@@ -364,7 +409,13 @@ Parameters:
 
 Summary: Creates a new alert.
 
-## | alertModel | object | Yes | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
+Parameters:
+
+| Name       | Description | Required | Properties                                                         |
+| ---------- | ----------- | -------- | ------------------------------------------------------------------ |
+| alertModel | object      | Yes      | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
+
+---
 
 #### getAlertsPost()
 
@@ -420,10 +471,15 @@ Summary: Updates the specified alert.
 
 Parameters:
 
-| Name       | Description          | Required | Properties                                                         |
-| ---------- | -------------------- | -------- | ------------------------------------------------------------------ |
-| alertId    | The ID of the alert. | Yes      |
-| alertModel | object               | Yes      | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
+| Name    | Description          | Required | Properties |
+| ------- | -------------------- | -------- | ---------- |
+| alertId | The ID of the alert. | Yes      |
+
+Parameters:
+
+| Name       | Description | Required | Properties                                                         |
+| ---------- | ----------- | -------- | ------------------------------------------------------------------ |
+| alertModel | object      | Yes      | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 
 ---
 
@@ -516,11 +572,16 @@ Summary: Updates the specified channel.
 
 Parameters:
 
-| Name      | Description                                                                             | Required | Properties                                                                                                                                                                                                                   |
-| --------- | --------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name      | Description                                                                             | Required | Properties |
+| --------- | --------------------------------------------------------------------------------------- | -------- | ---------- |
 | channelId | The ID of the channel to update.                                                        | Yes      |
 | override  | If true, the channel will be updated even if a different revision exists on the server. | No       |
-| channel   | object                                                                                  | Yes      | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
+
+Parameters:
+
+| Name    | Description | Required | Properties                                                                                                                                                                                                                   |
+| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| channel | object      | Yes      | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 
 ---
 
@@ -579,7 +640,13 @@ Parameters:
 
 Summary: Creates a new channel.
 
-## | channel | object | Yes | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
+Parameters:
+
+| Name    | Description | Required | Properties                                                                                                                                                                                                                   |
+| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| channel | object      | Yes      | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
+
+---
 
 #### removeChannels(channelId)
 
@@ -1031,11 +1098,16 @@ Summary: Updates a single code template.
 
 Parameters:
 
-| Name           | Description                                                                                   | Required | Properties                                                                                                                   |
-| -------------- | --------------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Name           | Description                                                                                   | Required | Properties |
+| -------------- | --------------------------------------------------------------------------------------------- | -------- | ---------- |
 | codeTemplateId | The ID of the code template.                                                                  | Yes      |
 | override       | If true, the code template will be updated even if a different revision exists on the server. | No       |
-| codeTemplate   | object                                                                                        | Yes      | {id,name,revision,lastModified,contextSet,properties,type,description,code,purgedProperties,addToScripts,functionDefinition} |
+
+Parameters:
+
+| Name         | Description | Required | Properties                                                                                                                   |
+| ------------ | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| codeTemplate | object      | Yes      | {id,name,revision,lastModified,contextSet,properties,type,description,code,purgedProperties,addToScripts,functionDefinition} |
 
 ---
 
@@ -1153,7 +1225,13 @@ Summary: Returns an UpdateSettings object with all update settings.
 
 Summary: Updates the update settings.
 
-## | updateSettings | object | Yes | {statsEnabled,lastStatsTime,properties,purgedProperties} |
+Parameters:
+
+| Name           | Description | Required | Properties                                               |
+| -------------- | ----------- | -------- | -------------------------------------------------------- |
+| updateSettings | object      | Yes      | {statsEnabled,lastStatsTime,properties,purgedProperties} |
+
+---
 
 #### getConfigurationMap()
 
@@ -1177,7 +1255,13 @@ Summary: Returns a ServerSettings object with all server settings.
 
 Summary: Updates the server configuration settings.
 
-## | serverSettings | object | Yes | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
+Parameters:
+
+| Name           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                            |
+| -------------- | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| serverSettings | object      | Yes      | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
+
+---
 
 #### getChannelMetadata()
 
@@ -1301,11 +1385,16 @@ Summary: Updates all of the channels, alerts and properties stored on the Mirth 
 
 Parameters:
 
-| Name                | Description                                                                         | Required | Properties                                                                                                                                                                                        |
-| ------------------- | ----------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| deploy              | If true, all enabled channels will be deployed after the configuration is restored. | No       |
-| overwriteConfigMap  | If true, overwrite the Configuration Map                                            | No       |
-| serverConfiguration | object                                                                              | Yes      | {date,channelGroups,channels,channelTags,users,alerts,codeTemplateLibraries,serverSettings,updateSettings,globalScripts,pluginProperties,resourceProperties,channelDependencies,configurationMap} |
+| Name               | Description                                                                         | Required | Properties |
+| ------------------ | ----------------------------------------------------------------------------------- | -------- | ---------- |
+| deploy             | If true, all enabled channels will be deployed after the configuration is restored. | No       |
+| overwriteConfigMap | If true, overwrite the Configuration Map                                            | No       |
+
+Parameters:
+
+| Name                | Description | Required | Properties                                                                                                                                                                                        |
+| ------------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| serverConfiguration | object      | Yes      | {date,channelGroups,channels,channelTags,users,alerts,codeTemplateLibraries,serverSettings,updateSettings,globalScripts,pluginProperties,resourceProperties,channelDependencies,configurationMap} |
 
 ---
 
@@ -1504,11 +1593,16 @@ Summary: Search for events by specific filter criteria.
 
 Parameters:
 
-| Name        | Description                                                              | Required | Properties                                                                                                 |
-| ----------- | ------------------------------------------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------- |
-| offset      | Used for pagination, determines where to start in the search results.    | No       |
-| limit       | Used for pagination, determines the maximum number of results to return. | No       |
-| eventFilter | object                                                                   | Yes      | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
+| Name   | Description                                                              | Required | Properties |
+| ------ | ------------------------------------------------------------------------ | -------- | ---------- |
+| offset | Used for pagination, determines where to start in the search results.    | No       |
+| limit  | Used for pagination, determines the maximum number of results to return. | No       |
+
+Parameters:
+
+| Name        | Description | Required | Properties                                                                                                 |
+| ----------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| eventFilter | object      | Yes      | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 
 ---
 
@@ -1516,7 +1610,13 @@ Parameters:
 
 Summary: Count number for events by specific filter criteria.
 
-## | eventFilter | object | Yes | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
+Parameters:
+
+| Name        | Description | Required | Properties                                                                                                 |
+| ----------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| eventFilter | object      | Yes      | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
+
+---
 
 #### getEventCount_1( {maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId})
 
@@ -1643,13 +1743,18 @@ Summary: Search for messages by specific filter criteria.
 
 Parameters:
 
-| Name           | Description                                                              | Required | Properties                                                                                                                                                                                                                                                                                                 |
-| -------------- | ------------------------------------------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name           | Description                                                              | Required | Properties |
+| -------------- | ------------------------------------------------------------------------ | -------- | ---------- |
 | channelId      | The ID of the channel.                                                   | Yes      |
 | includeContent | If true, message content will be returned with the results.              | No       |
 | offset         | Used for pagination, determines where to start in the search results.    | No       |
 | limit          | Used for pagination, determines the maximum number of results to return. | No       |
-| messageFilter  | object                                                                   | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+
+Parameters:
+
+| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 
 ---
 
@@ -1718,7 +1823,12 @@ Parameters:
 | overwrite             | If true and a valid original message ID is given, this message will overwrite the existing one.                                        | No       |
 | imported              | If true, marks this message as being imported. If the message is overwriting an existing one, then statistics will not be decremented. | No       |
 | originalMessageId     | The original message ID this message is associated with.                                                                               | No       |
-| textData              | string                                                                                                                                 | Yes      |            |
+
+Parameters:
+
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
@@ -1776,10 +1886,15 @@ Summary: Processes a new message through a channel, using the RawMessage object.
 
 Parameters:
 
-| Name       | Description            | Required | Properties                                                                                                  |
-| ---------- | ---------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
-| channelId  | The ID of the channel. | Yes      |
-| rawMessage | object                 | Yes      | {overwrite,imported,originalMessageId,rawData,rawBytes,destinationMetaDataIds,sourceMap,binary,attachments} |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
+
+Parameters:
+
+| Name       | Description | Required | Properties                                                                                                  |
+| ---------- | ----------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| rawMessage | object      | Yes      | {overwrite,imported,originalMessageId,rawData,rawBytes,destinationMetaDataIds,sourceMap,binary,attachments} |
 
 ---
 
@@ -1803,11 +1918,16 @@ Summary: Given a ConnectorMessage object, reattaches any DICOM attachment data a
 
 Parameters:
 
-| Name             | Description            | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ---------------- | ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| channelId        | The ID of the channel. | Yes      |
-| messageId        | The ID of the message. | Yes      |
-| connectorMessage | object                 | Yes      | {messageId,metaDataId,channelId,channelName,connectorName,serverId,receivedDate,status,raw,processedRaw,transformed,encoded,sent,response,responseTransformed,processedResponse,sourceMapContent,connectorMapContent,channelMapContent,responseMapContent,metaDataMap,processingErrorContent,postProcessorErrorContent,responseErrorContent,errorCode,sendAttempts,sendDate,responseDate,chainId,orderId,sentProperties,queueBucket,attemptedFirst,dispatcherId,responseMap,connectorMap,channelMap,responseError,processingError,sourceMap,messageContent,postProcessorError} |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
+| messageId | The ID of the message. | Yes      |
+
+Parameters:
+
+| Name             | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ---------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| connectorMessage | object      | Yes      | {messageId,metaDataId,channelId,channelName,connectorName,serverId,receivedDate,status,raw,processedRaw,transformed,encoded,sent,response,responseTransformed,processedResponse,sourceMapContent,connectorMapContent,channelMapContent,responseMapContent,metaDataMap,processingErrorContent,postProcessorErrorContent,responseErrorContent,errorCode,sendAttempts,sendDate,responseDate,chainId,orderId,sentProperties,queueBucket,attemptedFirst,dispatcherId,responseMap,connectorMap,channelMap,responseError,processingError,sourceMap,messageContent,postProcessorError} |
 
 ---
 
@@ -1817,10 +1937,15 @@ Summary: Count number for messages by specific filter criteria.
 
 Parameters:
 
-| Name          | Description            | Required | Properties                                                                                                                                                                                                                                                                                                 |
-| ------------- | ---------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channelId     | The ID of the channel. | Yes      |
-| messageFilter | object                 | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
+
+Parameters:
+
+| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 
 ---
 
@@ -1878,13 +2003,18 @@ Summary: Reprocesses messages through a channel filtering with a MessageFilter.
 
 Parameters:
 
-| Name               | Description                                                                                                      | Required | Properties                                                                                                                                                                                                                                                                                                 |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name               | Description                                                                                                      | Required | Properties |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
 | channelId          | The ID of the channel.                                                                                           | Yes      |
 | replace            | If true, the message will overwrite the current one                                                              | No       |
 | filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No       |
 | metaDataId         | Indicates which destinations to send the message to.                                                             | No       |
-| messageFilter      | object                                                                                                           | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+
+Parameters:
+
+| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 
 ---
 
@@ -2003,10 +2133,15 @@ Summary: Imports a Message object into a channel. The message will not actually 
 
 Parameters:
 
-| Name      | Description            | Required | Properties                                                                                                                                     |
-| --------- | ---------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
 | channelId | The ID of the channel. | Yes      |
-| message   | object                 | Yes      | {messageId,serverId,channelId,receivedDate,processed,originalId,importId,importChannelId,attachments,connectorMessages,mergedConnectorMessage} |
+
+Parameters:
+
+| Name    | Description | Required | Properties                                                                                                                                     |
+| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| message | object      | Yes      | {messageId,serverId,channelId,receivedDate,processed,originalId,importId,importChannelId,attachments,connectorMessages,mergedConnectorMessage} |
 
 ---
 
@@ -2020,7 +2155,12 @@ Parameters:
 | ----------------- | ------------------------------------------------------------------- | -------- | ---------- |
 | channelId         | The ID of the channel.                                              | Yes      |
 | includeSubfolders | If true, sub-folders will also be scanned recursively for messages. | No       |
-| textData          | string                                                              | Yes      |            |
+
+Parameters:
+
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
@@ -2131,10 +2271,15 @@ Summary: Remove messages by specific filter criteria.
 
 Parameters:
 
-| Name          | Description            | Required | Properties                                                                                                                                                                                                                                                                                                 |
-| ------------- | ---------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channelId     | The ID of the channel. | Yes      |
-| messageFilter | object                 | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
+
+Parameters:
+
+| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 
 ---
 
@@ -2250,7 +2395,13 @@ Parameters:
 
 Summary: Checks the password against the configured password policies.
 
-## | textData | string | Yes | |
+Parameters:
+
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
+
+---
 
 #### updateUserPassword(userId,textData)
 
@@ -2258,10 +2409,15 @@ Summary: Updates a user's password.
 
 Parameters:
 
-| Name     | Description                                           | Required | Properties |
-| -------- | ----------------------------------------------------- | -------- | ---------- |
-| userId   | The unique ID of the user to update the password for. | Yes      |
-| textData | string                                                | Yes      |            |
+| Name   | Description                                           | Required | Properties |
+| ------ | ----------------------------------------------------- | -------- | ---------- |
+| userId | The unique ID of the user to update the password for. | Yes      |
+
+Parameters:
+
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
@@ -2281,7 +2437,13 @@ Summary: Returns a List of all users.
 
 Summary: Creates a new user.
 
-## | user | object | Yes | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
+Parameters:
+
+| Name | Description | Required | Properties                                                                                                                                                                         |
+| ---- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user | object      | Yes      | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
+
+---
 
 #### getUser(userIdOrName)
 
@@ -2301,10 +2463,15 @@ Summary: Updates a specified user.
 
 Parameters:
 
-| Name   | Description                          | Required | Properties                                                                                                                                                                         |
-| ------ | ------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name   | Description                          | Required | Properties |
+| ------ | ------------------------------------ | -------- | ---------- |
 | userId | The unique ID of the user to update. | Yes      |
-| user   | object                               | Yes      | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
+
+Parameters:
+
+| Name | Description | Required | Properties                                                                                                                                                                         |
+| ---- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user | object      | Yes      | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 
 ---
 
@@ -2376,10 +2543,15 @@ Summary: Updates a user preference.
 
 Parameters:
 
-| Name     | Description                              | Required | Properties |
-| -------- | ---------------------------------------- | -------- | ---------- |
-| userId   | The unique ID of the user.               | Yes      |
-| name     | The name of the user property to update. | Yes      |
-| textData | string                                   | Yes      |            |
+| Name   | Description                              | Required | Properties |
+| ------ | ---------------------------------------- | -------- | ---------- |
+| userId | The unique ID of the user.               | Yes      |
+| name   | The name of the user property to update. | Yes      |
+
+Parameters:
+
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---

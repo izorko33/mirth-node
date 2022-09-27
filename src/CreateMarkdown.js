@@ -77,8 +77,15 @@ async function CreateMarkdown(paths, schemas) {
         });
       }
 
+      //   console.log(item.parameters.length);
+
       if (schemaParamsObject.length) {
         schemaParamsObject.forEach((param, index) => {
+          markdown += [
+            `Parameters:\r\n`,
+            `| Name | Description | Required | Properties |`,
+            `| ------ | ------ | ------ | ------ |\r\n`,
+          ].join('\r\n');
           markdown += `| ${schemaParams[index]} | ${param.type} | Yes | ${
             param.properties !== undefined ? `{${Object.keys(param.properties)}}` : ''
           } |\r\n`;
