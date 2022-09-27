@@ -41,6 +41,7 @@ build/Release
 node_modules/
 jspm_packages/
 exports/
+functions/
 
 # TypeScript v1 declaration files
 typings/
@@ -78,6 +79,7 @@ typings/
 
 # Next.js build output
 .next
+src/MirthConnect.js
 
 # Nuxt.js build / generate output
 .nuxt
