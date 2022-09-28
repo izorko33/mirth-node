@@ -1,8 +1,8 @@
 {
   "name": "mirth-node",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "Mirh API for javascript applications.",
-  "main": "./src/ConnectMirth.js",
+  "main": "./src/MirthApi.js",
   "license": "(MIT OR GPL-3.0-or-later)",
   "repository": {
     "type": "git",

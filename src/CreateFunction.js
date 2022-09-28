@@ -147,7 +147,7 @@ async function CreateFunction(url, func) {
                   data =  response.data${returnValue ? `.${returnValue}` : ''};
                 })
                 .catch(function (error) {
-                  console.log(error);
+                  data = error.response.statusText;
                 });
                 return data;
                 `;
@@ -166,7 +166,7 @@ async function CreateFunction(url, func) {
                   data =  response.data${returnValue ? `.${returnValue}` : ''};
                 })
                 .catch(function (error) {
-                  console.log(error);
+                  data = error.response.statusText;
                 });
                 return data;
                 `;
@@ -185,15 +185,17 @@ async function CreateFunction(url, func) {
                   ${
                     isLogin
                       ? `if (!instance.defaults.headers.Cookie) {
-                    const [cookie] = response.headers['set-cookie'];
-                    instance.defaults.headers.Cookie = cookie;
-                  }`
-                      : ''
+                          const [cookie] = response.headers['set-cookie'];
+                          instance.defaults.headers.Cookie = cookie;
+                        }
+                        data = response.statusText;
+                        `
+                      : `data =  response.data${returnValue ? `.${returnValue}` : ''}`
                   }
-                  data =  response.data${returnValue ? `.${returnValue}` : ''};
+                  ;
                 })
                 .catch(function (error) {
-                  console.log(error);
+                  data = error.response.statusText;
                 });
                 return data;
                 `;
@@ -209,7 +211,7 @@ async function CreateFunction(url, func) {
                   data =  response.data${returnValue ? `.${returnValue}` : ''};
                 })
                 .catch(function (error) {
-                  console.log(error);
+                  data = error.response.statusText;
                 });
                 return data;
                 `;

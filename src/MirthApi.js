@@ -27,7 +27,7 @@ class MirthClient {
   }
   async _init() {
     const folderNameForFunctons = __dirname + `/functions`;
-    const folderNameForExports = __dirname + `/exports`;
+    const folderNameForExports = './exports';
     if (!fs.existsSync(folderNameForExports)) {
       fs.mkdirSync(folderNameForExports);
     }

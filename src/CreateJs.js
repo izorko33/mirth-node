@@ -13,17 +13,20 @@ async function CreateJs() {
       }
       async _init() {
         const loginData = await Login({ instance: this.instance, url: this.URL, password: this.password, username: this.username });
-        if (loginData['com.mirth.connect.model.LoginStatus'].status == 'SUCCESS') {
+        if (loginData === 'OK') {
           console.log('User ' + this.username + ' logged in on ' + new Date());
+          return this;
+        } else {
+          console.log(loginData);
+          return this;
         }
-        return this;
       }
   
       exportPaths = () => ExportPaths(this.instance, this.URL);
       exportMessagesByChannelId = async (channelId, limit) => {
         const { name } = await this.getChannel(false, channelId);
         const currentDate = new Date().toJSON().slice(0, 16).split('T').join('-');
-        const folderName = __dirname + '/exports/messages';
+        const folderName = './exports/messages';
         const content = [];
     
         console.log('Started export for ' + limit + ' messages.');
@@ -51,8 +54,8 @@ async function CreateJs() {
       exportChannels = async () => {
         const { channel } = await this.getChannels();
         const { codeTemplate } = await this.getCodeTemplates();
-        const folderNameForChannels = __dirname + '/exports/channels/';
-        const folderNameForCodeTemplates = __dirname + '/exports/codeTemplates/';
+        const folderNameForChannels = './exports/channels/';
+        const folderNameForCodeTemplates = './exports/codeTemplates/';
     
         const createExports = item => {
           const folderNameForEachChannel = folderNameForChannels + item.name;
@@ -122,7 +125,7 @@ async function CreateJs() {
       updateChannelById = async channelId => {
         try {
           const channel = await this.getChannel(true, channelId);
-          const fileNameForDestnation = __dirname + '/exports/channels/' + channel.name + '/Destination.js';
+          const fileNameForDestnation = './exports/channels/' + channel.name + '/Destination.js';
           let destination;
     
           try {
@@ -143,7 +146,7 @@ async function CreateJs() {
 
       updateAllCodeTemplates = async () => {
         const { codeTemplate } = await this.getCodeTemplates();
-        const folderNameForCodeTemplates = __dirname + '/exports/codeTemplates/';
+        const folderNameForCodeTemplates = './exports/codeTemplates/';
         if (Array.isArray(codeTemplate)) {
           codeTemplate.forEach(item => {
             const folderNameForEachTemplate = folderNameForCodeTemplates + item.name;

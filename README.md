@@ -1,4 +1,4 @@
-# Mirth-JS
+# Mirth-Node
 
 The Mirth-js is a client for having Mirth for nodejs and react applications.
 Tested Mirth versions: 3.x, 4.x
@@ -34,14 +34,43 @@ Tested Mirth versions: 3.x, 4.x
 npm install mirth-node --save
 ```
 
+Import
+
+```
+const { MirthClient } = require('mirth-node');
+require('dotenv').config(); // If you want to use proccess.env
+```
+
 ---
 
 ## Usage
 
+Example function
+
+```
+const { MirthClient } = require('mirth-node');
+require('dotenv').config();
+
+async function main() {
+  const clientMirth = await new MirthClient({
+    host: process.env.MIRTH_HOST,
+    port: process.env.MIRTH_PORT,
+    username: process.env.MIRTH_USER,
+    password: process.env.MIRTH_PASSWORD,
+    disableTLSCheck: true,
+  });
+  const currentUser = await clientMirth.getCurrentUser();
+  console.log(currentUser);
+}
+
+main();
+
+```
+
 Creating new instance
 
 ```
-  const clientMirth = await new MirthClient({
+  const clientMirth = new MirthClient({
     host: process.env.MIRTH_HOST,
     port: process.env.MIRTH_PORT,
     username: process.env.MIRTH_USER,
