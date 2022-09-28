@@ -1,5 +1,5 @@
 {
-  "name": "mirth-js",
+  "name": "mirth-node",
   "version": "1.0.0",
   "description": "Mirh API for javascript applications.",
   "main": "./src/ConnectMirth.js",

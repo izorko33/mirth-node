@@ -31,7 +31,7 @@ Tested Mirth versions: 3.x, 4.x
 ## Installation
 
 ```
-npm install mirth-js --save
+npm install mirth-node --save
 ```
 
 ---
