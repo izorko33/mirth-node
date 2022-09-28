@@ -9,8 +9,8 @@ async function main() {
     password: process.env.MIRTH_PASSWORD,
     disableTLSCheck: true,
   });
-  // const channels = await clientMirth.getCodeTemplates();
-  // console.log(channels);
+  const channels = await clientMirth.getCurrentUser();
+  console.log(channels);
   // await clientMirth.exportPaths();
   // await clientMirth.updateAllCodeTemplates();
   // await clientMirth.updateChannelById('8956fb6e-67b4-4f7c-93e4-9d50848b5d6f');
