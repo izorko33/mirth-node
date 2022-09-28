@@ -24,7 +24,7 @@ async function ExportPaths(instance, url) {
 
   const data = await CreateJs();
 
-  // await CreateMarkdown(paths, components.schemas);
+  await CreateMarkdown(paths, components.schemas);
 
   try {
     if (!fs.existsSync(folderNameForFunctons)) {

@@ -1,260 +1,244 @@
 ### Connector Services
 
-#### testWrite(channelId,channelName,textData)
+##### testWrite(channelId,channelName,textData)
 
 Summary: Tests whether a file can be written to the specified directory.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| textData | string | Yes |  |
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
-#### testWrite_1(channelId,channelName,fileDispatcherProperties)
+##### testWrite_1(channelId,channelName,fileDispatcherProperties)
 
 Summary: Tests whether a file can be written to the specified directory.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| fileDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,scheme,schemeProperties,host,outputPattern,anonymous,username,password,timeout,keepConnectionOpen,maxIdleTime,secure,passive,validateConnection,outputAppend,errorOnExists,temporary,binary,charsetEncoding,template,name,protocol,purgedProperties} |
+| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                            |
+| ------------------------ | ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| fileDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,scheme,schemeProperties,host,outputPattern,anonymous,username,password,timeout,keepConnectionOpen,maxIdleTime,secure,passive,validateConnection,outputAppend,errorOnExists,temporary,binary,charsetEncoding,template,name,protocol,purgedProperties} |
 
 ---
 
-#### testRead(channelId,channelName,fileReceiverProperties)
+##### testRead(channelId,channelName,fileReceiverProperties)
 
 Summary: Tests whether a file can be read from the specified directory.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| fileReceiverProperties | object | Yes | {pluginProperties,pollConnectorProperties,sourceConnectorProperties,scheme,schemeProperties,host,fileFilter,regex,directoryRecursion,ignoreDot,anonymous,username,password,timeout,secure,passive,validateConnection,afterProcessingAction,moveToDirectory,moveToFileName,errorReadingAction,errorResponseAction,errorMoveToDirectory,errorMoveToFileName,checkFileAge,fileAge,fileSizeMinimum,fileSizeMaximum,ignoreFileSizeMaximum,sortBy,binary,charsetEncoding,name,protocol,purgedProperties} |
+| Name                   | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| fileReceiverProperties | object      | Yes      | {pluginProperties,pollConnectorProperties,sourceConnectorProperties,scheme,schemeProperties,host,fileFilter,regex,directoryRecursion,ignoreDot,anonymous,username,password,timeout,secure,passive,validateConnection,afterProcessingAction,moveToDirectory,moveToFileName,errorReadingAction,errorResponseAction,errorMoveToDirectory,errorMoveToFileName,checkFileAge,fileAge,fileSizeMinimum,fileSizeMaximum,ignoreFileSizeMaximum,sortBy,binary,charsetEncoding,name,protocol,purgedProperties} |
 
 ---
 
-#### testConnection(channelId,channelName,httpDispatcherProperties)
+##### testConnection(channelId,channelName,httpDispatcherProperties)
 
 Summary: Tests whether a connection can be successfully established to the destination endpoint.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| httpDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,host,useProxyServer,proxyAddress,proxyPort,method,useHeadersVariable,headersVariable,useParametersVariable,parametersVariable,responseXmlBody,responseParseMultipart,responseIncludeMetadata,responseBinaryMimeTypes,responseBinaryMimeTypesRegex,multipart,useAuthentication,authenticationType,usePreemptiveAuthentication,username,password,content,contentType,dataTypeBinary,charset,socketTimeout,name,protocol,parametersMap,headersMap,purgedProperties} |
+| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------ | ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| httpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,host,useProxyServer,proxyAddress,proxyPort,method,useHeadersVariable,headersVariable,useParametersVariable,parametersVariable,responseXmlBody,responseParseMultipart,responseIncludeMetadata,responseBinaryMimeTypes,responseBinaryMimeTypesRegex,multipart,useAuthentication,authenticationType,usePreemptiveAuthentication,username,password,content,contentType,dataTypeBinary,charset,socketTimeout,name,protocol,parametersMap,headersMap,purgedProperties} |
 
 ---
 
-#### getTables( {channelId,channelName,driver,username,password,tableNamePattern,selectLimit,resourceId})
+##### getTables({channelId,channelName,driver,username,password,tableNamePattern,selectLimit,resourceId})
 
 Summary: Executes a query to retrieve database table metadata.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
-
-| driver | The JDBC driver class to use. (ex: org.postgresql.Driver) | Yes |
-
-| url | The JDBC connection URL to use. (ex: jdbc:postgresql://localhost:5432/mirthdb) | Yes |
-
-| username | The username to authenticate with. | No |
-
-| password | The password to authenticate with. | No |
-
-| tableNamePattern | If specified, filters by table name. Wildcards (* or %) are allowed. | No |
-
-| selectLimit | A simple query to use to retrieve database metadata information. | No |
-
-| resourceId | Library resource IDs to use, if a custom driver is necessary. | No |
+| Name             | Description                                                                    | Required | Properties |
+| ---------------- | ------------------------------------------------------------------------------ | -------- | ---------- |
+| channelId        | The ID of the channel.                                                         | Yes      |
+| channelName      | The name of the channel.                                                       | Yes      |
+| driver           | The JDBC driver class to use. (ex: org.postgresql.Driver)                      | Yes      |
+| url              | The JDBC connection URL to use. (ex: jdbc:postgresql://localhost:5432/mirthdb) | Yes      |
+| username         | The username to authenticate with.                                             | No       |
+| password         | The password to authenticate with.                                             | No       |
+| tableNamePattern | If specified, filters by table name. Wildcards (\* or %) are allowed.          | No       |
+| selectLimit      | A simple query to use to retrieve database metadata information.               | No       |
+| resourceId       | Library resource IDs to use, if a custom driver is necessary.                  | No       |
 
 ---
 
-#### getTemplate(templateName)
+##### getTemplate(templateName)
 
 Summary: Retrieves a single JMS connector settings template.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| templateName | The name of the template. | Yes |
+| Name         | Description               | Required | Properties |
+| ------------ | ------------------------- | -------- | ---------- |
+| templateName | The name of the template. | Yes      |
 
 ---
 
-#### saveTemplate(templateName,jmsConnectorProperties)
+##### saveTemplate(templateName,jmsConnectorProperties)
 
 Summary: Creates or updates a JMS connector settings template.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| templateName | The name of the template. | Yes |
+| Name         | Description               | Required | Properties |
+| ------------ | ------------------------- | -------- | ---------- |
+| templateName | The name of the template. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| jmsConnectorProperties | object | Yes | {pluginProperties,useJndi,jndiProviderUrl,jndiInitialContextFactory,jndiConnectionFactoryName,connectionFactoryClass,connectionProperties,username,password,destinationName,topic,clientId,name,protocol,purgedProperties} |
+| Name                   | Description | Required | Properties                                                                                                                                                                                                                 |
+| ---------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| jmsConnectorProperties | object      | Yes      | {pluginProperties,useJndi,jndiProviderUrl,jndiInitialContextFactory,jndiConnectionFactoryName,connectionFactoryClass,connectionProperties,username,password,destinationName,topic,clientId,name,protocol,purgedProperties} |
 
 ---
 
-#### deleteTemplate(templateName)
+##### deleteTemplate(templateName)
 
 Summary: Creates or updates a JMS connector settings template.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| templateName | The name of the template. | Yes |
+| Name         | Description               | Required | Properties |
+| ------------ | ------------------------- | -------- | ---------- |
+| templateName | The name of the template. | Yes      |
 
 ---
 
-#### getTemplates()
+##### getTemplates()
 
 Summary: Retrieves JMS connector settings templates.
 
 ---
 
-#### sendTestEmail(channelId,channelName,smtpDispatcherProperties)
+##### sendTestEmail(channelId,channelName,smtpDispatcherProperties)
 
 Summary: Sends a test e-mail, replacing any connector properties first.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| smtpDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,smtpHost,smtpPort,overrideLocalBinding,localAddress,localPort,timeout,encryption,authentication,username,password,to,from,cc,bcc,replyTo,headersVariable,subject,charsetEncoding,html,body,attachmentsVariable,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,attachmentsList,purgedProperties} |
+| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------ | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| smtpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,smtpHost,smtpPort,overrideLocalBinding,localAddress,localPort,timeout,encryption,authentication,username,password,to,from,cc,bcc,replyTo,headersVariable,subject,charsetEncoding,html,body,attachmentsVariable,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,attachmentsList,purgedProperties} |
 
 ---
 
-#### testConnection_1(channelId,channelName,tcpDispatcherProperties)
+##### testConnection_1(channelId,channelName,tcpDispatcherProperties)
 
 Summary: Tests whether a connection can be successfully established to the destination endpoint.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| tcpDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,transmissionModeProperties,serverMode,remoteAddress,remotePort,overrideLocalBinding,localAddress,localPort,sendTimeout,bufferSize,maxConnections,keepConnectionOpen,checkRemoteHost,responseTimeout,ignoreResponse,queueOnResponseTimeout,dataTypeBinary,charsetEncoding,template,name,protocol,purgedProperties} |
+| Name                    | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                         |
+| ----------------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| tcpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,transmissionModeProperties,serverMode,remoteAddress,remotePort,overrideLocalBinding,localAddress,localPort,sendTimeout,bufferSize,maxConnections,keepConnectionOpen,checkRemoteHost,responseTimeout,ignoreResponse,queueOnResponseTimeout,dataTypeBinary,charsetEncoding,template,name,protocol,purgedProperties} |
 
 ---
 
-#### getDefinition(channelId,channelName,wsdlUrl)
+##### getDefinition(channelId,channelName,wsdlUrl)
 
 Summary: Retrieves the definition service map corresponding to the specified WSDL.
 
 ---
 
-#### testConnection_2(channelId,channelName,webServiceDispatcherProperties)
+##### testConnection_2(channelId,channelName,webServiceDispatcherProperties)
 
 Summary: Tests whether a connection can be successfully established to the destination endpoint.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| webServiceDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
+| Name                           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------ | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| webServiceDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 
 ---
 
-#### cacheWsdlFromUrl(channelId,channelName,webServiceDispatcherProperties)
+##### cacheWsdlFromUrl(channelId,channelName,webServiceDispatcherProperties)
 
 Summary: Downloads the WSDL at the specified URL and caches the web service definition tree.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| channelName | The name of the channel. | Yes |
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| webServiceDispatcherProperties | object | Yes | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
+| Name                           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------ | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| webServiceDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 
 ---
 
-#### isWsdlCached(channelId,channelName,wsdlUrl)
+##### isWsdlCached(channelId,channelName,wsdlUrl)
 
 Summary: Returns true if the definition tree for the WSDL is cached by the server.
 
 ---
 
-#### generateEnvelope(channelId,channelName,wsdlUrl)
+##### generateEnvelope(channelId,channelName,wsdlUrl)
 
 Summary: Generate SOAP envelope for a given WSDL operation.
 
 ---
 
-#### getSoapAction(channelId,channelName,wsdlUrl)
+##### getSoapAction(channelId,channelName,wsdlUrl)
 
 Summary: Retrieves the default SOAP Action for a given WSDL operation.
 
@@ -262,1467 +246,1401 @@ Summary: Retrieves the default SOAP Action for a given WSDL operation.
 
 ### Extension Services
 
-#### getChannelLog(serverId,fetchSize,lastLogId,channelId)
+##### getChannelLog(serverId,fetchSize,lastLogId,channelId)
 
 Summary: Retrieves connection logs for a specific channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| serverId | The server ID to retrieve logs for. Logs for all servers are retrieved is this parameter is not specified. | No |
-
-| channelId | The channel ID to retrieve logs for. | Yes |
-
-| fetchSize | Specifies the maximum number of log items to return. | Yes |
-
-| lastLogId | The last log ID the client retrieved. Only log items with a greater ID will be returned. | No |
+| Name      | Description                                                                                                | Required | Properties |
+| --------- | ---------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| serverId  | The server ID to retrieve logs for. Logs for all servers are retrieved is this parameter is not specified. | No       |
+| channelId | The channel ID to retrieve logs for.                                                                       | Yes      |
+| fetchSize | Specifies the maximum number of log items to return.                                                       | Yes      |
+| lastLogId | The last log ID the client retrieved. Only log items with a greater ID will be returned.                   | No       |
 
 ---
 
-#### getConnectorStateMap(serverId)
+##### getConnectorStateMap(serverId)
 
 Summary: Retrieves all dashboard connector states.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| serverId | The server ID to retrieve connector statuses for. Connector Statuses across all servers are retrieved is this parameter is not specified. | No |
+| Name     | Description                                                                                                                               | Required | Properties |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| serverId | The server ID to retrieve connector statuses for. Connector Statuses across all servers are retrieved is this parameter is not specified. | No       |
 
 ---
 
-#### getChannelStates()
+##### getChannelStates()
 
 Summary: Retrieves all dashboard channel states.
 
 ---
 
-#### getChannelState(channelId)
+##### getChannelState(channelId)
 
 Summary: Retrieves a single dashboard channel state.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to return a dashboard status for. | Yes |
+| Name      | Description                                      | Required | Properties |
+| --------- | ------------------------------------------------ | -------- | ---------- |
+| channelId | The channel ID to return a dashboard status for. | Yes      |
 
 ---
 
-#### getAllChannelLogs(serverId,fetchSize,lastLogId)
+##### getAllChannelLogs(serverId,fetchSize,lastLogId)
 
 Summary: Retrieves connection logs for all channels.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| serverId | The server ID to retrieve logs for. Logs for all servers are retrieved is this parameter is not specified. | No |
-
-| fetchSize | Specifies the maximum number of log items to return. | Yes |
-
-| lastLogId | The last log ID the client retrieved. Only log items with a greater ID will be returned. | No |
+| Name      | Description                                                                                                | Required | Properties |
+| --------- | ---------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| serverId  | The server ID to retrieve logs for. Logs for all servers are retrieved is this parameter is not specified. | No       |
+| fetchSize | Specifies the maximum number of log items to return.                                                       | Yes      |
+| lastLogId | The last log ID the client retrieved. Only log items with a greater ID will be returned.                   | No       |
 
 ---
 
-#### start()
+##### start()
 
 Summary: Starts the data pruner on-demand.
 
 ---
 
-#### stop()
+##### stop()
 
 Summary: Stops the data pruner if currently running.
 
 ---
 
-#### getStatusMap()
+##### getStatusMap()
 
 Summary: Retrieves the current data pruner status.
 
 ---
 
-#### getLibraries(resourceId)
+##### getLibraries(resourceId)
 
 Summary: Retrieves all library URLs for the given directory resource.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| resourceId | The ID of the directory resource. | Yes |
+| Name       | Description                       | Required | Properties |
+| ---------- | --------------------------------- | -------- | ---------- |
+| resourceId | The ID of the directory resource. | Yes      |
 
 ---
 
-#### getAllMapsPost(includeGlobalMap)
+##### getAllMapsPost(includeGlobalMap)
 
 Summary: Retrieves global and/or global channel map information. This is a POST request alternative to GET /maps/all that may be used when there are too many channel IDs to include in the query parameters.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| includeGlobalMap | If true, the global map will be returned. | No |
+| Name             | Description                               | Required | Properties |
+| ---------------- | ----------------------------------------- | -------- | ---------- |
+| includeGlobalMap | If true, the global map will be returned. | No       |
 
 ---
 
-#### getGlobalChannelMap(channelId)
+##### getGlobalChannelMap(channelId)
 
 Summary: Retrieves global channel map information for a single channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel to retrieve global channel map information for. | Yes |
+| Name      | Description                                                           | Required | Properties |
+| --------- | --------------------------------------------------------------------- | -------- | ---------- |
+| channelId | The ID of the channel to retrieve global channel map information for. | Yes      |
 
 ---
 
-#### getAllMaps(channelId,includeGlobalMap)
+##### getAllMaps(channelId,includeGlobalMap)
 
 Summary: Retrieves global and/or global channel map information.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel to retrieve global channel map information for. | No |
-
-| includeGlobalMap | If true, the global map will be returned. | No |
+| Name             | Description                                                           | Required | Properties |
+| ---------------- | --------------------------------------------------------------------- | -------- | ---------- |
+| channelId        | The ID of the channel to retrieve global channel map information for. | No       |
+| includeGlobalMap | If true, the global map will be returned.                             | No       |
 
 ---
 
-#### getGlobalMap()
+##### getGlobalMap()
 
 Summary: Retrieves global map information.
 
 ---
 
-#### getServerLogs(fetchSize,lastLogId)
+##### getServerLogs(fetchSize,lastLogId)
 
 Summary: Retrieves server log entries.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| fetchSize | Specifies the maximum number of log items to return. | Yes |
-
-| lastLogId | The last log ID the client retrieved. Only log items with a greater ID will be returned. | No |
+| Name      | Description                                                                              | Required | Properties |
+| --------- | ---------------------------------------------------------------------------------------- | -------- | ---------- |
+| fetchSize | Specifies the maximum number of log items to return.                                     | Yes      |
+| lastLogId | The last log ID the client retrieved. Only log items with a greater ID will be returned. | No       |
 
 ---
 
 ### Alerts
 
-#### getAlerts(alertId)
+##### getAlerts(alertId)
 
 Summary: Retrieves multiple alerts by ID, or all alerts if not specified.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertId | The ID of the alert(s). If absent, all alerts will be returned. | No |
+| Name    | Description                                                     | Required | Properties |
+| ------- | --------------------------------------------------------------- | -------- | ---------- |
+| alertId | The ID of the alert(s). If absent, all alerts will be returned. | No       |
 
 ---
 
-#### createAlert(alertModel)
+##### createAlert(alertModel)
 
 Summary: Creates a new alert.
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertModel | object | Yes | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
+| Name       | Description | Required | Properties                                                         |
+| ---------- | ----------- | -------- | ------------------------------------------------------------------ |
+| alertModel | object      | Yes      | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 
 ---
 
-#### getAlertsPost()
+##### getAlertsPost()
 
 Summary: Retrieves multiple alerts by ID, or all alerts if not specified. This is a POST request alternative to GET /alerts that may be used when there are too many alert IDs to include in the query parameters.
 
 ---
 
-#### getAlertInfo(alertId)
+##### getAlertInfo(alertId)
 
 Summary: Returns an AlertInfo object containing the alert model, alert protocol options, and any updated channel summaries.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertId | The ID of the alert. | Yes |
+| Name    | Description          | Required | Properties |
+| ------- | -------------------- | -------- | ---------- |
+| alertId | The ID of the alert. | Yes      |
 
 ---
 
-#### getAlertInfo_1()
+##### getAlertInfo_1()
 
 Summary: Returns an AlertInfo object containing alert protocol options and any updated channel summaries.
 
 ---
 
-#### getAlertProtocolOptions()
+##### getAlertProtocolOptions()
 
 Summary: Returns all alert protocol options.
 
 ---
 
-#### getAlertStatusList()
+##### getAlertStatusList()
 
 Summary: Returns all alert dashboard statuses.
 
 ---
 
-#### getAlert(alertId)
+##### getAlert(alertId)
 
 Summary: Retrieves an alert by ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertId | The ID of the alert. | Yes |
+| Name    | Description          | Required | Properties |
+| ------- | -------------------- | -------- | ---------- |
+| alertId | The ID of the alert. | Yes      |
 
 ---
 
-#### updateAlert(alertId,alertModel)
+##### updateAlert(alertId,alertModel)
 
 Summary: Updates the specified alert.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertId | The ID of the alert. | Yes |
+| Name    | Description          | Required | Properties |
+| ------- | -------------------- | -------- | ---------- |
+| alertId | The ID of the alert. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertModel | object | Yes | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
+| Name       | Description | Required | Properties                                                         |
+| ---------- | ----------- | -------- | ------------------------------------------------------------------ |
+| alertModel | object      | Yes      | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 
 ---
 
-#### removeAlert(alertId)
+##### removeAlert(alertId)
 
 Summary: Removes the specified alert.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertId | The ID of the alert. | Yes |
+| Name    | Description          | Required | Properties |
+| ------- | -------------------- | -------- | ---------- |
+| alertId | The ID of the alert. | Yes      |
 
 ---
 
-#### enableAlert(alertId)
+##### enableAlert(alertId)
 
 Summary: Enables the specified alert.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertId | The ID of the alert. | Yes |
+| Name    | Description          | Required | Properties |
+| ------- | -------------------- | -------- | ---------- |
+| alertId | The ID of the alert. | Yes      |
 
 ---
 
-#### disableAlert(alertId)
+##### disableAlert(alertId)
 
 Summary: Disables the specified alert.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| alertId | The ID of the alert. | Yes |
+| Name    | Description          | Required | Properties |
+| ------- | -------------------- | -------- | ---------- |
+| alertId | The ID of the alert. | Yes      |
 
 ---
 
 ### Channel Groups
 
-#### getChannelGroupsPost()
+##### getChannelGroupsPost()
 
 Summary: Retrieve a list of all channel groups, or multiple channel groups by ID. This is a POST request alternative to GET /channelgroups that may be used when there are too many channel group IDs to include in the query parameters.
 
 ---
 
-#### getChannelGroups(channelGroupId)
+##### getChannelGroups(channelGroupId)
 
 Summary: Retrieve a list of all channel groups, or multiple channel groups by ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelGroupId | The IDs of the channel groups to retrieve. If absent, all groups will be retrieved. | No |
+| Name           | Description                                                                         | Required | Properties |
+| -------------- | ----------------------------------------------------------------------------------- | -------- | ---------- |
+| channelGroupId | The IDs of the channel groups to retrieve. If absent, all groups will be retrieved. | No       |
 
 ---
 
-#### updateChannelGroups(override)
+##### updateChannelGroups(override)
 
 Summary: Updates all channel groups in one request. ("Try it out" doesn't work for this endpoint, but the descriptions are valid. Please use another tool for testing.)
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| override | If true, the channel groups will be updated even if different revisions exist on the server. | No |
+| Name     | Description                                                                                  | Required | Properties |
+| -------- | -------------------------------------------------------------------------------------------- | -------- | ---------- |
+| override | If true, the channel groups will be updated even if different revisions exist on the server. | No       |
 
 ---
 
 ### Channels
 
-#### getChannel(includeCodeTemplateLibraries,channelId)
+##### getChannel(includeCodeTemplateLibraries,channelId)
 
 Summary: Retrieve a single channel by ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel to retrieve. | Yes |
-
-| includeCodeTemplateLibraries | If true, code template libraries will be included in the channel. | No |
+| Name                         | Description                                                       | Required | Properties |
+| ---------------------------- | ----------------------------------------------------------------- | -------- | ---------- |
+| channelId                    | The ID of the channel to retrieve.                                | Yes      |
+| includeCodeTemplateLibraries | If true, code template libraries will be included in the channel. | No       |
 
 ---
 
-#### updateChannel(override,channelId,channel)
+##### updateChannel(override,channelId,channel)
 
 Summary: Updates the specified channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel to update. | Yes |
-
-| override | If true, the channel will be updated even if a different revision exists on the server. | No |
+| Name      | Description                                                                             | Required | Properties |
+| --------- | --------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId | The ID of the channel to update.                                                        | Yes      |
+| override  | If true, the channel will be updated even if a different revision exists on the server. | No       |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channel | object | Yes | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
+| Name    | Description | Required | Properties                                                                                                                                                                                                                   |
+| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| channel | object      | Yes      | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 
 ---
 
-#### removeChannel(channelId)
+##### removeChannel(channelId)
 
 Summary: Removes the channel with the specified ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel to remove. | Yes |
+| Name      | Description                      | Required | Properties |
+| --------- | -------------------------------- | -------- | ---------- |
+| channelId | The ID of the channel to remove. | Yes      |
 
 ---
 
-#### removeChannelsPost()
+##### removeChannelsPost()
 
 Summary: Removes the channels with the specified IDs. This is a POST request alternative to DELETE /channels that may be used when there are too many channel IDs to include in the query parameters.
 
 ---
 
-#### getChannelsPost(pollingOnly,includeCodeTemplateLibraries)
+##### getChannelsPost(pollingOnly,includeCodeTemplateLibraries)
 
 Summary: Retrieve a list of all channels, or multiple channels by ID. This is a POST request alternative to GET /channels that may be used when there are too many channel IDs to include in the query parameters.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| pollingOnly | If true, only channels with polling source connectors will be returned. | No |
-
-| includeCodeTemplateLibraries | If true, code template libraries will be included in the channel. | No |
+| Name                         | Description                                                             | Required | Properties |
+| ---------------------------- | ----------------------------------------------------------------------- | -------- | ---------- |
+| pollingOnly                  | If true, only channels with polling source connectors will be returned. | No       |
+| includeCodeTemplateLibraries | If true, code template libraries will be included in the channel.       | No       |
 
 ---
 
-#### getChannelIdsAndNames()
+##### getChannelIdsAndNames()
 
 Summary: Returns a map of all channel IDs and names.
 
 ---
 
-#### getChannels(channelId,pollingOnly,includeCodeTemplateLibraries)
+##### getChannels(channelId,pollingOnly,includeCodeTemplateLibraries)
 
 Summary: Retrieve a list of all channels, or multiple channels by ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The IDs of the channels to retrieve. If absent, all channels will be retrieved. | No |
-
-| pollingOnly | If true, only channels with polling source connectors will be returned. | No |
-
-| includeCodeTemplateLibraries | If true, code template libraries will be included in the channel. | No |
+| Name                         | Description                                                                     | Required | Properties |
+| ---------------------------- | ------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId                    | The IDs of the channels to retrieve. If absent, all channels will be retrieved. | No       |
+| pollingOnly                  | If true, only channels with polling source connectors will be returned.         | No       |
+| includeCodeTemplateLibraries | If true, code template libraries will be included in the channel.               | No       |
 
 ---
 
-#### createChannel(channel)
+##### createChannel(channel)
 
 Summary: Creates a new channel.
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channel | object | Yes | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
+| Name    | Description | Required | Properties                                                                                                                                                                                                                   |
+| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| channel | object      | Yes      | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 
 ---
 
-#### removeChannels(channelId)
+##### removeChannels(channelId)
 
 Summary: Removes the channels with the specified IDs.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The IDs of the channels to remove. | Yes |
+| Name      | Description                        | Required | Properties |
+| --------- | ---------------------------------- | -------- | ---------- |
+| channelId | The IDs of the channels to remove. | Yes      |
 
 ---
 
-#### getMetaDataColumns(channelId)
+##### getMetaDataColumns(channelId)
 
 Summary: Returns all metadata columns for a channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
 
 ---
 
-#### getChannelSummary(ignoreNewChannels)
+##### getChannelSummary(ignoreNewChannels)
 
 Summary: Returns a list of channel summaries, indicating to a client which channels have changed (been updated, deleted, undeployed, etc.). If a channel was modified, the entire Channel object will be returned.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| ignoreNewChannels | If true, summaries will only be returned for channels in the map's entry set. | Yes |
+| Name              | Description                                                                   | Required | Properties |
+| ----------------- | ----------------------------------------------------------------------------- | -------- | ---------- |
+| ignoreNewChannels | If true, summaries will only be returned for channels in the map's entry set. | Yes      |
 
 ---
 
-#### setChannelEnabled(enabled)
+##### setChannelEnabled(enabled)
 
 Summary: Enables/disables the specified channels. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
 
 ---
 
-#### setChannelEnabled_1(channelId,enabled)
+##### setChannelEnabled_1(channelId,enabled)
 
 Summary: Enables/disables the specified channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| enabled | The enabled flag (true/false) to set. | Yes |
+| Name      | Description                           | Required | Properties |
+| --------- | ------------------------------------- | -------- | ---------- |
+| channelId | The ID of the channel.                | Yes      |
+| enabled   | The enabled flag (true/false) to set. | Yes      |
 
 ---
 
-#### setChannelInitialState(initialState)
+##### setChannelInitialState(initialState)
 
 Summary: Sets the initial state for the specified channels. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
 
 ---
 
-#### setChannelInitialState_1(channelId,initialState)
+##### setChannelInitialState_1(channelId,initialState)
 
 Summary: Sets the initial state for a single channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| initialState | The initial state of the channel. | Yes |
+| Name         | Description                       | Required | Properties |
+| ------------ | --------------------------------- | -------- | ---------- |
+| channelId    | The ID of the channel.            | Yes      |
+| initialState | The initial state of the channel. | Yes      |
 
 ---
 
-#### getConnectorNames(channelId)
+##### getConnectorNames(channelId)
 
 Summary: Returns all connector names for a channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
 
 ---
 
 ### Channel Statistics
 
-#### clearAllStatistics()
+##### clearAllStatistics()
 
 Summary: Clears all statistics (including lifetime) for all channels/connectors.
 
 ---
 
-#### getStatisticsPost()
+##### getStatisticsPost()
 
 Summary: Returns the Statistics for all channels. This is a POST request alternative to GET /statistics that may be used when there are too many channel IDs to include in the query parameters.
 
 ---
 
-#### clearStatistics(received,filtered,sent,error)
+##### clearStatistics(received,filtered,sent,error)
 
 Summary: Clears the statistics for the given channels and/or connectors.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| received | If true, received stats will be cleared. | No |
-
-| filtered | If true, filtered stats will be cleared. | No |
-
-| sent | If true, sent stats will be cleared. | No |
-
-| error | If true, error stats will be cleared. | No |
+| Name     | Description                              | Required | Properties |
+| -------- | ---------------------------------------- | -------- | ---------- |
+| received | If true, received stats will be cleared. | No       |
+| filtered | If true, filtered stats will be cleared. | No       |
+| sent     | If true, sent stats will be cleared.     | No       |
+| error    | If true, error stats will be cleared.    | No       |
 
 ---
 
-#### getStatistics(channelId,includeUndeployed,includeMetadataId,excludeMetadataId,aggregateStats)
+##### getStatistics(channelId,includeUndeployed,includeMetadataId,excludeMetadataId,aggregateStats)
 
 Summary: Returns the Statistics for all channels.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The IDs of the channels to retrieve. If absent, all channels will be retrieved. | No |
-
-| includeUndeployed | If true, statistics for undeployed channels will also be included. | No |
-
-| includeMetadataId | The ids of connectors to include. Cannot include and exclude connectors. | No |
-
-| excludeMetadataId | The ids of connectors to exclude. Cannot include and exclude connectors. | No |
-
-| aggregateStats | If true, statistics will be aggregated into one result | No |
+| Name              | Description                                                                     | Required | Properties |
+| ----------------- | ------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId         | The IDs of the channels to retrieve. If absent, all channels will be retrieved. | No       |
+| includeUndeployed | If true, statistics for undeployed channels will also be included.              | No       |
+| includeMetadataId | The ids of connectors to include. Cannot include and exclude connectors.        | No       |
+| excludeMetadataId | The ids of connectors to exclude. Cannot include and exclude connectors.        | No       |
+| aggregateStats    | If true, statistics will be aggregated into one result                          | No       |
 
 ---
 
-#### getStatistics_1(channelId)
+##### getStatistics_1(channelId)
 
 Summary: Returns the Statistics for the channel with the specified id.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel to retrieve statistics for. | Yes |
+| Name      | Description                                       | Required | Properties |
+| --------- | ------------------------------------------------- | -------- | ---------- |
+| channelId | The ID of the channel to retrieve statistics for. | Yes      |
 
 ---
 
 ### Channel Status Operations
 
-#### stopChannel(returnErrors,channelId)
+##### stopChannel(returnErrors,channelId)
 
 Summary: Stops the channel with the specified ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to stop. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The channel ID to stop.                                             | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### haltChannel(returnErrors,channelId)
+##### haltChannel(returnErrors,channelId)
 
 Summary: Halts the channel with the specified ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to halt. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The channel ID to halt.                                             | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### pauseChannel(returnErrors,channelId)
+##### pauseChannel(returnErrors,channelId)
 
 Summary: Pauses the channel with the specified ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to pause. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The channel ID to pause.                                            | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### resumeChannel(returnErrors,channelId)
+##### resumeChannel(returnErrors,channelId)
 
 Summary: Resumes the channel with the specified ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to resume. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The channel ID to resume.                                           | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### startConnectors(returnErrors)
+##### startConnectors(returnErrors)
 
 Summary: Starts the connectors with the specified channel and metadata IDs.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### getChannelStatusListPost(filter,includeUndeployed)
+##### getChannelStatusListPost(filter,includeUndeployed)
 
 Summary: Returns all channel dashboard statuses, or multiple statuses by channel ID. This is a POST request alternative to GET /statuses that may be used when there are too many channel IDs to include in the query parameters.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| filter | The filter string to limit dashboard statuses with. | No |
-
-| includeUndeployed | If true, statuses for undeployed channels will also be included. | No |
+| Name              | Description                                                      | Required | Properties |
+| ----------------- | ---------------------------------------------------------------- | -------- | ---------- |
+| filter            | The filter string to limit dashboard statuses with.              | No       |
+| includeUndeployed | If true, statuses for undeployed channels will also be included. | No       |
 
 ---
 
-#### getDashboardChannelInfo(fetchSize,filter)
+##### getDashboardChannelInfo(fetchSize,filter)
 
 Summary: Returns a DashboardChannelInfo object containing a partial channel status list and a set of remaining channel IDs.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| fetchSize | Specifies the maximum number of statuses to return. | Yes |
-
-| filter | The filter string to limit dashboard statuses with. | No |
+| Name      | Description                                         | Required | Properties |
+| --------- | --------------------------------------------------- | -------- | ---------- |
+| fetchSize | Specifies the maximum number of statuses to return. | Yes      |
+| filter    | The filter string to limit dashboard statuses with. | No       |
 
 ---
 
-#### startChannel(returnErrors,channelId)
+##### startChannel(returnErrors,channelId)
 
 Summary: Starts the channel with the specified ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to start. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The channel ID to start.                                            | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### stopConnectors(returnErrors)
+##### stopConnectors(returnErrors)
 
 Summary: Stops the connectors with the specified channel and metadata IDs.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### startChannels(returnErrors,channelId)
+##### startChannels(returnErrors,channelId)
 
 Summary: Starts the channels with the specified IDs. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### stopChannels(returnErrors,channelId)
+##### stopChannels(returnErrors,channelId)
 
 Summary: Stops the channels with the specified IDs. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### pauseChannels(returnErrors,channelId)
+##### pauseChannels(returnErrors,channelId)
 
 Summary: Pauses the channels with the specified IDs. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### resumeChannels(returnErrors,channelId)
+##### resumeChannels(returnErrors,channelId)
 
 Summary: Resume the channels with the specified IDs. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### startConnector(returnErrors,channelId,metaDataId)
+##### startConnector(returnErrors,channelId,metaDataId)
 
 Summary: Starts the connector with the specified channel and metadata ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to start a connector for. | Yes |
-
-| metaDataId | The connector metadata ID to start. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The channel ID to start a connector for.                            | Yes      |
+| metaDataId   | The connector metadata ID to start.                                 | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### stopConnector(returnErrors,channelId,metaDataId)
+##### stopConnector(returnErrors,channelId,metaDataId)
 
 Summary: Stops the connector with the specified channel and metadata ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to stop a connector for. | Yes |
-
-| metaDataId | The connector metadata ID to stop. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The channel ID to stop a connector for.                             | Yes      |
+| metaDataId   | The connector metadata ID to stop.                                  | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### haltChannels(returnErrors,channelId)
+##### haltChannels(returnErrors,channelId)
 
 Summary: Halts the channels with the specified IDs. ("Try it Out" only works when submitting an array containing one element for this endpoint, but the descriptions are valid. If you want to modify multiple items at once, please use another tool for testing.)
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### getChannelStatus(channelId)
+##### getChannelStatus(channelId)
 
 Summary: Returns the dashboard status for a single channel ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel ID to return a dashboard status for. | Yes |
+| Name      | Description                                      | Required | Properties |
+| --------- | ------------------------------------------------ | -------- | ---------- |
+| channelId | The channel ID to return a dashboard status for. | Yes      |
 
 ---
 
-#### getChannelStatusList(channelId,filter,includeUndeployed)
+##### getChannelStatusList(channelId,filter,includeUndeployed)
 
 Summary: Returns all channel dashboard statuses, or multiple statuses by channel ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The channel IDs to return dashboard statuses for. If absent, all statuses will be returned. | No |
-
-| filter | The filter string to limit dashboard statuses with. | No |
-
-| includeUndeployed | If true, statuses for undeployed channels will also be included. | No |
+| Name              | Description                                                                                 | Required | Properties |
+| ----------------- | ------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId         | The channel IDs to return dashboard statuses for. If absent, all statuses will be returned. | No       |
+| filter            | The filter string to limit dashboard statuses with.                                         | No       |
+| includeUndeployed | If true, statuses for undeployed channels will also be included.                            | No       |
 
 ---
 
 ### Code Templates
 
-#### getCodeTemplateLibrary(includeCodeTemplates,libraryId)
+##### getCodeTemplateLibrary(includeCodeTemplates,libraryId)
 
 Summary: Retrieves a single code template library.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| libraryId | The ID of the library to retrieve. | Yes |
-
-| includeCodeTemplates | If true, full code templates will be included inside each library. | No |
+| Name                 | Description                                                        | Required | Properties |
+| -------------------- | ------------------------------------------------------------------ | -------- | ---------- |
+| libraryId            | The ID of the library to retrieve.                                 | Yes      |
+| includeCodeTemplates | If true, full code templates will be included inside each library. | No       |
 
 ---
 
-#### getCodeTemplateLibraries(libraryId,includeCodeTemplates)
+##### getCodeTemplateLibraries(libraryId,includeCodeTemplates)
 
 Summary: Retrieves multiple code template libraries by ID, or all libraries if not specified.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| libraryId | The ID of the library(s) to retrieve. | No |
-
-| includeCodeTemplates | If true, full code templates will be included inside each library. | No |
+| Name                 | Description                                                        | Required | Properties |
+| -------------------- | ------------------------------------------------------------------ | -------- | ---------- |
+| libraryId            | The ID of the library(s) to retrieve.                              | No       |
+| includeCodeTemplates | If true, full code templates will be included inside each library. | No       |
 
 ---
 
-#### updateCodeTemplateLibraries(override)
+##### updateCodeTemplateLibraries(override)
 
 Summary: Replaces all code template libraries.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| override | If true, the code template library will be updated even if a different revision exists on the server. | No |
+| Name     | Description                                                                                           | Required | Properties |
+| -------- | ----------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| override | If true, the code template library will be updated even if a different revision exists on the server. | No       |
 
 ---
 
-#### getCodeTemplateLibrariesPost(includeCodeTemplates)
+##### getCodeTemplateLibrariesPost(includeCodeTemplates)
 
 Summary: Retrieves multiple code template libraries by ID, or all libraries if not specified. This is a POST request alternative to GET /codeTemplateLibraries that may be used when there are too many library IDs to include in the query parameters.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| includeCodeTemplates | If true, full code templates will be included inside each library. | No |
+| Name                 | Description                                                        | Required | Properties |
+| -------------------- | ------------------------------------------------------------------ | -------- | ---------- |
+| includeCodeTemplates | If true, full code templates will be included inside each library. | No       |
 
 ---
 
-#### getCodeTemplatesPost()
+##### getCodeTemplatesPost()
 
 Summary: Retrieves multiple code templates by ID, or all templates if not specified. This is a POST request alternative to GET /codeTemplates that may be used when there are too many code template IDs to include in the query parameters.
 
 ---
 
-#### getCodeTemplate(codeTemplateId)
+##### getCodeTemplate(codeTemplateId)
 
 Summary: Retrieves a single code template.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| codeTemplateId | The ID of the code template to retrieve. | Yes |
+| Name           | Description                              | Required | Properties |
+| -------------- | ---------------------------------------- | -------- | ---------- |
+| codeTemplateId | The ID of the code template to retrieve. | Yes      |
 
 ---
 
-#### updateCodeTemplate(override,codeTemplateId,codeTemplate)
+##### updateCodeTemplate(override,codeTemplateId,codeTemplate)
 
 Summary: Updates a single code template.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| codeTemplateId | The ID of the code template. | Yes |
-
-| override | If true, the code template will be updated even if a different revision exists on the server. | No |
+| Name           | Description                                                                                   | Required | Properties |
+| -------------- | --------------------------------------------------------------------------------------------- | -------- | ---------- |
+| codeTemplateId | The ID of the code template.                                                                  | Yes      |
+| override       | If true, the code template will be updated even if a different revision exists on the server. | No       |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| codeTemplate | object | Yes | {id,name,revision,lastModified,contextSet,properties,type,description,code,purgedProperties,addToScripts,functionDefinition} |
+| Name         | Description | Required | Properties                                                                                                                   |
+| ------------ | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| codeTemplate | object      | Yes      | {id,name,revision,lastModified,contextSet,properties,type,description,code,purgedProperties,addToScripts,functionDefinition} |
 
 ---
 
-#### removeCodeTemplate(codeTemplateId)
+##### removeCodeTemplate(codeTemplateId)
 
 Summary: Removes a single code template.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| codeTemplateId | The ID of the code template. | Yes |
+| Name           | Description                  | Required | Properties |
+| -------------- | ---------------------------- | -------- | ---------- |
+| codeTemplateId | The ID of the code template. | Yes      |
 
 ---
 
-#### getCodeTemplates(codeTemplateId)
+##### getCodeTemplates(codeTemplateId)
 
 Summary: Retrieves multiple code templates by ID, or all templates if not specified.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| codeTemplateId | The ID of the code template(s) to retrieve. | No |
+| Name           | Description                                 | Required | Properties |
+| -------------- | ------------------------------------------- | -------- | ---------- |
+| codeTemplateId | The ID of the code template(s) to retrieve. | No       |
 
 ---
 
-#### getCodeTemplateSummary()
+##### getCodeTemplateSummary()
 
 Summary: Returns a list of code template summaries, indicating to a client which code templates have changed. If a code template was modified, the entire CodeTemplate object will be returned.
 
 ---
 
-#### updateLibrariesAndTemplates(override)
+##### updateLibrariesAndTemplates(override)
 
 Summary: Updates all libraries and updates/removes selected code templates in one request. ("Try it out" doesn't work for this endpoint, but the descriptions are valid. Please use another tool for testing.)
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| override | If true, the libraries and code templates will be updated even if different revisions exist on the server. | No |
+| Name     | Description                                                                                                | Required | Properties |
+| -------- | ---------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| override | If true, the libraries and code templates will be updated even if different revisions exist on the server. | No       |
 
 ---
 
 ### Server Configuration
 
-#### getResources()
+##### getResources()
 
 Summary: Returns all resources for the server.
 
 ---
 
-#### setResources()
+##### setResources()
 
 Summary: Updates all resources for the server.
 
 ---
 
-#### getVersion()
+##### getVersion()
 
 Summary: Returns the version of the Mirth Connect server.
 
 ---
 
-#### getJVMName()
+##### getJVMName()
 
 Summary: Returns the name of the JVM running Mirth Connect.
 
 ---
 
-#### getAbout()
+##### getAbout()
 
 Summary: Returns a map of common information about the Mirth Connect server.
 
 ---
 
-#### getLicenseInfo()
+##### getLicenseInfo()
 
 Summary: Returns a LicenseInfo object with the expiration date and other information.
 
 ---
 
-#### getGuid()
+##### getGuid()
 
 Summary: Returns a globally unique id.
 
 ---
 
-#### getProtocolsAndCipherSuites()
+##### getProtocolsAndCipherSuites()
 
 Summary: Returns a map containing all supported and enabled TLS protocols and cipher suites.
 
 ---
 
-#### getStatus()
+##### getStatus()
 
 Summary: Returns the status of the Mirth Connect server.
 
 ---
 
-#### getServerId()
+##### getServerId()
 
 Summary: Returns the server id.
 
 ---
 
-#### getUpdateSettings()
+##### getUpdateSettings()
 
 Summary: Returns an UpdateSettings object with all update settings.
 
 ---
 
-#### setUpdateSettings(updateSettings)
+##### setUpdateSettings(updateSettings)
 
 Summary: Updates the update settings.
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| updateSettings | object | Yes | {statsEnabled,lastStatsTime,properties,purgedProperties} |
+| Name           | Description | Required | Properties                                               |
+| -------------- | ----------- | -------- | -------------------------------------------------------- |
+| updateSettings | object      | Yes      | {statsEnabled,lastStatsTime,properties,purgedProperties} |
 
 ---
 
-#### getConfigurationMap()
+##### getConfigurationMap()
 
 Summary: Returns all entries in the configuration map.
 
 ---
 
-#### setConfigurationMap()
+##### setConfigurationMap()
 
 Summary: Updates all entries in the configuration map.
 
 ---
 
-#### getServerSettings()
+##### getServerSettings()
 
 Summary: Returns a ServerSettings object with all server settings.
 
 ---
 
-#### setServerSettings(serverSettings)
+##### setServerSettings(serverSettings)
 
 Summary: Updates the server configuration settings.
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| serverSettings | object | Yes | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
+| Name           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                            |
+| -------------- | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| serverSettings | object      | Yes      | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
 
 ---
 
-#### getChannelMetadata()
+##### getChannelMetadata()
 
 Summary: Returns all channel metadata for the server.
 
 ---
 
-#### setChannelMetadata()
+##### setChannelMetadata()
 
 Summary: Updates all channel metadata for the server.
 
 ---
 
-#### getChannelTags()
+##### getChannelTags()
 
 Summary: Returns a set containing all channel tags for the server.
 
 ---
 
-#### setChannelTags()
+##### setChannelTags()
 
 Summary: Updates all channel tags.
 
 ---
 
-#### getGlobalScripts()
+##### getGlobalScripts()
 
 Summary: Returns a map containing all of the global scripts.
 
 ---
 
-#### setGlobalScripts()
+##### setGlobalScripts()
 
 Summary: Updates all of the global scripts.
 
 ---
 
-#### getChannelDependencies()
+##### getChannelDependencies()
 
 Summary: Returns all channel dependencies for the server.
 
 ---
 
-#### setChannelDependencies()
+##### setChannelDependencies()
 
 Summary: Updates all channel dependencies for the server.
 
 ---
 
-#### getRhinoLanguageVersion()
+##### getRhinoLanguageVersion()
 
 Summary: Returns the language version that the Rhino engine should use.
 
 ---
 
-#### getServerTimezone()
+##### getServerTimezone()
 
 Summary: Returns the time zone of the server.
 
 ---
 
-#### getServerTime()
+##### getServerTime()
 
 Summary: Returns the time of the server.
 
 ---
 
-#### getAvailableCharsetEncodings()
+##### getAvailableCharsetEncodings()
 
 Summary: Returns a List of all of the charset encodings supported by the server.
 
 ---
 
-#### getPublicServerSettings()
+##### getPublicServerSettings()
 
 Summary: Returns a PublicServerSettings object containing server settings available to all users.
 
 ---
 
-#### getEncryptionSettings()
+##### getEncryptionSettings()
 
 Summary: Returns an EncryptionSettings object with all encryption settings.
 
 ---
 
-#### getDatabaseDrivers()
+##### getDatabaseDrivers()
 
 Summary: Returns the database driver list.
 
 ---
 
-#### setDatabaseDrivers()
+##### setDatabaseDrivers()
 
 Summary: Updates the list of database drivers.
 
 ---
 
-#### getBuildDate()
+##### getBuildDate()
 
 Summary: Returns the build date of the Mirth Connect server.
 
 ---
 
-#### getServerConfiguration(initialState,pollingOnly,disableAlerts)
+##### getServerConfiguration(initialState,pollingOnly,disableAlerts)
 
 Summary: Returns a ServerConfiguration object which contains all of the channels, alerts, configuration map, and properties stored on the Mirth Connect server.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| initialState | The initial state to set all channels in the configuration to. | No |
-
-| pollingOnly | If true, and the initialState parameter is set, only channels with polling source connectors will have their initial states overwritten in the returned server configuration. | No |
-
-| disableAlerts | If true, all alerts returned in the server configuration will be disabled. | No |
+| Name          | Description                                                                                                                                                                   | Required | Properties |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| initialState  | The initial state to set all channels in the configuration to.                                                                                                                | No       |
+| pollingOnly   | If true, and the initialState parameter is set, only channels with polling source connectors will have their initial states overwritten in the returned server configuration. | No       |
+| disableAlerts | If true, all alerts returned in the server configuration will be disabled.                                                                                                    | No       |
 
 ---
 
-#### setServerConfiguration(deploy,overwriteConfigMap,serverConfiguration)
+##### setServerConfiguration(deploy,overwriteConfigMap,serverConfiguration)
 
 Summary: Updates all of the channels, alerts and properties stored on the Mirth Connect server.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| deploy | If true, all enabled channels will be deployed after the configuration is restored. | No |
-
-| overwriteConfigMap | If true, overwrite the Configuration Map | No |
+| Name               | Description                                                                         | Required | Properties |
+| ------------------ | ----------------------------------------------------------------------------------- | -------- | ---------- |
+| deploy             | If true, all enabled channels will be deployed after the configuration is restored. | No       |
+| overwriteConfigMap | If true, overwrite the Configuration Map                                            | No       |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| serverConfiguration | object | Yes | {date,channelGroups,channels,channelTags,users,alerts,codeTemplateLibraries,serverSettings,updateSettings,globalScripts,pluginProperties,resourceProperties,channelDependencies,configurationMap} |
+| Name                | Description | Required | Properties                                                                                                                                                                                        |
+| ------------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| serverConfiguration | object      | Yes      | {date,channelGroups,channels,channelTags,users,alerts,codeTemplateLibraries,serverSettings,updateSettings,globalScripts,pluginProperties,resourceProperties,channelDependencies,configurationMap} |
 
 ---
 
-#### getPasswordRequirements()
+##### getPasswordRequirements()
 
 Summary: Returns all password requirements for the server.
 
 ---
 
-#### sendTestEmail_1()
+##### sendTestEmail_1()
 
 Summary: Sends a test e-mail.
 
 ---
 
-#### reloadResource(resourceId)
+##### reloadResource(resourceId)
 
 Summary: Reloads a resource and all libraries associated with it.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| resourceId | The unique ID of the resource to reload. | Yes |
+| Name       | Description                              | Required | Properties |
+| ---------- | ---------------------------------------- | -------- | ---------- |
+| resourceId | The unique ID of the resource to reload. | Yes      |
 
 ---
 
 ### Database Tasks
 
-#### getDatabaseTasks()
+##### getDatabaseTasks()
 
 Summary: Retrieves all current database tasks.
 
 ---
 
-#### getDatabaseTask(databaseTaskId)
+##### getDatabaseTask(databaseTaskId)
 
 Summary: Retrieves a single database task.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| databaseTaskId | The ID of the database task. | Yes |
+| Name           | Description                  | Required | Properties |
+| -------------- | ---------------------------- | -------- | ---------- |
+| databaseTaskId | The ID of the database task. | Yes      |
 
 ---
 
-#### runDatabaseTask(databaseTaskId)
+##### runDatabaseTask(databaseTaskId)
 
 Summary: Executes the specified database task.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| databaseTaskId | The ID of the database task. | Yes |
+| Name           | Description                  | Required | Properties |
+| -------------- | ---------------------------- | -------- | ---------- |
+| databaseTaskId | The ID of the database task. | Yes      |
 
 ---
 
-#### cancelDatabaseTask(databaseTaskId)
+##### cancelDatabaseTask(databaseTaskId)
 
 Summary: Cancels execution of the specified database task.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| databaseTaskId | The ID of the database task. | Yes |
+| Name           | Description                  | Required | Properties |
+| -------------- | ---------------------------- | -------- | ---------- |
+| databaseTaskId | The ID of the database task. | Yes      |
 
 ---
 
 ### Channel Deployment Operations
 
-#### deployChannel(returnErrors,debugOptions,channelId)
+##### deployChannel(returnErrors,debugOptions,channelId)
 
 Summary: Deploys (or redeploys) a single channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel to deploy. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
-
-| debugOptions | If present, the channel will deploy in debug mode and use these options. The input should be a comma-separated list of 't' and 'f' values that indicate whether to debug Deploy/Undeploy/Preprocessor/Postprocessor scripts, Attachment/Batch scripts, Source Connectors scripts, Source Filter/Transformer scripts, Destination Filter/Transformer scripts, Destination Connector scripts, and Destination Response Transformer scripts, in that order. Example: "f,f,f,f,f,f,f") | No |
+| Name         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Required | Properties |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The ID of the channel to deploy.                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned.                                                                                                                                                                                                                                                                                                                                                                                                                | No       |
+| debugOptions | If present, the channel will deploy in debug mode and use these options. The input should be a comma-separated list of 't' and 'f' values that indicate whether to debug Deploy/Undeploy/Preprocessor/Postprocessor scripts, Attachment/Batch scripts, Source Connectors scripts, Source Filter/Transformer scripts, Destination Filter/Transformer scripts, Destination Connector scripts, and Destination Response Transformer scripts, in that order. Example: "f,f,f,f,f,f,f") | No       |
 
 ---
 
-#### undeployChannel(returnErrors,channelId)
+##### undeployChannel(returnErrors,channelId)
 
 Summary: Undeploys a single channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel to undeploy. | Yes |
-
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The ID of the channel to undeploy.                                  | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### deployChannels(returnErrors)
+##### deployChannels(returnErrors)
 
 Summary: Deploys (or redeploys) selected channels.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### undeployChannels(returnErrors)
+##### undeployChannels(returnErrors)
 
 Summary: Undeploys selected channels.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
-#### redeployAllChannels(returnErrors)
+##### redeployAllChannels(returnErrors)
 
 Summary: Redeploys all channels.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| returnErrors | If true, an error response code and the exception will be returned. | No |
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
 
 ### Events
 
-#### getEvent(eventId)
+##### getEvent(eventId)
 
 Summary: Retrieves an event by ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| eventId | The ID of the event. | Yes |
+| Name    | Description          | Required | Properties |
+| ------- | -------------------- | -------- | ---------- |
+| eventId | The ID of the event. | Yes      |
 
 ---
 
-#### getMaxEventId()
+##### getMaxEventId()
 
 Summary: Returns the maximum event ID currently in the database.
 
 ---
 
-#### getEvents( {maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId,offset,limit})
+##### getEvents({maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId,offset,limit})
 
 Summary: Search for events by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| maxEventId | The maximum event ID to query. | No |
-
-| minEventId | The minimum event ID to query. | No |
-
-| level | The type of events to query. | No |
-
-| startDate | The earliest event date to query by. Example: 1985-10-26T09:00:00.000-0700 | No |
-
-| endDate | The latest event date to query by. Example: 2015-10-21T07:28:00.000-0700 | No |
-
-| name | Searches the event name for this string. | No |
-
-| outcome | Searches on whether the event outcome was successful or not. | No |
-
-| userId | The user ID to query events by. | No |
-
-| attributeSearch | Searches the attributes for this string. | No |
-
-| ipAddress | The IP address that originated the event. | No |
-
-| serverId | The ID of the server that the event was created from. | No |
-
-| offset | Used for pagination, determines where to start in the search results. | No |
-
-| limit | Used for pagination, determines the maximum number of results to return. | No |
+| Name            | Description                                                                | Required | Properties |
+| --------------- | -------------------------------------------------------------------------- | -------- | ---------- |
+| maxEventId      | The maximum event ID to query.                                             | No       |
+| minEventId      | The minimum event ID to query.                                             | No       |
+| level           | The type of events to query.                                               | No       |
+| startDate       | The earliest event date to query by. Example: 1985-10-26T09:00:00.000-0700 | No       |
+| endDate         | The latest event date to query by. Example: 2015-10-21T07:28:00.000-0700   | No       |
+| name            | Searches the event name for this string.                                   | No       |
+| outcome         | Searches on whether the event outcome was successful or not.               | No       |
+| userId          | The user ID to query events by.                                            | No       |
+| attributeSearch | Searches the attributes for this string.                                   | No       |
+| ipAddress       | The IP address that originated the event.                                  | No       |
+| serverId        | The ID of the server that the event was created from.                      | No       |
+| offset          | Used for pagination, determines where to start in the search results.      | No       |
+| limit           | Used for pagination, determines the maximum number of results to return.   | No       |
 
 ---
 
-#### removeAllEvents()
+##### removeAllEvents()
 
 Summary: Remove all events.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| export | If true, messages will be exported into the application data directory on the server before being removed. | No |
+| Name   | Description                                                                                                | Required | Properties |
+| ------ | ---------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| export | If true, messages will be exported into the application data directory on the server before being removed. | No       |
 
 ---
 
-#### getEvents_1(offset,limit,eventFilter)
+##### getEvents_1(offset,limit,eventFilter)
 
 Summary: Search for events by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| offset | Used for pagination, determines where to start in the search results. | No |
-
-| limit | Used for pagination, determines the maximum number of results to return. | No |
+| Name   | Description                                                              | Required | Properties |
+| ------ | ------------------------------------------------------------------------ | -------- | ---------- |
+| offset | Used for pagination, determines where to start in the search results.    | No       |
+| limit  | Used for pagination, determines the maximum number of results to return. | No       |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| eventFilter | object | Yes | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
+| Name        | Description | Required | Properties                                                                                                 |
+| ----------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| eventFilter | object      | Yes      | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 
 ---
 
-#### getEventCount(eventFilter)
+##### getEventCount(eventFilter)
 
 Summary: Count number for events by specific filter criteria.
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| eventFilter | object | Yes | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
+| Name        | Description | Required | Properties                                                                                                 |
+| ----------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| eventFilter | object      | Yes      | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 
 ---
 
-#### getEventCount_1( {maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId})
+##### getEventCount_1({maxEventId,minEventId,level,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId})
 
 Summary: Count number for events by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| maxEventId | The maximum event ID to query. | No |
-
-| minEventId | The minimum event ID to query. | No |
-
-| level | The type of events to query. | No |
-
-| startDate | The earliest event date to query by. Example: 1985-10-26T09:00:00.000-0700 | No |
-
-| endDate | The latest event date to query by. Example: 2015-10-21T07:28:00.000-0700 | No |
-
-| name | Searches the event name for this string. | No |
-
-| outcome | Searches on whether the event outcome was successful or not. | No |
-
-| userId | The user ID to query events by. | No |
-
-| attributeSearch | Searches the attributes for this string. | No |
-
-| ipAddress | The IP address that originated the event. | No |
-
-| serverId | The ID of the server that the event was created from. | No |
+| Name            | Description                                                                | Required | Properties |
+| --------------- | -------------------------------------------------------------------------- | -------- | ---------- |
+| maxEventId      | The maximum event ID to query.                                             | No       |
+| minEventId      | The minimum event ID to query.                                             | No       |
+| level           | The type of events to query.                                               | No       |
+| startDate       | The earliest event date to query by. Example: 1985-10-26T09:00:00.000-0700 | No       |
+| endDate         | The latest event date to query by. Example: 2015-10-21T07:28:00.000-0700   | No       |
+| name            | Searches the event name for this string.                                   | No       |
+| outcome         | Searches on whether the event outcome was successful or not.               | No       |
+| userId          | The user ID to query events by.                                            | No       |
+| attributeSearch | Searches the attributes for this string.                                   | No       |
+| ipAddress       | The IP address that originated the event.                                  | No       |
+| serverId        | The ID of the server that the event was created from.                      | No       |
 
 ---
 
-#### exportAllEvents()
+##### exportAllEvents()
 
 Summary: Exports all events to the application data directory on the server.
 
@@ -1730,941 +1648,704 @@ Summary: Exports all events to the application data directory on the server.
 
 ### Extensions
 
-#### installExtension()
+##### installExtension()
 
 Summary: Installs an extension.
 
 ---
 
-#### uninstallExtension()
+##### uninstallExtension()
 
 Summary: Uninstalls an extension.
 
 ---
 
-#### getExtensionMetaData(extensionName)
+##### getExtensionMetaData(extensionName)
 
 Summary: Returns extension metadata by name.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| extensionName | The name of the extension to retrieve. | Yes |
+| Name          | Description                            | Required | Properties |
+| ------------- | -------------------------------------- | -------- | ---------- |
+| extensionName | The name of the extension to retrieve. | Yes      |
 
 ---
 
-#### getPluginMetaData()
+##### getPluginMetaData()
 
 Summary: Returns all active plugin metadata.
 
 ---
 
-#### getConnectorMetaData()
+##### getConnectorMetaData()
 
 Summary: Returns all active connector metadata.
 
 ---
 
-#### getPluginProperties(propertyKeys,extensionName)
+##### getPluginProperties(propertyKeys,extensionName)
 
 Summary: Returns filtered properties for a specified extension.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| extensionName | The name of the extension to retrieve. | Yes |
-
-| propertyKeys | The set of properties to retrieve. | No |
+| Name          | Description                            | Required | Properties |
+| ------------- | -------------------------------------- | -------- | ---------- |
+| extensionName | The name of the extension to retrieve. | Yes      |
+| propertyKeys  | The set of properties to retrieve.     | No       |
 
 ---
 
-#### setPluginProperties(mergeProperties,extensionName)
+##### setPluginProperties(mergeProperties,extensionName)
 
 Summary: Sets properties for a specified extension.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| extensionName | undefined | Yes |
-
-| mergeProperties | Merge or replace properties. Defaults to replace. | No |
+| Name            | Description                                       | Required | Properties |
+| --------------- | ------------------------------------------------- | -------- | ---------- |
+| extensionName   | undefined                                         | Yes      |
+| mergeProperties | Merge or replace properties. Defaults to replace. | No       |
 
 ---
 
-#### isExtensionEnabled(extensionName)
+##### isExtensionEnabled(extensionName)
 
 Summary: Returns the enabled status of an extension.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| extensionName | The name of the extension to retrieve. | Yes |
+| Name          | Description                            | Required | Properties |
+| ------------- | -------------------------------------- | -------- | ---------- |
+| extensionName | The name of the extension to retrieve. | Yes      |
 
 ---
 
-#### setExtensionEnabled(enabled,extensionName)
+##### setExtensionEnabled(enabled,extensionName)
 
 Summary: Enables or disables an extension.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| extensionName | The name of the extension to retrieve. | Yes |
-
-| enabled | The new enabled status to set. | Yes |
+| Name          | Description                            | Required | Properties |
+| ------------- | -------------------------------------- | -------- | ---------- |
+| extensionName | The name of the extension to retrieve. | Yes      |
+| enabled       | The new enabled status to set.         | Yes      |
 
 ---
 
 ### Messages
 
-#### getMessages(includeContent,offset,limit,channelId,messageFilter)
+##### getMessages(includeContent,offset,limit,channelId,messageFilter)
 
 Summary: Search for messages by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| includeContent | If true, message content will be returned with the results. | No |
-
-| offset | Used for pagination, determines where to start in the search results. | No |
-
-| limit | Used for pagination, determines the maximum number of results to return. | No |
+| Name           | Description                                                              | Required | Properties |
+| -------------- | ------------------------------------------------------------------------ | -------- | ---------- |
+| channelId      | The ID of the channel.                                                   | Yes      |
+| includeContent | If true, message content will be returned with the results.              | No       |
+| offset         | Used for pagination, determines where to start in the search results.    | No       |
+| limit          | Used for pagination, determines the maximum number of results to return. | No       |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| messageFilter | object | Yes | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 
 ---
 
-#### getMessages_1( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,includeContent,offset,limit,channelId})
+##### getMessages_1({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,includeContent,offset,limit,channelId})
 
 Summary: Search for messages by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| minMessageId | The minimum message ID to query. | No |
-
-| maxMessageId | The maximum message ID to query. | No |
-
-| minOriginalId | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| maxOriginalId | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| minImportId | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| maxImportId | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| startDate | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700 | No |
-
-| endDate | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700 | No |
-
-| textSearch | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable. | No |
-
-| textSearchRegex | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases. | No |
-
-| status | Determines which message statuses to query by. | No |
-
-| includedMetaDataId | If present, only connector metadata IDs in this list will be queried. | No |
-
-| excludedMetaDataId | If present, connector metadata IDs in this list will not be queried. | No |
-
-| serverId | The server ID associated with messages. | No |
-
-| rawContentSearch | Searches the raw content of messages. | No |
-
-| processedRawContentSearch | Searches the processed raw content of messages. | No |
-
-| transformedContentSearch | Searches the transformed content of messages. | No |
-
-| encodedContentSearch | Searches the encoded content of messages. | No |
-
-| sentContentSearch | Searches the sent content of messages. | No |
-
-| responseContentSearch | Searches the response content of messages. | No |
-
-| responseTransformedContentSearch | Searches the response transformed content of messages. | No |
-
-| processedResponseContentSearch | Searches the processed response content of messages. | No |
-
-| connectorMapContentSearch | Searches the connector map content of messages. | No |
-
-| channelMapContentSearch | Searches the channel map content of messages. | No |
-
-| sourceMapContentSearch | Searches the source map content of messages. | No |
-
-| responseMapContentSearch | Searches the response map content of messages. | No |
-
-| processingErrorContentSearch | Searches the processing error content of messages. | No |
-
-| postprocessorErrorContentSearch | Searches the postprocessor error content of messages. | No |
-
-| responseErrorContentSearch | Searches the response error content of messages. | No |
-
-| metaDataSearch | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No |
-
-| metaDataCaseInsensitiveSearch | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value. | No |
-
-| textSearchMetaDataColumn | When using a text search, these custom metadata columns will also be searched. | No |
-
-| minSendAttempts | The minimum number of send attempts for connector messages. | No |
-
-| maxSendAttempts | The maximum number of send attempts for connector messages. | No |
-
-| attachment | If true, only messages with attachments are included in the results. | No |
-
-| error | If true, only messages with errors are included in the results. | No |
-
-| includeContent | If true, message content will be returned with the results. | No |
-
-| offset | Used for pagination, determines where to start in the search results. | No |
-
-| limit | Used for pagination, determines the maximum number of results to return. | No |
+| Name                             | Description                                                                                                                                                                                                                                                 | Required | Properties |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId                        | The ID of the channel.                                                                                                                                                                                                                                      | Yes      |
+| minMessageId                     | The minimum message ID to query.                                                                                                                                                                                                                            | No       |
+| maxMessageId                     | The maximum message ID to query.                                                                                                                                                                                                                            | No       |
+| minOriginalId                    | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| maxOriginalId                    | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| minImportId                      | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| maxImportId                      | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| startDate                        | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700                                                                                                                                                                      | No       |
+| endDate                          | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700                                                                                                                                                                        | No       |
+| textSearch                       | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable.                               | No       |
+| textSearchRegex                  | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases.                                                                                                         | No       |
+| status                           | Determines which message statuses to query by.                                                                                                                                                                                                              | No       |
+| includedMetaDataId               | If present, only connector metadata IDs in this list will be queried.                                                                                                                                                                                       | No       |
+| excludedMetaDataId               | If present, connector metadata IDs in this list will not be queried.                                                                                                                                                                                        | No       |
+| serverId                         | The server ID associated with messages.                                                                                                                                                                                                                     | No       |
+| rawContentSearch                 | Searches the raw content of messages.                                                                                                                                                                                                                       | No       |
+| processedRawContentSearch        | Searches the processed raw content of messages.                                                                                                                                                                                                             | No       |
+| transformedContentSearch         | Searches the transformed content of messages.                                                                                                                                                                                                               | No       |
+| encodedContentSearch             | Searches the encoded content of messages.                                                                                                                                                                                                                   | No       |
+| sentContentSearch                | Searches the sent content of messages.                                                                                                                                                                                                                      | No       |
+| responseContentSearch            | Searches the response content of messages.                                                                                                                                                                                                                  | No       |
+| responseTransformedContentSearch | Searches the response transformed content of messages.                                                                                                                                                                                                      | No       |
+| processedResponseContentSearch   | Searches the processed response content of messages.                                                                                                                                                                                                        | No       |
+| connectorMapContentSearch        | Searches the connector map content of messages.                                                                                                                                                                                                             | No       |
+| channelMapContentSearch          | Searches the channel map content of messages.                                                                                                                                                                                                               | No       |
+| sourceMapContentSearch           | Searches the source map content of messages.                                                                                                                                                                                                                | No       |
+| responseMapContentSearch         | Searches the response map content of messages.                                                                                                                                                                                                              | No       |
+| processingErrorContentSearch     | Searches the processing error content of messages.                                                                                                                                                                                                          | No       |
+| postprocessorErrorContentSearch  | Searches the postprocessor error content of messages.                                                                                                                                                                                                       | No       |
+| responseErrorContentSearch       | Searches the response error content of messages.                                                                                                                                                                                                            | No       |
+| metaDataSearch                   | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No       |
+| metaDataCaseInsensitiveSearch    | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value.                                                                                                                                          | No       |
+| textSearchMetaDataColumn         | When using a text search, these custom metadata columns will also be searched.                                                                                                                                                                              | No       |
+| minSendAttempts                  | The minimum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| maxSendAttempts                  | The maximum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| attachment                       | If true, only messages with attachments are included in the results.                                                                                                                                                                                        | No       |
+| error                            | If true, only messages with errors are included in the results.                                                                                                                                                                                             | No       |
+| includeContent                   | If true, message content will be returned with the results.                                                                                                                                                                                                 | No       |
+| offset                           | Used for pagination, determines where to start in the search results.                                                                                                                                                                                       | No       |
+| limit                            | Used for pagination, determines the maximum number of results to return.                                                                                                                                                                                    | No       |
 
 ---
 
-#### processMessage( {destinationMetaDataId,sourceMapEntry,overwrite,imported,originalMessageId,channelId,textData})
+##### processMessage({destinationMetaDataId,sourceMapEntry,overwrite,imported,originalMessageId,channelId,textData})
 
 Summary: Processes a new message through a channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| destinationMetaDataId | Indicates which destinations to send the message to. | No |
-
-| sourceMapEntry | These entries will be injected into the source map for the message. Value should be in the format: key=value | No |
-
-| overwrite | If true and a valid original message ID is given, this message will overwrite the existing one. | No |
-
-| imported | If true, marks this message as being imported. If the message is overwriting an existing one, then statistics will not be decremented. | No |
-
-| originalMessageId | The original message ID this message is associated with. | No |
+| Name                  | Description                                                                                                                            | Required | Properties |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId             | The ID of the channel.                                                                                                                 | Yes      |
+| destinationMetaDataId | Indicates which destinations to send the message to.                                                                                   | No       |
+| sourceMapEntry        | These entries will be injected into the source map for the message. Value should be in the format: key=value                           | No       |
+| overwrite             | If true and a valid original message ID is given, this message will overwrite the existing one.                                        | No       |
+| imported              | If true, marks this message as being imported. If the message is overwriting an existing one, then statistics will not be decremented. | No       |
+| originalMessageId     | The original message ID this message is associated with.                                                                               | No       |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| textData | string | Yes |  |
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
-#### removeMessages( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
+##### removeMessages({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
 
 Summary: Remove messages by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| minMessageId | The minimum message ID to query. | No |
-
-| maxMessageId | The maximum message ID to query. | No |
-
-| minOriginalId | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| maxOriginalId | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| minImportId | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| maxImportId | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| startDate | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700 | No |
-
-| endDate | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700 | No |
-
-| textSearch | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable. | No |
-
-| textSearchRegex | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases. | No |
-
-| status | Determines which message statuses to query by. | No |
-
-| includedMetaDataId | If present, only connector metadata IDs in this list will be queried. | No |
-
-| excludedMetaDataId | If present, connector metadata IDs in this list will not be queried. | No |
-
-| serverId | The server ID associated with messages. | No |
-
-| rawContentSearch | Searches the raw content of messages. | No |
-
-| processedRawContentSearch | Searches the processed raw content of messages. | No |
-
-| transformedContentSearch | Searches the transformed content of messages. | No |
-
-| encodedContentSearch | Searches the encoded content of messages. | No |
-
-| sentContentSearch | Searches the sent content of messages. | No |
-
-| responseContentSearch | Searches the response content of messages. | No |
-
-| responseTransformedContentSearch | Searches the response transformed content of messages. | No |
-
-| processedResponseContentSearch | Searches the processed response content of messages. | No |
-
-| connectorMapContentSearch | Searches the connector map content of messages. | No |
-
-| channelMapContentSearch | Searches the channel map content of messages. | No |
-
-| sourceMapContentSearch | Searches the source map content of messages. | No |
-
-| responseMapContentSearch | Searches the response map content of messages. | No |
-
-| processingErrorContentSearch | Searches the processing error content of messages. | No |
-
-| postprocessorErrorContentSearch | Searches the postprocessor error content of messages. | No |
-
-| responseErrorContentSearch | Searches the response error content of messages. | No |
-
-| metaDataSearch | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No |
-
-| metaDataCaseInsensitiveSearch | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value. | No |
-
-| textSearchMetaDataColumn | When using a text search, these custom metadata columns will also be searched. | No |
-
-| minSendAttempts | The minimum number of send attempts for connector messages. | No |
-
-| maxSendAttempts | The maximum number of send attempts for connector messages. | No |
-
-| attachment | If true, only messages with attachments are included in the results. | No |
-
-| error | If true, only messages with errors are included in the results. | No |
+| Name                             | Description                                                                                                                                                                                                                                                 | Required | Properties |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId                        | The ID of the channel.                                                                                                                                                                                                                                      | Yes      |
+| minMessageId                     | The minimum message ID to query.                                                                                                                                                                                                                            | No       |
+| maxMessageId                     | The maximum message ID to query.                                                                                                                                                                                                                            | No       |
+| minOriginalId                    | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| maxOriginalId                    | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| minImportId                      | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| maxImportId                      | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| startDate                        | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700                                                                                                                                                                      | No       |
+| endDate                          | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700                                                                                                                                                                        | No       |
+| textSearch                       | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable.                               | No       |
+| textSearchRegex                  | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases.                                                                                                         | No       |
+| status                           | Determines which message statuses to query by.                                                                                                                                                                                                              | No       |
+| includedMetaDataId               | If present, only connector metadata IDs in this list will be queried.                                                                                                                                                                                       | No       |
+| excludedMetaDataId               | If present, connector metadata IDs in this list will not be queried.                                                                                                                                                                                        | No       |
+| serverId                         | The server ID associated with messages.                                                                                                                                                                                                                     | No       |
+| rawContentSearch                 | Searches the raw content of messages.                                                                                                                                                                                                                       | No       |
+| processedRawContentSearch        | Searches the processed raw content of messages.                                                                                                                                                                                                             | No       |
+| transformedContentSearch         | Searches the transformed content of messages.                                                                                                                                                                                                               | No       |
+| encodedContentSearch             | Searches the encoded content of messages.                                                                                                                                                                                                                   | No       |
+| sentContentSearch                | Searches the sent content of messages.                                                                                                                                                                                                                      | No       |
+| responseContentSearch            | Searches the response content of messages.                                                                                                                                                                                                                  | No       |
+| responseTransformedContentSearch | Searches the response transformed content of messages.                                                                                                                                                                                                      | No       |
+| processedResponseContentSearch   | Searches the processed response content of messages.                                                                                                                                                                                                        | No       |
+| connectorMapContentSearch        | Searches the connector map content of messages.                                                                                                                                                                                                             | No       |
+| channelMapContentSearch          | Searches the channel map content of messages.                                                                                                                                                                                                               | No       |
+| sourceMapContentSearch           | Searches the source map content of messages.                                                                                                                                                                                                                | No       |
+| responseMapContentSearch         | Searches the response map content of messages.                                                                                                                                                                                                              | No       |
+| processingErrorContentSearch     | Searches the processing error content of messages.                                                                                                                                                                                                          | No       |
+| postprocessorErrorContentSearch  | Searches the postprocessor error content of messages.                                                                                                                                                                                                       | No       |
+| responseErrorContentSearch       | Searches the response error content of messages.                                                                                                                                                                                                            | No       |
+| metaDataSearch                   | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No       |
+| metaDataCaseInsensitiveSearch    | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value.                                                                                                                                          | No       |
+| textSearchMetaDataColumn         | When using a text search, these custom metadata columns will also be searched.                                                                                                                                                                              | No       |
+| minSendAttempts                  | The minimum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| maxSendAttempts                  | The maximum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| attachment                       | If true, only messages with attachments are included in the results.                                                                                                                                                                                        | No       |
+| error                            | If true, only messages with errors are included in the results.                                                                                                                                                                                             | No       |
 
 ---
 
-#### processMessage_1(channelId,rawMessage)
+##### processMessage_1(channelId,rawMessage)
 
 Summary: Processes a new message through a channel, using the RawMessage object.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| rawMessage | object | Yes | {overwrite,imported,originalMessageId,rawData,rawBytes,destinationMetaDataIds,sourceMap,binary,attachments} |
+| Name       | Description | Required | Properties                                                                                                  |
+| ---------- | ----------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| rawMessage | object      | Yes      | {overwrite,imported,originalMessageId,rawData,rawBytes,destinationMetaDataIds,sourceMap,binary,attachments} |
 
 ---
 
-#### getAttachmentsByMessageId(includeContent,channelId,messageId)
+##### getAttachmentsByMessageId(includeContent,channelId,messageId)
 
 Summary: Retrieve a list of attachments by message ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| messageId | The ID of the message. | Yes |
-
-| includeContent | If false, only the attachment ID and type will be returned. | No |
+| Name           | Description                                                 | Required | Properties |
+| -------------- | ----------------------------------------------------------- | -------- | ---------- |
+| channelId      | The ID of the channel.                                      | Yes      |
+| messageId      | The ID of the message.                                      | Yes      |
+| includeContent | If false, only the attachment ID and type will be returned. | No       |
 
 ---
 
-#### getDICOMMessage(channelId,messageId,connectorMessage)
+##### getDICOMMessage(channelId,messageId,connectorMessage)
 
 Summary: Given a ConnectorMessage object, reattaches any DICOM attachment data and returns the raw Base64 encoded message data.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| messageId | The ID of the message. | Yes |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
+| messageId | The ID of the message. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| connectorMessage | object | Yes | {messageId,metaDataId,channelId,channelName,connectorName,serverId,receivedDate,status,raw,processedRaw,transformed,encoded,sent,response,responseTransformed,processedResponse,sourceMapContent,connectorMapContent,channelMapContent,responseMapContent,metaDataMap,processingErrorContent,postProcessorErrorContent,responseErrorContent,errorCode,sendAttempts,sendDate,responseDate,chainId,orderId,sentProperties,queueBucket,attemptedFirst,dispatcherId,responseMap,connectorMap,channelMap,responseError,processingError,sourceMap,messageContent,postProcessorError} |
+| Name             | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ---------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| connectorMessage | object      | Yes      | {messageId,metaDataId,channelId,channelName,connectorName,serverId,receivedDate,status,raw,processedRaw,transformed,encoded,sent,response,responseTransformed,processedResponse,sourceMapContent,connectorMapContent,channelMapContent,responseMapContent,metaDataMap,processingErrorContent,postProcessorErrorContent,responseErrorContent,errorCode,sendAttempts,sendDate,responseDate,chainId,orderId,sentProperties,queueBucket,attemptedFirst,dispatcherId,responseMap,connectorMap,channelMap,responseError,processingError,sourceMap,messageContent,postProcessorError} |
 
 ---
 
-#### getMessageCount(channelId,messageFilter)
+##### getMessageCount(channelId,messageFilter)
 
 Summary: Count number for messages by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| messageFilter | object | Yes | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 
 ---
 
-#### getMessageCount_1( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
+##### getMessageCount_1({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
 
 Summary: Count number for messages by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| minMessageId | The minimum message ID to query. | No |
-
-| maxMessageId | The maximum message ID to query. | No |
-
-| minOriginalId | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| maxOriginalId | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| minImportId | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| maxImportId | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| startDate | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700 | No |
-
-| endDate | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700 | No |
-
-| textSearch | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable. | No |
-
-| textSearchRegex | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases. | No |
-
-| status | Determines which message statuses to query by. | No |
-
-| includedMetaDataId | If present, only connector metadata IDs in this list will be queried. | No |
-
-| excludedMetaDataId | If present, connector metadata IDs in this list will not be queried. | No |
-
-| serverId | The server ID associated with messages. | No |
-
-| rawContentSearch | Searches the raw content of messages. | No |
-
-| processedRawContentSearch | Searches the processed raw content of messages. | No |
-
-| transformedContentSearch | Searches the transformed content of messages. | No |
-
-| encodedContentSearch | Searches the encoded content of messages. | No |
-
-| sentContentSearch | Searches the sent content of messages. | No |
-
-| responseContentSearch | Searches the response content of messages. | No |
-
-| responseTransformedContentSearch | Searches the response transformed content of messages. | No |
-
-| processedResponseContentSearch | Searches the processed response content of messages. | No |
-
-| connectorMapContentSearch | Searches the connector map content of messages. | No |
-
-| channelMapContentSearch | Searches the channel map content of messages. | No |
-
-| sourceMapContentSearch | Searches the source map content of messages. | No |
-
-| responseMapContentSearch | Searches the response map content of messages. | No |
-
-| processingErrorContentSearch | Searches the processing error content of messages. | No |
-
-| postprocessorErrorContentSearch | Searches the postprocessor error content of messages. | No |
-
-| responseErrorContentSearch | Searches the response error content of messages. | No |
-
-| metaDataSearch | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No |
-
-| metaDataCaseInsensitiveSearch | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value. | No |
-
-| textSearchMetaDataColumn | When using a text search, these custom metadata columns will also be searched. | No |
-
-| minSendAttempts | The minimum number of send attempts for connector messages. | No |
-
-| maxSendAttempts | The maximum number of send attempts for connector messages. | No |
-
-| attachment | If true, only messages with attachments are included in the results. | No |
-
-| error | If true, only messages with errors are included in the results. | No |
+| Name                             | Description                                                                                                                                                                                                                                                 | Required | Properties |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId                        | The ID of the channel.                                                                                                                                                                                                                                      | Yes      |
+| minMessageId                     | The minimum message ID to query.                                                                                                                                                                                                                            | No       |
+| maxMessageId                     | The maximum message ID to query.                                                                                                                                                                                                                            | No       |
+| minOriginalId                    | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| maxOriginalId                    | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| minImportId                      | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| maxImportId                      | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| startDate                        | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700                                                                                                                                                                      | No       |
+| endDate                          | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700                                                                                                                                                                        | No       |
+| textSearch                       | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable.                               | No       |
+| textSearchRegex                  | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases.                                                                                                         | No       |
+| status                           | Determines which message statuses to query by.                                                                                                                                                                                                              | No       |
+| includedMetaDataId               | If present, only connector metadata IDs in this list will be queried.                                                                                                                                                                                       | No       |
+| excludedMetaDataId               | If present, connector metadata IDs in this list will not be queried.                                                                                                                                                                                        | No       |
+| serverId                         | The server ID associated with messages.                                                                                                                                                                                                                     | No       |
+| rawContentSearch                 | Searches the raw content of messages.                                                                                                                                                                                                                       | No       |
+| processedRawContentSearch        | Searches the processed raw content of messages.                                                                                                                                                                                                             | No       |
+| transformedContentSearch         | Searches the transformed content of messages.                                                                                                                                                                                                               | No       |
+| encodedContentSearch             | Searches the encoded content of messages.                                                                                                                                                                                                                   | No       |
+| sentContentSearch                | Searches the sent content of messages.                                                                                                                                                                                                                      | No       |
+| responseContentSearch            | Searches the response content of messages.                                                                                                                                                                                                                  | No       |
+| responseTransformedContentSearch | Searches the response transformed content of messages.                                                                                                                                                                                                      | No       |
+| processedResponseContentSearch   | Searches the processed response content of messages.                                                                                                                                                                                                        | No       |
+| connectorMapContentSearch        | Searches the connector map content of messages.                                                                                                                                                                                                             | No       |
+| channelMapContentSearch          | Searches the channel map content of messages.                                                                                                                                                                                                               | No       |
+| sourceMapContentSearch           | Searches the source map content of messages.                                                                                                                                                                                                                | No       |
+| responseMapContentSearch         | Searches the response map content of messages.                                                                                                                                                                                                              | No       |
+| processingErrorContentSearch     | Searches the processing error content of messages.                                                                                                                                                                                                          | No       |
+| postprocessorErrorContentSearch  | Searches the postprocessor error content of messages.                                                                                                                                                                                                       | No       |
+| responseErrorContentSearch       | Searches the response error content of messages.                                                                                                                                                                                                            | No       |
+| metaDataSearch                   | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No       |
+| metaDataCaseInsensitiveSearch    | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value.                                                                                                                                          | No       |
+| textSearchMetaDataColumn         | When using a text search, these custom metadata columns will also be searched.                                                                                                                                                                              | No       |
+| minSendAttempts                  | The minimum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| maxSendAttempts                  | The maximum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| attachment                       | If true, only messages with attachments are included in the results.                                                                                                                                                                                        | No       |
+| error                            | If true, only messages with errors are included in the results.                                                                                                                                                                                             | No       |
 
 ---
 
-#### reprocessMessages(replace,filterDestinations,metaDataId,channelId,messageFilter)
+##### reprocessMessages(replace,filterDestinations,metaDataId,channelId,messageFilter)
 
 Summary: Reprocesses messages through a channel filtering with a MessageFilter.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| replace | If true, the message will overwrite the current one | No |
-
-| filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No |
-
-| metaDataId | Indicates which destinations to send the message to. | No |
+| Name               | Description                                                                                                      | Required | Properties |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId          | The ID of the channel.                                                                                           | Yes      |
+| replace            | If true, the message will overwrite the current one                                                              | No       |
+| filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No       |
+| metaDataId         | Indicates which destinations to send the message to.                                                             | No       |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| messageFilter | object | Yes | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 
 ---
 
-#### reprocessMessages_1( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,replace,filterDestinations,metaDataId,channelId})
+##### reprocessMessages_1({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,replace,filterDestinations,metaDataId,channelId})
 
 Summary: Reprocesses messages through a channel by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| minMessageId | The minimum message ID to query. | No |
-
-| maxMessageId | The maximum message ID to query. | No |
-
-| minOriginalId | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| maxOriginalId | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| minImportId | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| maxImportId | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| startDate | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700 | No |
-
-| endDate | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700 | No |
-
-| textSearch | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable. | No |
-
-| textSearchRegex | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases. | No |
-
-| status | Determines which message statuses to query by. | No |
-
-| includedMetaDataId | If present, only connector metadata IDs in this list will be queried. | No |
-
-| excludedMetaDataId | If present, connector metadata IDs in this list will not be queried. | No |
-
-| serverId | The server ID associated with messages. | No |
-
-| rawContentSearch | Searches the raw content of messages. | No |
-
-| processedRawContentSearch | Searches the processed raw content of messages. | No |
-
-| transformedContentSearch | Searches the transformed content of messages. | No |
-
-| encodedContentSearch | Searches the encoded content of messages. | No |
-
-| sentContentSearch | Searches the sent content of messages. | No |
-
-| responseContentSearch | Searches the response content of messages. | No |
-
-| responseTransformedContentSearch | Searches the response transformed content of messages. | No |
-
-| processedResponseContentSearch | Searches the processed response content of messages. | No |
-
-| connectorMapContentSearch | Searches the connector map content of messages. | No |
-
-| channelMapContentSearch | Searches the channel map content of messages. | No |
-
-| sourceMapContentSearch | Searches the source map content of messages. | No |
-
-| responseMapContentSearch | Searches the response map content of messages. | No |
-
-| processingErrorContentSearch | Searches the processing error content of messages. | No |
-
-| postprocessorErrorContentSearch | Searches the postprocessor error content of messages. | No |
-
-| responseErrorContentSearch | Searches the response error content of messages. | No |
-
-| metaDataSearch | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No |
-
-| metaDataCaseInsensitiveSearch | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value. | No |
-
-| textSearchMetaDataColumn | When using a text search, these custom metadata columns will also be searched. | No |
-
-| minSendAttempts | The minimum number of send attempts for connector messages. | No |
-
-| maxSendAttempts | The maximum number of send attempts for connector messages. | No |
-
-| attachment | If true, only messages with attachments are included in the results. | No |
-
-| error | If true, only messages with errors are included in the results. | No |
-
-| replace | If true, the message will overwrite the current one | No |
-
-| filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No |
-
-| metaDataId | Indicates which destinations to send the message to. | No |
+| Name                             | Description                                                                                                                                                                                                                                                 | Required | Properties |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId                        | The ID of the channel.                                                                                                                                                                                                                                      | Yes      |
+| minMessageId                     | The minimum message ID to query.                                                                                                                                                                                                                            | No       |
+| maxMessageId                     | The maximum message ID to query.                                                                                                                                                                                                                            | No       |
+| minOriginalId                    | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| maxOriginalId                    | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| minImportId                      | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| maxImportId                      | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| startDate                        | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700                                                                                                                                                                      | No       |
+| endDate                          | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700                                                                                                                                                                        | No       |
+| textSearch                       | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable.                               | No       |
+| textSearchRegex                  | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases.                                                                                                         | No       |
+| status                           | Determines which message statuses to query by.                                                                                                                                                                                                              | No       |
+| includedMetaDataId               | If present, only connector metadata IDs in this list will be queried.                                                                                                                                                                                       | No       |
+| excludedMetaDataId               | If present, connector metadata IDs in this list will not be queried.                                                                                                                                                                                        | No       |
+| serverId                         | The server ID associated with messages.                                                                                                                                                                                                                     | No       |
+| rawContentSearch                 | Searches the raw content of messages.                                                                                                                                                                                                                       | No       |
+| processedRawContentSearch        | Searches the processed raw content of messages.                                                                                                                                                                                                             | No       |
+| transformedContentSearch         | Searches the transformed content of messages.                                                                                                                                                                                                               | No       |
+| encodedContentSearch             | Searches the encoded content of messages.                                                                                                                                                                                                                   | No       |
+| sentContentSearch                | Searches the sent content of messages.                                                                                                                                                                                                                      | No       |
+| responseContentSearch            | Searches the response content of messages.                                                                                                                                                                                                                  | No       |
+| responseTransformedContentSearch | Searches the response transformed content of messages.                                                                                                                                                                                                      | No       |
+| processedResponseContentSearch   | Searches the processed response content of messages.                                                                                                                                                                                                        | No       |
+| connectorMapContentSearch        | Searches the connector map content of messages.                                                                                                                                                                                                             | No       |
+| channelMapContentSearch          | Searches the channel map content of messages.                                                                                                                                                                                                               | No       |
+| sourceMapContentSearch           | Searches the source map content of messages.                                                                                                                                                                                                                | No       |
+| responseMapContentSearch         | Searches the response map content of messages.                                                                                                                                                                                                              | No       |
+| processingErrorContentSearch     | Searches the processing error content of messages.                                                                                                                                                                                                          | No       |
+| postprocessorErrorContentSearch  | Searches the postprocessor error content of messages.                                                                                                                                                                                                       | No       |
+| responseErrorContentSearch       | Searches the response error content of messages.                                                                                                                                                                                                            | No       |
+| metaDataSearch                   | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No       |
+| metaDataCaseInsensitiveSearch    | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value.                                                                                                                                          | No       |
+| textSearchMetaDataColumn         | When using a text search, these custom metadata columns will also be searched.                                                                                                                                                                              | No       |
+| minSendAttempts                  | The minimum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| maxSendAttempts                  | The maximum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| attachment                       | If true, only messages with attachments are included in the results.                                                                                                                                                                                        | No       |
+| error                            | If true, only messages with errors are included in the results.                                                                                                                                                                                             | No       |
+| replace                          | If true, the message will overwrite the current one                                                                                                                                                                                                         | No       |
+| filterDestinations               | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through.                                                                                                                                            | No       |
+| metaDataId                       | Indicates which destinations to send the message to.                                                                                                                                                                                                        | No       |
 
 ---
 
-#### reprocessMessage(replace,filterDestinations,metaDataId,channelId,messageId)
+##### reprocessMessage(replace,filterDestinations,metaDataId,channelId,messageId)
 
 Summary: Reprocesses and overwrites a single message.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| messageId | The ID of the message. | Yes |
-
-| replace | If true, the message will overwrite the current one | No |
-
-| filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No |
-
-| metaDataId | Indicates which destinations to send the message to. | No |
+| Name               | Description                                                                                                      | Required | Properties |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId          | The ID of the channel.                                                                                           | Yes      |
+| messageId          | The ID of the message.                                                                                           | Yes      |
+| replace            | If true, the message will overwrite the current one                                                              | No       |
+| filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No       |
+| metaDataId         | Indicates which destinations to send the message to.                                                             | No       |
 
 ---
 
-#### getMessageContent(metaDataId,channelId,messageId)
+##### getMessageContent(metaDataId,channelId,messageId)
 
 Summary: Retrieve a message by ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| messageId | The ID of the message. | Yes |
-
-| metaDataId | The metadata IDs of the connectors. | No |
+| Name       | Description                         | Required | Properties |
+| ---------- | ----------------------------------- | -------- | ---------- |
+| channelId  | The ID of the channel.              | Yes      |
+| messageId  | The ID of the message.              | Yes      |
+| metaDataId | The metadata IDs of the connectors. | No       |
 
 ---
 
-#### removeMessage(metaDataId,patient_id,channelId,messageId)
+##### removeMessage(metaDataId,patient_id,channelId,messageId)
 
 Summary: Remove a single message by ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| messageId | The ID of the message. | Yes |
-
-| metaDataId | If present, only the specific connector message will be removed. If the metadata ID is 0, the entire message will be removed. | No |
-
-| patient_id | The patient ID of the channel message. | No |
+| Name       | Description                                                                                                                   | Required | Properties |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId  | The ID of the channel.                                                                                                        | Yes      |
+| messageId  | The ID of the message.                                                                                                        | Yes      |
+| metaDataId | If present, only the specific connector message will be removed. If the metadata ID is 0, the entire message will be removed. | No       |
+| patient_id | The patient ID of the channel message.                                                                                        | No       |
 
 ---
 
-#### removeAllMessagesPost(restartRunningChannels,clearStatistics)
+##### removeAllMessagesPost(restartRunningChannels,clearStatistics)
 
-Summary: Removes all messages for multiple specified channels. This is a POST request alternative to DELETE /_removeAllMessages that may be used when there are too many channel IDs to include in the query parameters.
+Summary: Removes all messages for multiple specified channels. This is a POST request alternative to DELETE /\_removeAllMessages that may be used when there are too many channel IDs to include in the query parameters.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| restartRunningChannels | If true, currently running channels will be stopped and restarted as part of the remove process. Otherwise, currently running channels will not be included. | No |
-
-| clearStatistics | If true, message statistics will also be cleared. | No |
+| Name                   | Description                                                                                                                                                  | Required | Properties |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ---------- |
+| restartRunningChannels | If true, currently running channels will be stopped and restarted as part of the remove process. Otherwise, currently running channels will not be included. | No       |
+| clearStatistics        | If true, message statistics will also be cleared.                                                                                                            | No       |
 
 ---
 
-#### importMessage(channelId,message)
+##### importMessage(channelId,message)
 
 Summary: Imports a Message object into a channel. The message will not actually be processed through the channel, only imported.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| message | object | Yes | {messageId,serverId,channelId,receivedDate,processed,originalId,importId,importChannelId,attachments,connectorMessages,mergedConnectorMessage} |
+| Name    | Description | Required | Properties                                                                                                                                     |
+| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| message | object      | Yes      | {messageId,serverId,channelId,receivedDate,processed,originalId,importId,importChannelId,attachments,connectorMessages,mergedConnectorMessage} |
 
 ---
 
-#### importMessagesServer(includeSubfolders,channelId,textData)
+##### importMessagesServer(includeSubfolders,channelId,textData)
 
 Summary: Imports messages into a channel from a path accessible by the server. The messages will not actually be processed through the channel, only imported.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| includeSubfolders | If true, sub-folders will also be scanned recursively for messages. | No |
+| Name              | Description                                                         | Required | Properties |
+| ----------------- | ------------------------------------------------------------------- | -------- | ---------- |
+| channelId         | The ID of the channel.                                              | Yes      |
+| includeSubfolders | If true, sub-folders will also be scanned recursively for messages. | No       |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| textData | string | Yes |  |
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
-#### exportMessagesServer(pageSize,channelId)
+##### exportMessagesServer(pageSize,channelId)
 
 Summary: Exports messages into a specific directory path accessible by the server. ("Try it out" doesn't work for this endpoint, but the descriptions are valid. Please use another tool for testing.)
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| pageSize | The maximum number of messages that will be queried at a time. | No |
+| Name      | Description                                                    | Required | Properties |
+| --------- | -------------------------------------------------------------- | -------- | ---------- |
+| channelId | The ID of the channel.                                         | Yes      |
+| pageSize  | The maximum number of messages that will be queried at a time. | No       |
 
 ---
 
-#### exportMessagesServer_1( {minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,pageSize,contentType,destinationContent,encrypt,includeAttachments,baseFolder,rootFolder,filePattern,archiveFileName,archiveFormat,compressFormat,password,encryptionType,channelId})
+##### exportMessagesServer_1({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,pageSize,contentType,destinationContent,encrypt,includeAttachments,baseFolder,rootFolder,filePattern,archiveFileName,archiveFormat,compressFormat,password,encryptionType,channelId})
 
 Summary: Exports messages into a specific directory path accessible by the server.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| minMessageId | The minimum message ID to query. | No |
-
-| maxMessageId | The maximum message ID to query. | No |
-
-| minOriginalId | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| maxOriginalId | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID. | No |
-
-| minImportId | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| maxImportId | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value. | No |
-
-| startDate | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700 | No |
-
-| endDate | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700 | No |
-
-| textSearch | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable. | No |
-
-| textSearchRegex | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases. | No |
-
-| status | Determines which message statuses to query by. | No |
-
-| includedMetaDataId | If present, only connector metadata IDs in this list will be queried. | No |
-
-| excludedMetaDataId | If present, connector metadata IDs in this list will not be queried. | No |
-
-| serverId | The server ID associated with messages. | No |
-
-| rawContentSearch | Searches the raw content of messages. | No |
-
-| processedRawContentSearch | Searches the processed raw content of messages. | No |
-
-| transformedContentSearch | Searches the transformed content of messages. | No |
-
-| encodedContentSearch | Searches the encoded content of messages. | No |
-
-| sentContentSearch | Searches the sent content of messages. | No |
-
-| responseContentSearch | Searches the response content of messages. | No |
-
-| responseTransformedContentSearch | Searches the response transformed content of messages. | No |
-
-| processedResponseContentSearch | Searches the processed response content of messages. | No |
-
-| connectorMapContentSearch | Searches the connector map content of messages. | No |
-
-| channelMapContentSearch | Searches the channel map content of messages. | No |
-
-| sourceMapContentSearch | Searches the source map content of messages. | No |
-
-| responseMapContentSearch | Searches the response map content of messages. | No |
-
-| processingErrorContentSearch | Searches the processing error content of messages. | No |
-
-| postprocessorErrorContentSearch | Searches the postprocessor error content of messages. | No |
-
-| responseErrorContentSearch | Searches the response error content of messages. | No |
-
-| metaDataSearch | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No |
-
-| metaDataCaseInsensitiveSearch | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value. | No |
-
-| textSearchMetaDataColumn | When using a text search, these custom metadata columns will also be searched. | No |
-
-| minSendAttempts | The minimum number of send attempts for connector messages. | No |
-
-| maxSendAttempts | The maximum number of send attempts for connector messages. | No |
-
-| attachment | If true, only messages with attachments are included in the results. | No |
-
-| error | If true, only messages with errors are included in the results. | No |
-
-| pageSize | The maximum number of messages that will be queried at a time. | No |
-
-| contentType | The ContentType that will be extracted from the message for writing. If null or not provided, the entire message will be written in serialized format. | No |
-
-| destinationContent | If true, the content to write will be extracted from the destination message(s), rather than the source message. | No |
-
-| encrypt | If true, message content will be encrypted before writing. | No |
-
-| includeAttachments | Determines whether attachments will be included with messages. | No |
-
-| baseFolder | The base directory to use when resolving relative paths in the root folder. | No |
-
-| rootFolder | The root folder to contain the written messages/sub-folders. | No |
-
-| filePattern | A string defining the folder/filename(s) for writing messages. It may contain variables to be replaced. | No |
-
-| archiveFileName | The file name to use for archive exports. | No |
-
-| archiveFormat | The archiver format to use to archive messages/folders that are written to the root folder. Valid values: zip, tar | No |
-
-| compressFormat | The compressor format to use to compress the archive file. Only valid when using the TAR archive format. Valid values: gz, bzip2 | No |
-
-| password | The password used to protect the archive file. Only valid when using the ZIP archive format. | No |
-
-| encryptionType | The algorithm used to encrypt the password-protected archive file. Only valid when using the ZIP archive format. Valid values: STANDARD, AES128, AES256 | No |
+| Name                             | Description                                                                                                                                                                                                                                                 | Required | Properties |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId                        | The ID of the channel.                                                                                                                                                                                                                                      | Yes      |
+| minMessageId                     | The minimum message ID to query.                                                                                                                                                                                                                            | No       |
+| maxMessageId                     | The maximum message ID to query.                                                                                                                                                                                                                            | No       |
+| minOriginalId                    | The minimum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| maxOriginalId                    | The maximum original message ID to query. Messages that have been reprocessed will retain their original message ID.                                                                                                                                        | No       |
+| minImportId                      | The minimum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| maxImportId                      | The maximum import message ID to query. Messages that have been imported will retain their original message ID under this value.                                                                                                                            | No       |
+| startDate                        | The earliest original received date to query by. Example: 1985-10-26T09:00:00.000-0700                                                                                                                                                                      | No       |
+| endDate                          | The latest original received date to query by. Example: 2015-10-21T07:28:00.000-0700                                                                                                                                                                        | No       |
+| textSearch                       | Searches all message content for this string. This process could take a long time depending on the amount of message content currently stored. Any message content that was encrypted by this channel will not be searchable.                               | No       |
+| textSearchRegex                  | If true, text search input will be considered a regular expression pattern to be matched. Only supported by PostgreSQL, MySQL and Oracle databases.                                                                                                         | No       |
+| status                           | Determines which message statuses to query by.                                                                                                                                                                                                              | No       |
+| includedMetaDataId               | If present, only connector metadata IDs in this list will be queried.                                                                                                                                                                                       | No       |
+| excludedMetaDataId               | If present, connector metadata IDs in this list will not be queried.                                                                                                                                                                                        | No       |
+| serverId                         | The server ID associated with messages.                                                                                                                                                                                                                     | No       |
+| rawContentSearch                 | Searches the raw content of messages.                                                                                                                                                                                                                       | No       |
+| processedRawContentSearch        | Searches the processed raw content of messages.                                                                                                                                                                                                             | No       |
+| transformedContentSearch         | Searches the transformed content of messages.                                                                                                                                                                                                               | No       |
+| encodedContentSearch             | Searches the encoded content of messages.                                                                                                                                                                                                                   | No       |
+| sentContentSearch                | Searches the sent content of messages.                                                                                                                                                                                                                      | No       |
+| responseContentSearch            | Searches the response content of messages.                                                                                                                                                                                                                  | No       |
+| responseTransformedContentSearch | Searches the response transformed content of messages.                                                                                                                                                                                                      | No       |
+| processedResponseContentSearch   | Searches the processed response content of messages.                                                                                                                                                                                                        | No       |
+| connectorMapContentSearch        | Searches the connector map content of messages.                                                                                                                                                                                                             | No       |
+| channelMapContentSearch          | Searches the channel map content of messages.                                                                                                                                                                                                               | No       |
+| sourceMapContentSearch           | Searches the source map content of messages.                                                                                                                                                                                                                | No       |
+| responseMapContentSearch         | Searches the response map content of messages.                                                                                                                                                                                                              | No       |
+| processingErrorContentSearch     | Searches the processing error content of messages.                                                                                                                                                                                                          | No       |
+| postprocessorErrorContentSearch  | Searches the postprocessor error content of messages.                                                                                                                                                                                                       | No       |
+| responseErrorContentSearch       | Searches the response error content of messages.                                                                                                                                                                                                            | No       |
+| metaDataSearch                   | Searches a custom metadata column. Value should be in the form: COLUMN_NAME &lt;operator&gt; value, where operator is one of the following: =, !=, <, <=, >, >=, CONTAINS, DOES NOT CONTAIN, STARTS WITH, DOES NOT START WITH, ENDS WITH, DOES NOT END WITH | No       |
+| metaDataCaseInsensitiveSearch    | Searches a custom metadata column, ignoring case. Value should be in the form: COLUMN_NAME &lt;operator&gt; value.                                                                                                                                          | No       |
+| textSearchMetaDataColumn         | When using a text search, these custom metadata columns will also be searched.                                                                                                                                                                              | No       |
+| minSendAttempts                  | The minimum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| maxSendAttempts                  | The maximum number of send attempts for connector messages.                                                                                                                                                                                                 | No       |
+| attachment                       | If true, only messages with attachments are included in the results.                                                                                                                                                                                        | No       |
+| error                            | If true, only messages with errors are included in the results.                                                                                                                                                                                             | No       |
+| pageSize                         | The maximum number of messages that will be queried at a time.                                                                                                                                                                                              | No       |
+| contentType                      | The ContentType that will be extracted from the message for writing. If null or not provided, the entire message will be written in serialized format.                                                                                                      | No       |
+| destinationContent               | If true, the content to write will be extracted from the destination message(s), rather than the source message.                                                                                                                                            | No       |
+| encrypt                          | If true, message content will be encrypted before writing.                                                                                                                                                                                                  | No       |
+| includeAttachments               | Determines whether attachments will be included with messages.                                                                                                                                                                                              | No       |
+| baseFolder                       | The base directory to use when resolving relative paths in the root folder.                                                                                                                                                                                 | No       |
+| rootFolder                       | The root folder to contain the written messages/sub-folders.                                                                                                                                                                                                | No       |
+| filePattern                      | A string defining the folder/filename(s) for writing messages. It may contain variables to be replaced.                                                                                                                                                     | No       |
+| archiveFileName                  | The file name to use for archive exports.                                                                                                                                                                                                                   | No       |
+| archiveFormat                    | The archiver format to use to archive messages/folders that are written to the root folder. Valid values: zip, tar                                                                                                                                          | No       |
+| compressFormat                   | The compressor format to use to compress the archive file. Only valid when using the TAR archive format. Valid values: gz, bzip2                                                                                                                            | No       |
+| password                         | The password used to protect the archive file. Only valid when using the ZIP archive format.                                                                                                                                                                | No       |
+| encryptionType                   | The algorithm used to encrypt the password-protected archive file. Only valid when using the ZIP archive format. Valid values: STANDARD, AES128, AES256                                                                                                     | No       |
 
 ---
 
-#### exportAttachmentServer(binary,channelId,messageId,attachmentId)
+##### exportAttachmentServer(binary,channelId,messageId,attachmentId)
 
 Summary: Exports a message attachment into a specific file path accessible by the server.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| messageId | The ID of the message. | Yes |
-
-| attachmentId | The ID of the attachment. | Yes |
-
-| binary | Indicates that the attachment is binary and should be Base64 decoded before writing to file. | No |
+| Name         | Description                                                                                  | Required | Properties |
+| ------------ | -------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId    | The ID of the channel.                                                                       | Yes      |
+| messageId    | The ID of the message.                                                                       | Yes      |
+| attachmentId | The ID of the attachment.                                                                    | Yes      |
+| binary       | Indicates that the attachment is binary and should be Base64 decoded before writing to file. | No       |
 
 ---
 
-#### auditAccessedPHIMessage()
+##### auditAccessedPHIMessage()
 
 Summary: Audit that the user has accessed a channel message that contains PHI.
 
 ---
 
-#### auditQueriedPHIMessage()
+##### auditQueriedPHIMessage()
 
 Summary: Audit that the user has queried the channel messages panel that contains PHI.
 
 ---
 
-#### removeMessages_1(channelId,messageFilter)
+##### removeMessages_1(channelId,messageFilter)
 
 Summary: Remove messages by specific filter criteria.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| messageFilter | object | Yes | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
 
 ---
 
-#### removeAllMessages(restartRunningChannels,clearStatistics,channelId)
+##### removeAllMessages(restartRunningChannels,clearStatistics,channelId)
 
 Summary: Removes all messages for the specified channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| restartRunningChannels | If true, currently running channels will be stopped and restarted as part of the remove process. Otherwise, currently running channels will not be included. | No |
-
-| clearStatistics | If true, message statistics will also be cleared. | No |
+| Name                   | Description                                                                                                                                                  | Required | Properties |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ---------- |
+| channelId              | The ID of the channel.                                                                                                                                       | Yes      |
+| restartRunningChannels | If true, currently running channels will be stopped and restarted as part of the remove process. Otherwise, currently running channels will not be included. | No       |
+| clearStatistics        | If true, message statistics will also be cleared.                                                                                                            | No       |
 
 ---
 
-#### removeAllMessages_1(channelId,restartRunningChannels,clearStatistics)
+##### removeAllMessages_1(channelId,restartRunningChannels,clearStatistics)
 
 Summary: Removes all messages for multiple specified channels.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The IDs of the channels. | Yes |
-
-| restartRunningChannels | If true, currently running channels will be stopped and restarted as part of the remove process. Otherwise, currently running channels will not be included. | No |
-
-| clearStatistics | If true, message statistics will also be cleared. | No |
+| Name                   | Description                                                                                                                                                  | Required | Properties |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ---------- |
+| channelId              | The IDs of the channels.                                                                                                                                     | Yes      |
+| restartRunningChannels | If true, currently running channels will be stopped and restarted as part of the remove process. Otherwise, currently running channels will not be included. | No       |
+| clearStatistics        | If true, message statistics will also be cleared.                                                                                                            | No       |
 
 ---
 
-#### getMaxMessageId(channelId)
+##### getMaxMessageId(channelId)
 
 Summary: Returns the maximum message ID for the given channel.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
 
 ---
 
-#### getAttachment(channelId,messageId,attachmentId)
+##### getAttachment(channelId,messageId,attachmentId)
 
 Summary: Retrieve a message attachment by ID.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| channelId | The ID of the channel. | Yes |
-
-| messageId | The ID of the message. | Yes |
-
-| attachmentId | The ID of the attachment. | Yes |
+| Name         | Description               | Required | Properties |
+| ------------ | ------------------------- | -------- | ---------- |
+| channelId    | The ID of the channel.    | Yes      |
+| messageId    | The ID of the message.    | Yes      |
+| attachmentId | The ID of the attachment. | Yes      |
 
 ---
 
 ### System Information and Statistics
 
-#### getStats()
+##### getStats()
 
 Summary: Returns statistics for the underlying system.
 
 ---
 
-#### getInfo()
+##### getInfo()
 
 Summary: Returns information about the underlying system.
 
@@ -2672,7 +2353,7 @@ Summary: Returns information about the underlying system.
 
 ### Usage Data
 
-#### getUsageData()
+##### getUsageData()
 
 Summary: Generates usage document using data from both the client and server.
 
@@ -2680,201 +2361,197 @@ Summary: Generates usage document using data from both the client and server.
 
 ### Users
 
-#### login(password,username)
+##### login(password,username)
 
 Summary: Logs in to the Mirth Connect server using the specified name and password.
 
 ---
 
-#### logout()
+##### logout()
 
 Summary: Logs out of the server.
 
 ---
 
-#### getCurrentUser()
+##### getCurrentUser()
 
 Summary: Returns the current logged in user.
 
 ---
 
-#### setUserNotificationAcknowledged(userId)
+##### setUserNotificationAcknowledged(userId)
 
 Summary: User notification has been acknowledged.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user. | Yes |
+| Name   | Description                | Required | Properties |
+| ------ | -------------------------- | -------- | ---------- |
+| userId | The unique ID of the user. | Yes      |
 
 ---
 
-#### checkUserPassword(textData)
+##### checkUserPassword(textData)
 
 Summary: Checks the password against the configured password policies.
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| textData | string | Yes |  |
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
-#### updateUserPassword(userId,textData)
+##### updateUserPassword(userId,textData)
 
 Summary: Updates a user's password.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user to update the password for. | Yes |
+| Name   | Description                                           | Required | Properties |
+| ------ | ----------------------------------------------------- | -------- | ---------- |
+| userId | The unique ID of the user to update the password for. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| textData | string | Yes |  |
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
-#### inactivityLogout()
+##### inactivityLogout()
 
 Summary: User has been inactive and automatically logged out.
 
 ---
 
-#### getAllUsers()
+##### getAllUsers()
 
 Summary: Returns a List of all users.
 
 ---
 
-#### createUser(user)
+##### createUser(user)
 
 Summary: Creates a new user.
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| user | object | Yes | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
+| Name | Description | Required | Properties                                                                                                                                                                         |
+| ---- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user | object      | Yes      | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 
 ---
 
-#### getUser(userIdOrName)
+##### getUser(userIdOrName)
 
 Summary: Returns a specific user by ID or username.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userIdOrName | The unique ID or username of the user to retrieve. | Yes |
+| Name         | Description                                        | Required | Properties |
+| ------------ | -------------------------------------------------- | -------- | ---------- |
+| userIdOrName | The unique ID or username of the user to retrieve. | Yes      |
 
 ---
 
-#### updateUser(userId,user)
+##### updateUser(userId,user)
 
 Summary: Updates a specified user.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user to update. | Yes |
+| Name   | Description                          | Required | Properties |
+| ------ | ------------------------------------ | -------- | ---------- |
+| userId | The unique ID of the user to update. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| user | object | Yes | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
+| Name | Description | Required | Properties                                                                                                                                                                         |
+| ---- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user | object      | Yes      | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 
 ---
 
-#### removeUser(userId)
+##### removeUser(userId)
 
 Summary: Removes a specific user.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user to remove. | Yes |
+| Name   | Description                          | Required | Properties |
+| ------ | ------------------------------------ | -------- | ---------- |
+| userId | The unique ID of the user to remove. | Yes      |
 
 ---
 
-#### isUserLoggedIn(userId)
+##### isUserLoggedIn(userId)
 
 Summary: Returns a true if the specified user is logged in to the server.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user. | Yes |
+| Name   | Description                | Required | Properties |
+| ------ | -------------------------- | -------- | ---------- |
+| userId | The unique ID of the user. | Yes      |
 
 ---
 
-#### getUserPreferences(name,userId)
+##### getUserPreferences(name,userId)
 
 Summary: Returns a Map of user preferences, optionally filtered by a set of property names.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user. | Yes |
-
-| name | An optional set of property names to filter by. | No |
+| Name   | Description                                     | Required | Properties |
+| ------ | ----------------------------------------------- | -------- | ---------- |
+| userId | The unique ID of the user.                      | Yes      |
+| name   | An optional set of property names to filter by. | No       |
 
 ---
 
-#### setUserPreferences(userId)
+##### setUserPreferences(userId)
 
 Summary: Updates multiple user preferences.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user. | Yes |
+| Name   | Description                | Required | Properties |
+| ------ | -------------------------- | -------- | ---------- |
+| userId | The unique ID of the user. | Yes      |
 
 ---
 
-#### getUserPreference(userId,name)
+##### getUserPreference(userId,name)
 
 Summary: Returns a specific user preference.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user. | Yes |
-
-| name | The name of the user property to retrieve. | Yes |
+| Name   | Description                                | Required | Properties |
+| ------ | ------------------------------------------ | -------- | ---------- |
+| userId | The unique ID of the user.                 | Yes      |
+| name   | The name of the user property to retrieve. | Yes      |
 
 ---
 
-#### setUserPreference(userId,name,textData)
+##### setUserPreference(userId,name,textData)
 
 Summary: Updates a user preference.
 
 Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| userId | The unique ID of the user. | Yes |
-
-| name | The name of the user property to update. | Yes |
+| Name   | Description                              | Required | Properties |
+| ------ | ---------------------------------------- | -------- | ---------- |
+| userId | The unique ID of the user.               | Yes      |
+| name   | The name of the user property to update. | Yes      |
 
 Object Parameters:
 
-| Name | Description | Required | Properties |
-| ------ | ------ | ------ | ------ |
-| textData | string | Yes |  |
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
-

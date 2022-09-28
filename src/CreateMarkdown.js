@@ -60,9 +60,9 @@ async function CreateMarkdown(paths, schemas) {
 
       const allParams = [...new Set(parametersWithoutDefaults.concat(missingParamsWithoutDefaults, schemaParams))];
       const prmsForMarkdown = `${
-        allParams.length !== 0 ? `${allParams.length <= 5 ? `${allParams.join(',')}` : ` {${allParams.join(',')}}`}` : ''
+        allParams.length !== 0 ? `${allParams.length <= 5 ? `${allParams.join(',')}` : `{${allParams.join(',')}}`}` : ''
       }`;
-      markdown += `#### ${key}(${prmsForMarkdown})\r\n\r\n`;
+      markdown += `##### ${key}(${prmsForMarkdown})\r\n\r\n`;
       markdown += `Summary: ${item.summary}\r\n\r\n`;
 
       if (item.parameters) {
@@ -72,22 +72,24 @@ async function CreateMarkdown(paths, schemas) {
           `| ------ | ------ | ------ | ------ |\r\n`,
         ].join('\r\n');
         item.parameters.forEach(function (params) {
-          markdown += `| ${params.name} | ${params.description} | ${params.required ? 'Yes' : 'No'} |\r\n\r\n`;
+          markdown += `| ${params.name} | ${params.description} | ${params.required ? 'Yes' : 'No'} |\r\n`;
         });
       }
 
-      //   console.log(item.parameters.length);
+      //   if (key === 'getMessages_1') {
+      //     console.log(allParams);
+      //   }
 
       if (schemaParamsObject.length) {
+        markdown += [
+          `Object Parameters:\r\n`,
+          `| Name | Description | Required | Properties |`,
+          `| ------ | ------ | ------ | ------ |\r\n`,
+        ].join('\r\n');
         schemaParamsObject.forEach((param, index) => {
-          markdown += [
-            `Object Parameters:\r\n`,
-            `| Name | Description | Required | Properties |`,
-            `| ------ | ------ | ------ | ------ |\r\n`,
-          ].join('\r\n');
           markdown += `| ${schemaParams[index]} | ${param.type} | Yes | ${
             param.properties !== undefined ? `{${Object.keys(param.properties)}}` : ''
-          } |\r\n\r\n`;
+          } |\r\n`;
         });
       }
 
