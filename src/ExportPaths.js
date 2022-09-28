@@ -11,7 +11,7 @@ async function ExportPaths(instance, url) {
   const folderNameForFunctons = __dirname + `/functions`;
   const fileNameConnect = __dirname + `/MirthConnect.js`;
 
-  const { paths, components } = await instance
+  const { paths, components, info } = await instance
     .get(url + `/openapi.json`, {
       headers: headers,
     })
@@ -24,7 +24,13 @@ async function ExportPaths(instance, url) {
 
   const data = await CreateJs();
 
-  await CreateMarkdown(paths, components.schemas);
+  try {
+    if (!fs.existsSync(__dirname + `/README-Mirth-${info.version}.md`)) {
+      await CreateMarkdown(paths, components.schemas, info);
+    }
+  } catch (err) {
+    console.error(err);
+  }
 
   try {
     if (!fs.existsSync(folderNameForFunctons)) {

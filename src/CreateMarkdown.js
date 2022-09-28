@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-async function CreateMarkdown(paths, schemas) {
+async function CreateMarkdown(paths, schemas, info) {
   let tags = new Map();
   for (const path in paths) {
     for (const item in paths[path]) {
@@ -11,8 +11,8 @@ async function CreateMarkdown(paths, schemas) {
     }
   }
   let markdown = '';
-  tags.forEach((tag, key) => {
-    markdown += [`### ${key}\r\n\r\n`].join('\r\n');
+  tags.forEach((tag, banana) => {
+    markdown += [`### ${banana}\r\n\r\n`].join('\r\n');
     tag.forEach((item, key) => {
       let parametersWithoutDefaults = [];
       let missingParamsWithoutDefaults = [];
@@ -62,7 +62,12 @@ async function CreateMarkdown(paths, schemas) {
       const prmsForMarkdown = `${
         allParams.length !== 0 ? `${allParams.length <= 5 ? `${allParams.join(',')}` : `{${allParams.join(',')}}`}` : ''
       }`;
-      markdown += `##### ${key}(${prmsForMarkdown})\r\n\r\n`;
+
+      if (key === 'getMessages_1') {
+        key = 'getMessagesByChannelId';
+      }
+
+      markdown += `#### ${key}(${prmsForMarkdown})\r\n\r\n`;
       markdown += `Summary: ${item.summary}\r\n\r\n`;
 
       if (item.parameters) {
@@ -75,10 +80,6 @@ async function CreateMarkdown(paths, schemas) {
           markdown += `| ${params.name} | ${params.description} | ${params.required ? 'Yes' : 'No'} |\r\n`;
         });
       }
-
-      //   if (key === 'getMessages_1') {
-      //     console.log(allParams);
-      //   }
 
       if (schemaParamsObject.length) {
         markdown += [
@@ -97,7 +98,7 @@ async function CreateMarkdown(paths, schemas) {
     });
   });
   try {
-    fs.writeFileSync('README.md', markdown, function (err) {
+    fs.writeFileSync(__dirname + `/README-Mirth-${info.version}.md`, markdown, function (err) {
       if (err) return console.log(err);
     });
   } catch (error) {
