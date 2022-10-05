@@ -130,6 +130,13 @@ async function CreateFunction(url, func, context) {
       const headers =
         typeof func[f].requestBody !== 'undefined' ? checkHeaders(func[f].requestBody) : { 'Content-Type': 'application/json' };
 
+      const prepareSchemaParams = param => {
+        if (param === 'textData') {
+          return 'textData,';
+        }
+        return 'postData,';
+      };
+
       const backTick = '`';
       let fetchData;
       switch (f) {
@@ -177,7 +184,7 @@ async function CreateFunction(url, func, context) {
             let data;
               await instance
                 .post(URL + ${backTick + createUrlString(url) + backTick}, ${queryParams ? 'urlString, ' : ''}${
-            schemaParams.length !== 0 ? `postData,` : ''
+            schemaParams.length !== 0 ? prepareSchemaParams(schemaParams[0]) : ''
           } {
                   headers: headers,
                 })

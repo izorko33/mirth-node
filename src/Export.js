@@ -71,7 +71,7 @@ async function Export(context) {
     }
   };
 
-  context.exportChannels = async () => {
+  context.syncDown = async () => {
     const { channel } = await context.getChannels();
     const { codeTemplate } = await context.getCodeTemplates();
     const exportsFolder = './exports';
@@ -84,6 +84,10 @@ async function Export(context) {
 
     const createExports = item => {
       const folderNameForEachChannel = folderNameForChannels + item.name;
+
+      if (fs.existsSync(folderNameForEachChannel)) {
+        fs.rmdirSync(folderNameForEachChannel, { recursive: true });
+      }
 
       if (!fs.existsSync(folderNameForEachChannel)) {
         fs.mkdirSync(folderNameForEachChannel);
@@ -130,9 +134,15 @@ async function Export(context) {
     } else {
       createExports(channel);
     }
+
     if (Array.isArray(codeTemplate)) {
       codeTemplate.forEach(item => {
         const folderNameForEachTemplate = folderNameForCodeTemplates + item.name;
+
+        if (fs.existsSync(folderNameForEachTemplate)) {
+          fs.rmdirSync(folderNameForEachTemplate, { recursive: true });
+        }
+
         if (!fs.existsSync(folderNameForEachTemplate)) {
           fs.mkdirSync(folderNameForEachTemplate);
         }
@@ -145,25 +155,35 @@ async function Export(context) {
         }
       });
     }
+    console.log(`Succesfully donwloaded ${channel.length} channels and ${codeTemplate.length} code templates.`);
   };
 
   context.updateChannelById = async channelId => {
     try {
       const channel = await context.getChannel(channelId);
       const fileNameForDestnation = './exports/channels/' + channel.name + '/Destination.js';
+      const fileNameForElements = './exports/channels/' + channel.name + '/Elements.json';
       let destination;
+      let elements;
 
       try {
         const data = fs.readFileSync(fileNameForDestnation, 'utf8');
         destination = data;
+        channel.destinationConnectors.connector.properties.script = destination;
       } catch (err) {
-        console.error(err);
+        console.error(`No Destination for ${channel.name}.`);
       }
 
-      channel.destinationConnectors.connector.properties.script = destination;
+      try {
+        const dataForElements = fs.readFileSync(fileNameForElements, 'utf8');
+        elements = JSON.parse(dataForElements);
+        channel.sourceConnector.transformer.elements = elements;
+      } catch (err) {
+        console.error(`No Tranformer elements for ${channel.name}.`);
+      }
 
       await context.updateChannel(channelId, true, channel);
-      console.log('Success for ' + channel.name);
+      console.log('Success for ' + channel.name + ' channel.');
     } catch (error) {
       console.log('No channel by that ID!');
       console.log(error);
@@ -185,11 +205,36 @@ async function Export(context) {
           codeTemplateJson.properties.code = code;
 
           context.updateCodeTemplate(item.id, true, codeTemplateJson);
-          console.log('Success for ' + item.name);
+          console.log('Success for ' + item.name + ' code template.');
         } catch (error) {
           console.log(error);
         }
       });
+    }
+  };
+
+  context.syncUp = async () => {
+    const { channel } = await context.getChannels();
+    await context.updateAllCodeTemplates();
+    if (Array.isArray(channel)) {
+      channel.forEach(async item => {
+        await context.updateChannelById(item.id);
+      });
+    } else {
+      await context.updateChannelById(channel.id);
+    }
+  };
+
+  context.sendMessagesToChannel = async (fileName, channelId) => {
+    const dataName = './exports/messages/' + fileName;
+    try {
+      const dataJson = fs.readFileSync(dataName);
+      const messagesJson = JSON.parse(dataJson);
+      messagesJson.forEach(async item => {
+        await context.processMessage({ channelId: channelId, textData: item.messageRaw });
+      });
+    } catch (error) {
+      console.log('No file with that name.');
     }
   };
 

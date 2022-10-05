@@ -102,9 +102,15 @@ Parameters:
 
 ---
 
-#### exportChannels()
+#### syncDown()
 
 Summary: Export all channels and code templates in exports folder.
+
+---
+
+#### syncUp()
+
+Summary: Import all channels and code templates from exports folder.
 
 ---
 
@@ -117,6 +123,19 @@ Parameters:
 | Name      | Description | Required | Properties |
 | --------- | ----------- | -------- | ---------- |
 | channelId | Channel id  | Yes      |
+
+---
+
+#### sendMessagesToChannel(fileName, channelId)
+
+Summary: Send messages to specific channel from specific file.
+
+Parameters:
+
+| Name      | Description                            | Required | Properties |
+| --------- | -------------------------------------- | -------- | ---------- |
+| channelId | Channel id                             | Yes      |
+| fileName  | Filename from exports/messages folder. | Yes      |
 
 ---
 
