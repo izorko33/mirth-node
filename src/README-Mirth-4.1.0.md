@@ -30,12 +30,6 @@ Parameters:
 | channelId   | The ID of the channel.   | Yes      |
 | channelName | The name of the channel. | Yes      |
 
-Object Parameters:
-
-| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                            |
-| ------------------------ | ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| fileDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,scheme,schemeProperties,host,outputPattern,anonymous,username,password,timeout,keepConnectionOpen,maxIdleTime,secure,passive,validateConnection,outputAppend,errorOnExists,temporary,binary,charsetEncoding,template,name,protocol,purgedProperties} |
-
 ---
 
 #### testRead(channelId,channelName,fileReceiverProperties)
@@ -49,12 +43,6 @@ Parameters:
 | channelId   | The ID of the channel.   | Yes      |
 | channelName | The name of the channel. | Yes      |
 
-Object Parameters:
-
-| Name                   | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ---------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| fileReceiverProperties | object      | Yes      | {pluginProperties,pollConnectorProperties,sourceConnectorProperties,scheme,schemeProperties,host,fileFilter,regex,directoryRecursion,ignoreDot,anonymous,username,password,timeout,secure,passive,validateConnection,afterProcessingAction,moveToDirectory,moveToFileName,errorReadingAction,errorResponseAction,errorMoveToDirectory,errorMoveToFileName,checkFileAge,fileAge,fileSizeMinimum,fileSizeMaximum,ignoreFileSizeMaximum,sortBy,binary,charsetEncoding,name,protocol,purgedProperties} |
-
 ---
 
 #### testConnection(channelId,channelName,httpDispatcherProperties)
@@ -67,12 +55,6 @@ Parameters:
 | ----------- | ------------------------ | -------- | ---------- |
 | channelId   | The ID of the channel.   | Yes      |
 | channelName | The name of the channel. | Yes      |
-
-Object Parameters:
-
-| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ------------------------ | ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| httpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,host,useProxyServer,proxyAddress,proxyPort,method,useHeadersVariable,headersVariable,useParametersVariable,parametersVariable,responseXmlBody,responseParseMultipart,responseIncludeMetadata,responseBinaryMimeTypes,responseBinaryMimeTypesRegex,multipart,useAuthentication,authenticationType,usePreemptiveAuthentication,username,password,content,contentType,dataTypeBinary,charset,socketTimeout,name,protocol,parametersMap,headersMap,purgedProperties} |
 
 ---
 
@@ -93,6 +75,12 @@ Parameters:
 | tableNamePattern | If specified, filters by table name. Wildcards (\* or %) are allowed.          | No       |
 | selectLimit      | A simple query to use to retrieve database metadata information.               | No       |
 | resourceId       | Library resource IDs to use, if a custom driver is necessary.                  | No       |
+
+---
+
+#### getTemplates()
+
+Summary: Retrieves JMS connector settings templates.
 
 ---
 
@@ -118,12 +106,6 @@ Parameters:
 | ------------ | ------------------------- | -------- | ---------- |
 | templateName | The name of the template. | Yes      |
 
-Object Parameters:
-
-| Name                   | Description | Required | Properties                                                                                                                                                                                                                 |
-| ---------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| jmsConnectorProperties | object      | Yes      | {pluginProperties,useJndi,jndiProviderUrl,jndiInitialContextFactory,jndiConnectionFactoryName,connectionFactoryClass,connectionProperties,username,password,destinationName,topic,clientId,name,protocol,purgedProperties} |
-
 ---
 
 #### deleteTemplate(templateName)
@@ -138,12 +120,6 @@ Parameters:
 
 ---
 
-#### getTemplates()
-
-Summary: Retrieves JMS connector settings templates.
-
----
-
 #### sendTestEmail(channelId,channelName,smtpDispatcherProperties)
 
 Summary: Sends a test e-mail, replacing any connector properties first.
@@ -154,12 +130,6 @@ Parameters:
 | ----------- | ------------------------ | -------- | ---------- |
 | channelId   | The ID of the channel.   | Yes      |
 | channelName | The name of the channel. | Yes      |
-
-Object Parameters:
-
-| Name                     | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                           |
-| ------------------------ | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| smtpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,smtpHost,smtpPort,overrideLocalBinding,localAddress,localPort,timeout,encryption,authentication,username,password,to,from,cc,bcc,replyTo,headersVariable,subject,charsetEncoding,html,body,attachmentsVariable,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,attachmentsList,purgedProperties} |
 
 ---
 
@@ -174,36 +144,11 @@ Parameters:
 | channelId   | The ID of the channel.   | Yes      |
 | channelName | The name of the channel. | Yes      |
 
-Object Parameters:
-
-| Name                    | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                         |
-| ----------------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| tcpDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,transmissionModeProperties,serverMode,remoteAddress,remotePort,overrideLocalBinding,localAddress,localPort,sendTimeout,bufferSize,maxConnections,keepConnectionOpen,checkRemoteHost,responseTimeout,ignoreResponse,queueOnResponseTimeout,dataTypeBinary,charsetEncoding,template,name,protocol,purgedProperties} |
-
 ---
 
 #### getDefinition(channelId,channelName,wsdlUrl)
 
 Summary: Retrieves the definition service map corresponding to the specified WSDL.
-
----
-
-#### testConnection_2(channelId,channelName,webServiceDispatcherProperties)
-
-Summary: Tests whether a connection can be successfully established to the destination endpoint.
-
-Parameters:
-
-| Name        | Description              | Required | Properties |
-| ----------- | ------------------------ | -------- | ---------- |
-| channelId   | The ID of the channel.   | Yes      |
-| channelName | The name of the channel. | Yes      |
-
-Object Parameters:
-
-| Name                           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------------------ | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| webServiceDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 
 ---
 
@@ -217,12 +162,6 @@ Parameters:
 | ----------- | ------------------------ | -------- | ---------- |
 | channelId   | The ID of the channel.   | Yes      |
 | channelName | The name of the channel. | Yes      |
-
-Object Parameters:
-
-| Name                           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------------------ | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| webServiceDispatcherProperties | object      | Yes      | {pluginProperties,destinationConnectorProperties,wsdlUrl,service,port,operation,locationURI,socketTimeout,useAuthentication,username,password,envelope,oneWay,headersVariable,useMtom,attachmentNames,attachmentContents,attachmentTypes,attachmentsVariable,soapAction,wsdlDefinitionMap,name,protocol,useAttachmentsVariable,useHeadersVariable,headersMap,purgedProperties} |
 
 ---
 
@@ -241,6 +180,19 @@ Summary: Generate SOAP envelope for a given WSDL operation.
 #### getSoapAction(channelId,channelName,wsdlUrl)
 
 Summary: Retrieves the default SOAP Action for a given WSDL operation.
+
+---
+
+#### testConnection_2(channelId,channelName,webServiceDispatcherProperties)
+
+Summary: Tests whether a connection can be successfully established to the destination endpoint.
+
+Parameters:
+
+| Name        | Description              | Required | Properties |
+| ----------- | ------------------------ | -------- | ---------- |
+| channelId   | The ID of the channel.   | Yes      |
+| channelName | The name of the channel. | Yes      |
 
 ---
 
@@ -335,6 +287,19 @@ Parameters:
 
 ---
 
+#### getAllMaps(channelId,includeGlobalMap)
+
+Summary: Retrieves global and/or global channel map information.
+
+Parameters:
+
+| Name             | Description                                                           | Required | Properties |
+| ---------------- | --------------------------------------------------------------------- | -------- | ---------- |
+| channelId        | The ID of the channel to retrieve global channel map information for. | No       |
+| includeGlobalMap | If true, the global map will be returned.                             | No       |
+
+---
+
 #### getAllMapsPost(includeGlobalMap)
 
 Summary: Retrieves global and/or global channel map information. This is a POST request alternative to GET /maps/all that may be used when there are too many channel IDs to include in the query parameters.
@@ -359,19 +324,6 @@ Parameters:
 
 ---
 
-#### getAllMaps(channelId,includeGlobalMap)
-
-Summary: Retrieves global and/or global channel map information.
-
-Parameters:
-
-| Name             | Description                                                           | Required | Properties |
-| ---------------- | --------------------------------------------------------------------- | -------- | ---------- |
-| channelId        | The ID of the channel to retrieve global channel map information for. | No       |
-| includeGlobalMap | If true, the global map will be returned.                             | No       |
-
----
-
 #### getGlobalMap()
 
 Summary: Retrieves global map information.
@@ -393,6 +345,12 @@ Parameters:
 
 ### Alerts
 
+#### getAlertProtocolOptions()
+
+Summary: Returns all alert protocol options.
+
+---
+
 #### getAlerts(alertId)
 
 Summary: Retrieves multiple alerts by ID, or all alerts if not specified.
@@ -408,12 +366,6 @@ Parameters:
 #### createAlert(alertModel)
 
 Summary: Creates a new alert.
-
-Object Parameters:
-
-| Name       | Description | Required | Properties                                                         |
-| ---------- | ----------- | -------- | ------------------------------------------------------------------ |
-| alertModel | object      | Yes      | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 
 ---
 
@@ -438,12 +390,6 @@ Parameters:
 #### getAlertInfo_1()
 
 Summary: Returns an AlertInfo object containing alert protocol options and any updated channel summaries.
-
----
-
-#### getAlertProtocolOptions()
-
-Summary: Returns all alert protocol options.
 
 ---
 
@@ -474,12 +420,6 @@ Parameters:
 | Name    | Description          | Required | Properties |
 | ------- | -------------------- | -------- | ---------- |
 | alertId | The ID of the alert. | Yes      |
-
-Object Parameters:
-
-| Name       | Description | Required | Properties                                                         |
-| ---------- | ----------- | -------- | ------------------------------------------------------------------ |
-| alertModel | object      | Yes      | {id,name,enabled,trigger,actionGroups,properties,purgedProperties} |
 
 ---
 
@@ -577,12 +517,6 @@ Parameters:
 | channelId | The ID of the channel to update.                                                        | Yes      |
 | override  | If true, the channel will be updated even if a different revision exists on the server. | No       |
 
-Object Parameters:
-
-| Name    | Description | Required | Properties                                                                                                                                                                                                                   |
-| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channel | object      | Yes      | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
-
 ---
 
 #### removeChannel(channelId)
@@ -597,9 +531,9 @@ Parameters:
 
 ---
 
-#### removeChannelsPost()
+#### getChannelIdsAndNames()
 
-Summary: Removes the channels with the specified IDs. This is a POST request alternative to DELETE /channels that may be used when there are too many channel IDs to include in the query parameters.
+Summary: Returns a map of all channel IDs and names.
 
 ---
 
@@ -616,9 +550,9 @@ Parameters:
 
 ---
 
-#### getChannelIdsAndNames()
+#### removeChannelsPost()
 
-Summary: Returns a map of all channel IDs and names.
+Summary: Removes the channels with the specified IDs. This is a POST request alternative to DELETE /channels that may be used when there are too many channel IDs to include in the query parameters.
 
 ---
 
@@ -639,12 +573,6 @@ Parameters:
 #### createChannel(channel)
 
 Summary: Creates a new channel.
-
-Object Parameters:
-
-| Name    | Description | Required | Properties                                                                                                                                                                                                                   |
-| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| channel | object      | Yes      | {id,nextMetaDataId,name,description,revision,sourceConnector,destinationConnectors,preprocessingScript,postprocessingScript,deployScript,undeployScript,properties,exportData,purgedProperties,enabledDestinationConnectors} |
 
 ---
 
@@ -736,15 +664,15 @@ Parameters:
 
 ### Channel Statistics
 
-#### clearAllStatistics()
-
-Summary: Clears all statistics (including lifetime) for all channels/connectors.
-
----
-
 #### getStatisticsPost()
 
 Summary: Returns the Statistics for all channels. This is a POST request alternative to GET /statistics that may be used when there are too many channel IDs to include in the query parameters.
+
+---
+
+#### clearAllStatistics()
+
+Summary: Clears all statistics (including lifetime) for all channels/connectors.
 
 ---
 
@@ -845,18 +773,6 @@ Parameters:
 
 ---
 
-#### startConnectors(returnErrors)
-
-Summary: Starts the connectors with the specified channel and metadata IDs.
-
-Parameters:
-
-| Name         | Description                                                         | Required | Properties |
-| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
-| returnErrors | If true, an error response code and the exception will be returned. | No       |
-
----
-
 #### getChannelStatusListPost(filter,includeUndeployed)
 
 Summary: Returns all channel dashboard statuses, or multiple statuses by channel ID. This is a POST request alternative to GET /statuses that may be used when there are too many channel IDs to include in the query parameters.
@@ -892,6 +808,18 @@ Parameters:
 | Name         | Description                                                         | Required | Properties |
 | ------------ | ------------------------------------------------------------------- | -------- | ---------- |
 | channelId    | The channel ID to start.                                            | Yes      |
+| returnErrors | If true, an error response code and the exception will be returned. | No       |
+
+---
+
+#### startConnectors(returnErrors)
+
+Summary: Starts the connectors with the specified channel and metadata IDs.
+
+Parameters:
+
+| Name         | Description                                                         | Required | Properties |
+| ------------ | ------------------------------------------------------------------- | -------- | ---------- |
 | returnErrors | If true, an error response code and the exception will be returned. | No       |
 
 ---
@@ -1024,6 +952,18 @@ Parameters:
 
 ### Code Templates
 
+#### getCodeTemplateLibrariesPost(includeCodeTemplates)
+
+Summary: Retrieves multiple code template libraries by ID, or all libraries if not specified. This is a POST request alternative to GET /codeTemplateLibraries that may be used when there are too many library IDs to include in the query parameters.
+
+Parameters:
+
+| Name                 | Description                                                        | Required | Properties |
+| -------------------- | ------------------------------------------------------------------ | -------- | ---------- |
+| includeCodeTemplates | If true, full code templates will be included inside each library. | No       |
+
+---
+
 #### getCodeTemplateLibrary(includeCodeTemplates,libraryId)
 
 Summary: Retrieves a single code template library.
@@ -1062,18 +1002,6 @@ Parameters:
 
 ---
 
-#### getCodeTemplateLibrariesPost(includeCodeTemplates)
-
-Summary: Retrieves multiple code template libraries by ID, or all libraries if not specified. This is a POST request alternative to GET /codeTemplateLibraries that may be used when there are too many library IDs to include in the query parameters.
-
-Parameters:
-
-| Name                 | Description                                                        | Required | Properties |
-| -------------------- | ------------------------------------------------------------------ | -------- | ---------- |
-| includeCodeTemplates | If true, full code templates will be included inside each library. | No       |
-
----
-
 #### getCodeTemplatesPost()
 
 Summary: Retrieves multiple code templates by ID, or all templates if not specified. This is a POST request alternative to GET /codeTemplates that may be used when there are too many code template IDs to include in the query parameters.
@@ -1102,12 +1030,6 @@ Parameters:
 | -------------- | --------------------------------------------------------------------------------------------- | -------- | ---------- |
 | codeTemplateId | The ID of the code template.                                                                  | Yes      |
 | override       | If true, the code template will be updated even if a different revision exists on the server. | No       |
-
-Object Parameters:
-
-| Name         | Description | Required | Properties                                                                                                                   |
-| ------------ | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| codeTemplate | object      | Yes      | {id,name,revision,lastModified,contextSet,properties,type,description,code,purgedProperties,addToScripts,functionDefinition} |
 
 ---
 
@@ -1173,18 +1095,6 @@ Summary: Returns the version of the Mirth Connect server.
 
 ---
 
-#### getJVMName()
-
-Summary: Returns the name of the JVM running Mirth Connect.
-
----
-
-#### getAbout()
-
-Summary: Returns a map of common information about the Mirth Connect server.
-
----
-
 #### getLicenseInfo()
 
 Summary: Returns a LicenseInfo object with the expiration date and other information.
@@ -1194,6 +1104,18 @@ Summary: Returns a LicenseInfo object with the expiration date and other informa
 #### getGuid()
 
 Summary: Returns a globally unique id.
+
+---
+
+#### getJVMName()
+
+Summary: Returns the name of the JVM running Mirth Connect.
+
+---
+
+#### getAbout()
+
+Summary: Returns a map of common information about the Mirth Connect server.
 
 ---
 
@@ -1225,12 +1147,6 @@ Summary: Returns an UpdateSettings object with all update settings.
 
 Summary: Updates the update settings.
 
-Object Parameters:
-
-| Name           | Description | Required | Properties                                               |
-| -------------- | ----------- | -------- | -------------------------------------------------------- |
-| updateSettings | object      | Yes      | {statsEnabled,lastStatsTime,properties,purgedProperties} |
-
 ---
 
 #### getConfigurationMap()
@@ -1254,12 +1170,6 @@ Summary: Returns a ServerSettings object with all server settings.
 #### setServerSettings(serverSettings)
 
 Summary: Updates the server configuration settings.
-
-Object Parameters:
-
-| Name           | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                            |
-| -------------- | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| serverSettings | object      | Yes      | {environmentName,serverName,clearGlobalMap,queueBufferSize,defaultMetaDataColumns,defaultAdministratorBackgroundColor,smtpHost,smtpPort,smtpTimeout,smtpFrom,smtpSecure,smtpAuth,smtpUsername,smtpPassword,loginNotificationEnabled,loginNotificationMessage,administratorAutoLogoutIntervalEnabled,administratorAutoLogoutIntervalField,properties,purgedProperties} |
 
 ---
 
@@ -1389,12 +1299,6 @@ Parameters:
 | ------------------ | ----------------------------------------------------------------------------------- | -------- | ---------- |
 | deploy             | If true, all enabled channels will be deployed after the configuration is restored. | No       |
 | overwriteConfigMap | If true, overwrite the Configuration Map                                            | No       |
-
-Object Parameters:
-
-| Name                | Description | Required | Properties                                                                                                                                                                                        |
-| ------------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| serverConfiguration | object      | Yes      | {date,channelGroups,channels,channelTags,users,alerts,codeTemplateLibraries,serverSettings,updateSettings,globalScripts,pluginProperties,resourceProperties,channelDependencies,configurationMap} |
 
 ---
 
@@ -1598,23 +1502,11 @@ Parameters:
 | offset | Used for pagination, determines where to start in the search results.    | No       |
 | limit  | Used for pagination, determines the maximum number of results to return. | No       |
 
-Object Parameters:
-
-| Name        | Description | Required | Properties                                                                                                 |
-| ----------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| eventFilter | object      | Yes      | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
-
 ---
 
 #### getEventCount(eventFilter)
 
 Summary: Count number for events by specific filter criteria.
-
-Object Parameters:
-
-| Name        | Description | Required | Properties                                                                                                 |
-| ----------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| eventFilter | object      | Yes      | {maxEventId,minEventId,id,levels,startDate,endDate,name,outcome,userId,attributeSearch,ipAddress,serverId} |
 
 ---
 
@@ -1750,12 +1642,6 @@ Parameters:
 | offset         | Used for pagination, determines where to start in the search results.    | No       |
 | limit          | Used for pagination, determines the maximum number of results to return. | No       |
 
-Object Parameters:
-
-| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
-| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
-
 ---
 
 #### getMessagesByChannelId({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,includeContent,offset,limit,channelId})
@@ -1890,12 +1776,6 @@ Parameters:
 | --------- | ---------------------- | -------- | ---------- |
 | channelId | The ID of the channel. | Yes      |
 
-Object Parameters:
-
-| Name       | Description | Required | Properties                                                                                                  |
-| ---------- | ----------- | -------- | ----------------------------------------------------------------------------------------------------------- |
-| rawMessage | object      | Yes      | {overwrite,imported,originalMessageId,rawData,rawBytes,destinationMetaDataIds,sourceMap,binary,attachments} |
-
 ---
 
 #### getAttachmentsByMessageId(includeContent,channelId,messageId)
@@ -1923,33 +1803,9 @@ Parameters:
 | channelId | The ID of the channel. | Yes      |
 | messageId | The ID of the message. | Yes      |
 
-Object Parameters:
-
-| Name             | Description | Required | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ---------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| connectorMessage | object      | Yes      | {messageId,metaDataId,channelId,channelName,connectorName,serverId,receivedDate,status,raw,processedRaw,transformed,encoded,sent,response,responseTransformed,processedResponse,sourceMapContent,connectorMapContent,channelMapContent,responseMapContent,metaDataMap,processingErrorContent,postProcessorErrorContent,responseErrorContent,errorCode,sendAttempts,sendDate,responseDate,chainId,orderId,sentProperties,queueBucket,attemptedFirst,dispatcherId,responseMap,connectorMap,channelMap,responseError,processingError,sourceMap,messageContent,postProcessorError} |
-
 ---
 
-#### getMessageCount(channelId,messageFilter)
-
-Summary: Count number for messages by specific filter criteria.
-
-Parameters:
-
-| Name      | Description            | Required | Properties |
-| --------- | ---------------------- | -------- | ---------- |
-| channelId | The ID of the channel. | Yes      |
-
-Object Parameters:
-
-| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
-| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
-
----
-
-#### getMessageCount_1({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
+#### getMessageCount({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,channelId})
 
 Summary: Count number for messages by specific filter criteria.
 
@@ -1997,28 +1853,19 @@ Parameters:
 
 ---
 
-#### reprocessMessages(replace,filterDestinations,metaDataId,channelId,messageFilter)
+#### getMessageCount_1(channelId,messageFilter)
 
-Summary: Reprocesses messages through a channel filtering with a MessageFilter.
+Summary: Count number for messages by specific filter criteria.
 
 Parameters:
 
-| Name               | Description                                                                                                      | Required | Properties |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
-| channelId          | The ID of the channel.                                                                                           | Yes      |
-| replace            | If true, the message will overwrite the current one                                                              | No       |
-| filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No       |
-| metaDataId         | Indicates which destinations to send the message to.                                                             | No       |
-
-Object Parameters:
-
-| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
-| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
+| Name      | Description            | Required | Properties |
+| --------- | ---------------------- | -------- | ---------- |
+| channelId | The ID of the channel. | Yes      |
 
 ---
 
-#### reprocessMessages_1({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,replace,filterDestinations,metaDataId,channelId})
+#### reprocessMessages({minMessageId,maxMessageId,minOriginalId,maxOriginalId,minImportId,maxImportId,startDate,endDate,textSearch,textSearchRegex,status,includedMetaDataId,excludedMetaDataId,serverId,rawContentSearch,processedRawContentSearch,transformedContentSearch,encodedContentSearch,sentContentSearch,responseContentSearch,responseTransformedContentSearch,processedResponseContentSearch,connectorMapContentSearch,channelMapContentSearch,sourceMapContentSearch,responseMapContentSearch,processingErrorContentSearch,postprocessorErrorContentSearch,responseErrorContentSearch,metaDataSearch,metaDataCaseInsensitiveSearch,textSearchMetaDataColumn,minSendAttempts,maxSendAttempts,attachment,error,replace,filterDestinations,metaDataId,channelId})
 
 Summary: Reprocesses messages through a channel by specific filter criteria.
 
@@ -2066,6 +1913,21 @@ Parameters:
 | replace                          | If true, the message will overwrite the current one                                                                                                                                                                                                         | No       |
 | filterDestinations               | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through.                                                                                                                                            | No       |
 | metaDataId                       | Indicates which destinations to send the message to.                                                                                                                                                                                                        | No       |
+
+---
+
+#### reprocessMessages_1(replace,filterDestinations,metaDataId,channelId,messageFilter)
+
+Summary: Reprocesses messages through a channel filtering with a MessageFilter.
+
+Parameters:
+
+| Name               | Description                                                                                                      | Required | Properties |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| channelId          | The ID of the channel.                                                                                           | Yes      |
+| replace            | If true, the message will overwrite the current one                                                              | No       |
+| filterDestinations | If true, the metaDataId parameter will be used to determine which destinations to reprocess the message through. | No       |
+| metaDataId         | Indicates which destinations to send the message to.                                                             | No       |
 
 ---
 
@@ -2136,12 +1998,6 @@ Parameters:
 | Name      | Description            | Required | Properties |
 | --------- | ---------------------- | -------- | ---------- |
 | channelId | The ID of the channel. | Yes      |
-
-Object Parameters:
-
-| Name    | Description | Required | Properties                                                                                                                                     |
-| ------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| message | object      | Yes      | {messageId,serverId,channelId,receivedDate,processed,originalId,importId,importChannelId,attachments,connectorMessages,mergedConnectorMessage} |
 
 ---
 
@@ -2275,12 +2131,6 @@ Parameters:
 | --------- | ---------------------- | -------- | ---------- |
 | channelId | The ID of the channel. | Yes      |
 
-Object Parameters:
-
-| Name          | Description | Required | Properties                                                                                                                                                                                                                                                                                                 |
-| ------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| messageFilter | object      | Yes      | {maxMessageId,minMessageId,originalIdUpper,originalIdLower,importIdUpper,importIdLower,startDate,endDate,textSearch,textSearchRegex,statuses,includedMetaDataIds,excludedMetaDataIds,serverId,contentSearch,metaDataSearch,textSearchMetaDataColumns,sendAttemptsLower,sendAttemptsUpper,attachment,error} |
-
 ---
 
 #### removeAllMessages(restartRunningChannels,clearStatistics,channelId)
@@ -2367,39 +2217,15 @@ Summary: Logs in to the Mirth Connect server using the specified name and passwo
 
 ---
 
-#### logout()
-
-Summary: Logs out of the server.
-
----
-
 #### getCurrentUser()
 
 Summary: Returns the current logged in user.
 
 ---
 
-#### setUserNotificationAcknowledged(userId)
+#### logout()
 
-Summary: User notification has been acknowledged.
-
-Parameters:
-
-| Name   | Description                | Required | Properties |
-| ------ | -------------------------- | -------- | ---------- |
-| userId | The unique ID of the user. | Yes      |
-
----
-
-#### checkUserPassword(textData)
-
-Summary: Checks the password against the configured password policies.
-
-Object Parameters:
-
-| Name     | Description | Required | Properties |
-| -------- | ----------- | -------- | ---------- |
-| textData | string      | Yes      |            |
+Summary: Logs out of the server.
 
 ---
 
@@ -2421,6 +2247,18 @@ Object Parameters:
 
 ---
 
+#### setUserNotificationAcknowledged(userId)
+
+Summary: User notification has been acknowledged.
+
+Parameters:
+
+| Name   | Description                | Required | Properties |
+| ------ | -------------------------- | -------- | ---------- |
+| userId | The unique ID of the user. | Yes      |
+
+---
+
 #### inactivityLogout()
 
 Summary: User has been inactive and automatically logged out.
@@ -2437,11 +2275,17 @@ Summary: Returns a List of all users.
 
 Summary: Creates a new user.
 
+---
+
+#### checkUserPassword(textData)
+
+Summary: Checks the password against the configured password policies.
+
 Object Parameters:
 
-| Name | Description | Required | Properties                                                                                                                                                                         |
-| ---- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| user | object      | Yes      | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
+| Name     | Description | Required | Properties |
+| -------- | ----------- | -------- | ---------- |
+| textData | string      | Yes      |            |
 
 ---
 
@@ -2466,12 +2310,6 @@ Parameters:
 | Name   | Description                          | Required | Properties |
 | ------ | ------------------------------------ | -------- | ---------- |
 | userId | The unique ID of the user to update. | Yes      |
-
-Object Parameters:
-
-| Name | Description | Required | Properties                                                                                                                                                                         |
-| ---- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| user | object      | Yes      | {id,username,email,firstName,lastName,organization,description,phoneNumber,industry,lastLogin,gracePeriodStart,strikeCount,lastStrikeTime,country,stateTerritory,role,userConsent} |
 
 ---
 

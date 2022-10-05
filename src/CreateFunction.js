@@ -13,11 +13,12 @@ function createUrlString(url) {
   return newUrlFinal;
 }
 
-async function CreateFunction(url, func) {
+async function CreateFunction(url, func, context) {
+  const instance = context.instance;
+  const URL = context.URL;
   for (const f in func) {
     if (func.hasOwnProperty(f)) {
       let funcName = func[f].operationId;
-      let functionName = func[f].operationId.charAt(0).toUpperCase() + func[f].operationId.slice(1);
       let parameters = [];
       let parametersWithoutDefaults = [];
       let missingParamsWithoutDefaults = [];
@@ -57,7 +58,6 @@ async function CreateFunction(url, func) {
         const responsesExamples = func[f].responses?.default.content['application/json'].examples;
         for (const example in responsesExamples) {
           const testArray = responsesExamples[example]['$ref'].split('/').pop().split('_');
-          // returnValue = testArray[testArray.length - 2];
           switch (testArray[testArray.length - 2]) {
             case 'boolean':
               returnValue = testArray[testArray.length - 2];
@@ -138,7 +138,7 @@ async function CreateFunction(url, func) {
             ${parametersWithoutDefaults.length !== 0 ? `const params = {${parametersWithoutDefaults}}` : ''}
             let data;
               await instance
-                .get(url + ${backTick}${createUrlString(url)}${backTick}, ${
+                .get(URL + ${backTick + createUrlString(url) + backTick}, ${
             parametersWithoutDefaults.length !== 0 ? `{params}, ` : ''
           } {
                   headers: headers,
@@ -157,7 +157,7 @@ async function CreateFunction(url, func) {
             ${schemaParams.length !== 0 ? `const postData = {${schemaParams}}` : ''}
             let data;
               await instance
-                .put(url + ${backTick}${createUrlString(url)}${backTick}, ${queryParams ? 'urlString, ' : ''}${
+                .put(URL + ${backTick + createUrlString(url) + backTick}, ${queryParams ? 'urlString, ' : ''}${
             schemaParams.length !== 0 ? `postData,` : ''
           } {
                   headers: headers,
@@ -176,7 +176,7 @@ async function CreateFunction(url, func) {
             ${schemaParams.length !== 0 ? `const postData = {${schemaParams}}` : ''}
             let data;
               await instance
-                .post(url + ${backTick}${createUrlString(url)}${backTick}, ${queryParams ? 'urlString, ' : ''}${
+                .post(URL + ${backTick + createUrlString(url) + backTick}, ${queryParams ? 'urlString, ' : ''}${
             schemaParams.length !== 0 ? `postData,` : ''
           } {
                   headers: headers,
@@ -204,7 +204,7 @@ async function CreateFunction(url, func) {
           fetchData = `
             let data;
               await instance
-                .delete(url + ${backTick}${createUrlString(url)}${backTick}, ${queryParams ? 'urlString, ' : ''} {
+                .delete(URL + ${backTick + createUrlString(url) + backTick}, ${queryParams ? 'urlString, ' : ''} {
                   headers: headers,
                 })
                 .then(function (response) {
@@ -220,12 +220,14 @@ async function CreateFunction(url, func) {
           break;
       }
 
-      const data = `
-        async function ${functionName}({instance, url${parameters.length !== 0 ? `, ${parameters.join(', ')}` : ''}${
-        schemaParams.length !== 0 ? `, ${schemaParams.join(', ')}` : ''
-      }}) {
+      const testParams = [...new Set(parameters.concat(schemaParams))];
+      const prepareParams = `${
+        testParams.length !== 0 ? `${testParams.length <= 3 ? `${testParams.join(',')}` : `{${testParams.join(',')}}`}` : ''
+      }`;
+
+      const data = `async function ${funcName}(${prepareParams}) {
           // ${func[f].summary}
-          const headers = ${JSON.stringify(headers)}
+          const headers = ${JSON.stringify(headers)};
           ${
             queryParams
               ? `
@@ -235,51 +237,14 @@ async function CreateFunction(url, func) {
               : ''
           }
           ${fetchData ? `${fetchData}` : ''}
-        }
-        module.exports = {${functionName}};
-          `;
+        } module.exports = {${funcName}};`;
 
-      const fileName = __dirname + `/functions/${functionName}.js`;
-
-      try {
-        fs.writeFileSync(fileName, data);
-      } catch (err) {
-        console.error(err);
-      }
-
-      // FOR NEWMIRTH CONNECT IMPORTS
-      try {
-        const fileNameConnect = __dirname + `/MirthConnect.js`;
-        const data = fs.readFileSync(fileNameConnect).toString().split('\n');
-        data.splice(3, 0, `const { ${functionName} } = require('./functions/${functionName}');`);
-        const text = data.join('\n');
-        fs.writeFileSync(fileNameConnect, text, function (err) {
-          if (err) return console.log(err);
-        });
-      } catch (error) {
-        console.error(error);
-      }
-
-      const allParams = [...new Set(parametersWithoutDefaults.concat(missingParamsWithoutDefaults, schemaParams))];
-
-      // FOR NEWMIRTH CONNECT FUNCTIONS
-      try {
-        const fileNameConnect = __dirname + `/MirthConnect.js`;
-        const data = fs.readFileSync(fileNameConnect).toString().split('\n');
-        data.push(
-          `${funcName} = (${
-            allParams.length !== 0 ? `${allParams.length <= 5 ? `${allParams.join(',')}` : ` {${allParams.join(',')}}`}` : ''
-          }) => ${functionName}({instance: this.instance, url: this.URL${allParams.length !== 0 ? `, ${allParams}` : ''}});`,
-        );
-        const text = data.join('\n');
-        fs.writeFileSync(fileNameConnect, text, function (err) {
-          if (err) return console.log(err);
-        });
-      } catch (error) {
-        console.error(error);
-      }
+      const prepareFunc = eval(data);
+      context[funcName] = prepareFunc[funcName];
     }
   }
+
+  return context;
 }
 
 module.exports = { CreateFunction };

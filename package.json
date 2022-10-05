@@ -1,12 +1,15 @@
 {
   "name": "mirth-node",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Mirh API for javascript applications.",
   "main": "./src/MirthApi.js",
   "license": "(MIT OR GPL-3.0-or-later)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/izorko33/mirth-js.git"
+  },
+  "scripts": {
+    "start": "nodemon src/index.js"
   },
   "keywords": [
     "Mirth",
@@ -25,5 +28,9 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
 }

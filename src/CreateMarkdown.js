@@ -81,7 +81,7 @@ async function CreateMarkdown(paths, schemas, info) {
         });
       }
 
-      if (schemaParamsObject.length) {
+      if (schemaParamsObject[0] !== undefined) {
         markdown += [
           `Object Parameters:\r\n`,
           `| Name | Description | Required | Properties |`,
@@ -97,6 +97,7 @@ async function CreateMarkdown(paths, schemas, info) {
       markdown += '---\r\n\r\n';
     });
   });
+
   try {
     fs.writeFileSync(__dirname + `/README-Mirth-${info.version}.md`, markdown, function (err) {
       if (err) return console.log(err);

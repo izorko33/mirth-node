@@ -1,6 +1,5 @@
-const fs = require('fs');
 const axios = require('axios');
-const { ExportPaths } = require('./ExportPaths');
+const { Export } = require('./Export');
 
 class MirthClient {
   constructor({ host = '', port = '', username = '', password = '', disableTLSCheck = false } = {}) {
@@ -25,32 +24,18 @@ class MirthClient {
 
     return this._init();
   }
-  async _init() {
-    const folderNameForFunctons = __dirname + `/functions`;
-    const folderNameForExports = './exports';
-    if (!fs.existsSync(folderNameForExports)) {
-      fs.mkdirSync(folderNameForExports);
-    }
-    if (!fs.existsSync('README.MD')) {
-      fs.writeFileSync('README.MD', '');
-    }
-    if (!fs.existsSync(folderNameForFunctons)) {
-      await ExportPaths(this.instance, this.URL);
-    }
 
-    try {
-      const { ConnectMirth } = require('./MirthConnect');
-      if (ConnectMirth) {
-        const client = await new ConnectMirth({
-          instanceClient: this.instance,
-          urlClient: this.URL,
-          usernameClient: this._username,
-          passwordClient: this._password,
-        });
-        return client;
+  async _init() {
+    await Export(this);
+
+    if (this.login !== undefined) {
+      const loginData = await this.login(this._password, this._username);
+      if (loginData === 'OK') {
+        console.log('User ' + this._username + ' logged in on ' + new Date());
+        return this;
       }
-    } catch (error) {
-      return error;
+    } else {
+      return;
     }
   }
 }
