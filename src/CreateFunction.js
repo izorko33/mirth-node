@@ -3,6 +3,7 @@ const fs = require('fs');
 function createUrlString(url) {
   let newUrlArray;
   let newUrlFinal;
+
   if (url) {
     newUrlArray = url.split('/');
     newUrlArray.forEach(function (item, index) {
@@ -32,21 +33,23 @@ async function CreateFunction(url, func, context) {
       }
 
       if (func[f].parameters) {
-        func[f].parameters.forEach(function (params) {
-          if (params.name !== 'export' && params.name !== 'url') {
-            if (params.schema.default !== undefined) {
-              if (params.name !== 'selectLimit' && params.name !== 'username' && params.name !== 'password') {
-                parameters.push(`${params.name} = ${params.schema.default}`);
-                parametersWithoutDefaults.push(params.name);
+        func[f].parameters.forEach(function (paramsLoop) {
+          if (paramsLoop.name !== 'export' && paramsLoop.name !== 'url') {
+            if (paramsLoop.schema.default !== undefined) {
+              if (paramsLoop.name !== 'selectLimit' && paramsLoop.name !== 'username' && paramsLoop.name !== 'password') {
+                parameters.push(`${paramsLoop.name} = ${paramsLoop.schema.default}`);
+                parametersWithoutDefaults.push(paramsLoop.name);
               } else {
-                parameters.push(params.name);
-                parametersWithoutDefaults.push(params.name);
+                parameters.push(paramsLoop.name);
+                parametersWithoutDefaults.push(paramsLoop.name);
               }
             } else {
-              parameters.push(params.name);
-              missingParamsWithoutDefaults.push(params.name);
-              if (params.in !== 'path') {
-                parametersWithoutDefaults.push(params.name);
+              parameters.push(paramsLoop.name);
+              missingParamsWithoutDefaults.push(paramsLoop.name);
+              if (paramsLoop.in !== 'path') {
+                parametersWithoutDefaults.push(paramsLoop.name);
+                // console.log(paramsLoop.name);
+                // banana.push(paramsLoop.name);
               }
             }
           }
@@ -99,14 +102,23 @@ async function CreateFunction(url, func, context) {
               const text = headers.content['application/json']['schema']['$ref'].split('/').pop();
               schemaParams.push(text[0].toLowerCase() + text.slice(1));
             }
+            if (headers.content['application/json']['schema']['items']) {
+              const text = headers.content['application/json']['schema']['items']['$ref'];
+              if (text) {
+                schemaParams.push('list');
+              }
+            }
             return {
               'Content-Type': 'application/json',
             };
           } else if (headers.content['application/x-www-form-urlencoded']) {
             if (headers.content['application/x-www-form-urlencoded'].schema.required) {
               parameters.push(headers.content['application/x-www-form-urlencoded'].schema.required);
-              parametersWithoutDefaults.push(headers.content['application/x-www-form-urlencoded'].schema.required);
+              // parametersWithoutDefaults.push(headers.content['application/x-www-form-urlencoded'].schema.required);
               queryParams = headers.content['application/x-www-form-urlencoded'].schema.required;
+              headers.content['application/x-www-form-urlencoded'].schema.required.forEach(item =>
+                parametersWithoutDefaults.push(item),
+              );
             }
             return {
               'Content-Type': 'application/x-www-form-urlencoded',
@@ -142,7 +154,7 @@ async function CreateFunction(url, func, context) {
       switch (f) {
         case 'get':
           fetchData = `
-            ${parametersWithoutDefaults.length !== 0 ? `const params = {${parametersWithoutDefaults}}` : ''}
+            // ${parametersWithoutDefaults.length !== 0 ? `const params = {${parametersWithoutDefaults}}` : ''}
             let data;
               await instance
                 .get(URL + ${backTick + createUrlString(url) + backTick}, ${
@@ -161,7 +173,7 @@ async function CreateFunction(url, func, context) {
           break;
         case 'put':
           fetchData = `
-            ${schemaParams.length !== 0 ? `const postData = {${schemaParams}}` : ''}
+            ${schemaParams.length !== 0 ? `const postData = {${schemaParams}};` : ''}
             let data;
               await instance
                 .put(URL + ${backTick + createUrlString(url) + backTick}, ${queryParams ? 'urlString, ' : ''}${
@@ -180,12 +192,12 @@ async function CreateFunction(url, func, context) {
           break;
         case 'post':
           fetchData = `
-            ${schemaParams.length !== 0 ? `const postData = {${schemaParams}}` : ''}
+            ${schemaParams.length !== 0 ? `const postData = {${schemaParams}};` : ''}
             let data;
               await instance
-                .post(URL + ${backTick + createUrlString(url) + backTick}, ${queryParams ? 'urlString, ' : ''}${
-            schemaParams.length !== 0 ? prepareSchemaParams(schemaParams[0]) : ''
-          } {
+                .post(URL + ${backTick + createUrlString(url) + backTick}, ${
+            parametersWithoutDefaults.length !== 0 ? 'urlString, ' : ''
+          }${schemaParams.length !== 0 ? prepareSchemaParams(schemaParams[0]) : ''} {
                   headers: headers,
                 })
                 .then(function (response) {
@@ -197,7 +209,7 @@ async function CreateFunction(url, func, context) {
                         }
                         data = response.statusText;
                         `
-                      : `data =  response.data${returnValue ? `.${returnValue}` : ''}`
+                      : `data =  response.data${returnValue ? `.${returnValue}` : ''};`
                   }
                   ;
                 })
@@ -232,14 +244,28 @@ async function CreateFunction(url, func, context) {
         testParams.length !== 0 ? `${testParams.length <= 3 ? `${testParams.join(',')}` : `{${testParams.join(',')}}`}` : ''
       }`;
 
+      // console.log(queryParams);
+
       const data = `async function ${funcName}(${prepareParams}) {
           // ${func[f].summary}
           const headers = ${JSON.stringify(headers)};
           ${
-            queryParams
+            parametersWithoutDefaults !== 0
               ? `
-              const params = {${queryParams}}
-              const urlString = new URLSearchParams(params).toString();
+              const returnValuesOnly = obj => {
+                let filteredParams = {};
+                for (const key in obj) {
+                  if (Object.hasOwnProperty.call(obj, key)) {
+                    const element = obj[key];
+                    if (element !== undefined) {
+                      filteredParams[key] = element;
+                    }
+                  }
+                }
+                return filteredParams;
+              };
+              const params = {${parametersWithoutDefaults}}
+              const urlString = new URLSearchParams(returnValuesOnly(params)).toString();
               `
               : ''
           }
@@ -248,6 +274,12 @@ async function CreateFunction(url, func, context) {
 
       const prepareFunc = eval(data);
       context[funcName] = prepareFunc[funcName];
+
+      // console.log({ funcName, parametersWithoutDefaults, queryParams });
+
+      // if (funcName === 'processMessage') {
+      //   console.log(data);
+      // }
     }
   }
 

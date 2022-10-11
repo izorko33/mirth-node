@@ -126,16 +126,17 @@ Parameters:
 
 ---
 
-#### sendMessagesToChannel(fileName, channelId)
+#### sendMessagesToChannel(pathToFileName, host, port)
 
 Summary: Send messages to specific channel from specific file.
 
 Parameters:
 
-| Name      | Description                            | Required | Properties |
-| --------- | -------------------------------------- | -------- | ---------- |
-| channelId | Channel id                             | Yes      |
-| fileName  | Filename from exports/messages folder. | Yes      |
+| Name           | Description                            | Required | Properties |
+| -------------- | -------------------------------------- | -------- | ---------- |
+| host           | Host                                   | Yes      |
+| port           | Port                                   | Yes      |
+| pathToFileName | Filename from exports/messages folder. | Yes      |
 
 ---
 
