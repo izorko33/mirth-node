@@ -83,8 +83,10 @@ async function Export(context) {
     const channels = await context.getChannels(undefined, false, true);
     const { codeTemplate } = await context.getCodeTemplates();
     const codeTemplateLibraries = await context.getCodeTemplateLibraries(undefined, true);
+    const globalScripts = await context.getGlobalScripts();
     const exportsFolder = './exports';
     const folderNameForChannels = exportsFolder + '/channels/';
+    const folderNameForGlobalScripts = exportsFolder + '/globalScripts/';
     const folderNameForCodeTemplates = exportsFolder + '/codeTemplates/';
 
     ifExists(exportsFolder);
@@ -152,6 +154,16 @@ async function Export(context) {
 
     ifExists(folderNameForChannels);
     ifExists(folderNameForCodeTemplates);
+    ifExists(folderNameForGlobalScripts);
+
+    if (Array.isArray(globalScripts.map.entry)) {
+      fs.writeFileSync(folderNameForGlobalScripts + 'globalScripts.json', JSON.stringify(globalScripts, null, 2), 'utf-8');
+      globalScripts.map.entry.forEach(item => {
+        const fileNameForGlobalScript = folderNameForGlobalScripts + item.string[0];
+        ifExists(fileNameForGlobalScript);
+        fs.writeFileSync(fileNameForGlobalScript + `/${item.string[0]}.js`, item.string[1], 'utf-8');
+      });
+    }
 
     if (Array.isArray(channels.channel)) {
       channels.channel.forEach(item => {
@@ -292,6 +304,7 @@ async function Export(context) {
   context.syncUp = async () => {
     const codeTemplates = await context.getCodeTemplates();
     const channelsApi = await context.getChannels(undefined, false, true);
+    const globalScripts = await context.getGlobalScripts();
 
     if (channelsApi) {
       if (Array.isArray(channelsApi.channel)) {
@@ -312,6 +325,18 @@ async function Export(context) {
       } catch (error) {
         console.log(error);
       }
+    }
+
+    if (globalScripts) {
+      const folderNameForGlobalScripts = './exports/globalScripts/';
+
+      for (const item of globalScripts.map.entry) {
+        const fileNameForGlobalScript = folderNameForGlobalScripts + `${item.string[0]}/${item.string[0]}.js`;
+        const globalScript = fs.readFileSync(fileNameForGlobalScript, 'utf-8');
+        item.string[1] = globalScript;
+      }
+      await context.setGlobalScripts(globalScripts);
+      console.log('Global scripts updated.');
     }
 
     if (codeTemplates) {

@@ -108,6 +108,9 @@ async function CreateFunction(url, func, context) {
                 schemaParams.push('list');
               }
             }
+            if (headers.content['application/json']['schema'].type === 'object') {
+              schemaParams.push('object');
+            }
             return {
               'Content-Type': 'application/json',
             };
@@ -177,7 +180,7 @@ async function CreateFunction(url, func, context) {
             let data;
               await instance
                 .put(URL + ${backTick + createUrlString(url) + backTick}, ${queryParams ? 'urlString, ' : ''}${
-            schemaParams.length !== 0 ? `postData,` : ''
+            schemaParams.length !== 0 ? `postData${schemaParams[0] === 'object' ? `.${schemaParams[0]}` : ''},` : ''
           } {
                   headers: headers,
                 })
@@ -250,7 +253,7 @@ async function CreateFunction(url, func, context) {
           // ${func[f].summary}
           const headers = ${JSON.stringify(headers)};
           ${
-            parametersWithoutDefaults !== 0
+            parametersWithoutDefaults.length !== 0
               ? `
               const returnValuesOnly = obj => {
                 let filteredParams = {};
@@ -274,12 +277,6 @@ async function CreateFunction(url, func, context) {
 
       const prepareFunc = eval(data);
       context[funcName] = prepareFunc[funcName];
-
-      // console.log({ funcName, parametersWithoutDefaults, queryParams });
-
-      // if (funcName === 'processMessage') {
-      //   console.log(data);
-      // }
     }
   }
 
