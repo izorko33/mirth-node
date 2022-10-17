@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 function createUrlString(url) {
   let newUrlArray;
   let newUrlFinal;
@@ -58,7 +56,7 @@ async function CreateFunction(url, func, context) {
 
       let returnValue;
       if (func[f].responses.default && func[f].responses.default.content['application/json']) {
-        const responsesExamples = func[f].responses?.default.content['application/json'].examples;
+        const responsesExamples = func[f].responses.default.content['application/json'].examples;
         for (const example in responsesExamples) {
           const testArray = responsesExamples[example]['$ref'].split('/').pop().split('_');
           switch (testArray[testArray.length - 2]) {

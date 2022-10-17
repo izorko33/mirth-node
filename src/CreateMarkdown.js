@@ -99,7 +99,7 @@ async function CreateMarkdown(paths, schemas, info) {
   });
 
   try {
-    fs.writeFileSync(__dirname + `/README-Mirth-${info.version}.md`, markdown, function (err) {
+    fs.writeFileSync(__dirname + `/Functions-Mirth-${info.version}.md`, markdown, function (err) {
       if (err) return console.log(err);
     });
   } catch (error) {
