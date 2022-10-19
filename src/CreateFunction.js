@@ -20,7 +20,6 @@ async function CreateFunction(url, func, context) {
       let funcName = func[f].operationId;
       let parameters = [];
       let parametersWithoutDefaults = [];
-      let missingParamsWithoutDefaults = [];
       let schemaParams = [];
       let queryParams;
 
@@ -42,7 +41,6 @@ async function CreateFunction(url, func, context) {
               }
             } else {
               parameters.push(paramsLoop.name);
-              missingParamsWithoutDefaults.push(paramsLoop.name);
               if (paramsLoop.in !== 'path') {
                 parametersWithoutDefaults.push(paramsLoop.name);
               }
@@ -112,7 +110,6 @@ async function CreateFunction(url, func, context) {
           } else if (headers.content['application/x-www-form-urlencoded']) {
             if (headers.content['application/x-www-form-urlencoded'].schema.required) {
               parameters.push(headers.content['application/x-www-form-urlencoded'].schema.required);
-              // parametersWithoutDefaults.push(headers.content['application/x-www-form-urlencoded'].schema.required);
               queryParams = headers.content['application/x-www-form-urlencoded'].schema.required;
               headers.content['application/x-www-form-urlencoded'].schema.required.forEach(item =>
                 parametersWithoutDefaults.push(item),
@@ -241,8 +238,6 @@ async function CreateFunction(url, func, context) {
       const prepareParams = `${
         testParams.length !== 0 ? `${testParams.length <= 3 ? `${testParams.join(',')}` : `{${testParams.join(',')}}`}` : ''
       }`;
-
-      // console.log(queryParams);
 
       const data = `async function ${funcName}(${prepareParams}) {
           // ${func[f].summary}

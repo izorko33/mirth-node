@@ -234,7 +234,6 @@ class MirthClient {
         console.log('Created/Updated channel: ' + channel.name);
       } catch (error) {
         console.log('No channel by that ID!');
-        // console.log(error);
       }
     };
 
