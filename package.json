@@ -1,6 +1,6 @@
 {
   "name": "mirth-node",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Mirh API for javascript applications.",
   "main": "./src/MirthApi.js",
   "license": "(MIT OR GPL-3.0-or-later)",
