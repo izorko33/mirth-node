@@ -26,7 +26,6 @@ async function CreateFunction(url, func, context) {
 
       const isLogin = url.includes('login');
       if (func[f].operationId === 'getMessages_1') {
-        functionName = 'GetMessagesByChannelId';
         funcName = 'getMessagesByChannelId';
       }
 
@@ -46,8 +45,6 @@ async function CreateFunction(url, func, context) {
               missingParamsWithoutDefaults.push(paramsLoop.name);
               if (paramsLoop.in !== 'path') {
                 parametersWithoutDefaults.push(paramsLoop.name);
-                // console.log(paramsLoop.name);
-                // banana.push(paramsLoop.name);
               }
             }
           }
